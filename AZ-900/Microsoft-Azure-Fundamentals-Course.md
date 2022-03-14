@@ -1,4 +1,14 @@
 # Microsoft Azure Fundamentals Course
+## Temario
+- [Microsoft Azure Fundamentals Course](#microsoft-azure-fundamentals-course)
+  - [Temario](#temario)
+  - [Cloud Computing y Conceptos clave](#cloud-computing-y-conceptos-clave)
+    - [Cloud Computing](#cloud-computing)
+    - [Conceptos clave](#conceptos-clave)
+  - [Principios de economía de escala](#principios-de-economía-de-escala)
+  - [CapEx vs OpEx y sus diferencias](#capex-vs-opex-y-sus-diferencias)
+  - [Modelo basado en el consumo](#modelo-basado-en-el-consumo)
+
 ## Cloud Computing y Conceptos clave
 ### Cloud Computing
 Modelo de prestación de servicios a través de internet (nube). Esto incluye pero no se limita a
@@ -39,6 +49,33 @@ De hecho, en la escala actual, Microsoft ya puede ofrecer múltiples servicios d
 </div> 
 
 ## CapEx vs OpEx y sus diferencias
+Diferencias entre gastos de capital(CapEx) y gastos operativos(OpEx)
 
+/  |Gastos de capital|Gastos operacionales
+---|---|---
+Costo inicial|Significativo|Ninguno
+Costo continuo|Bajo|Basado en el uso
+Deducción fiscal|Tiempo extraordinario|Mismo año
+Terminación anticipada|No|En cualquier momento
+Mantenimiento|Significativo|Bajo
+Valor en el tiempo|Disminuyen|Sin cambio
+<div>
+<img src="Images/CapEx.png" alt="CapEx" title="CapEx" width="300"/> 
+<img src="Images/OpEx.png" alt="OpEx" title="OpEx" width="300"/> 
+</div>  
 
+Pregunta: `Having your own datacenter infraesutrcture has a big ______ cost associated`.  
+Respuesta: `Initial`.  
 
+## Modelo basado en el consumo
+El modelo basado en el consumo es un modelo de precios que se utiliza en la nube para que a los clientes solo se les cobre en función de su uso de recursos.  
+Este modelo se caracteriza por  
+
+- **Sin costo inicial asociado**
+- **No se desperdician recursos** como tal, *no se incurre en cargos por recursos no utilizados*. No utilizado en este caso es diferente por servicio. Por ejemplo, Se considera que se usa el almacenamiento de blobs que almacena cualquier dato, ya que consume el espacio de almacenamiento. Las máquinas virtuales que se ejecutan consumen CPU, memoria y otros recursos incluso si no hay tráfico. Por lo tanto, se consideran utilizados y generarán cargos.
+- **Paga por lo que necesitas**
+- **Deja de pagar cuando no lo haces**  
+**El consumo** es la métrica virtual que se usa para calcular cuánto se usó cada recurso (servicio) en Azure. Cada servicio tiene muchas métricas más pequeñas que rastrean su consumo para ofrecer el mejor modelo de precios posible. Esas métricas se rastrean en un nivel muy granular.  
+<img src="Images/Consumption-based-model.png" alt="CapEx" title="CapEx" width="300"/> 
+
+[Consumption based Model - AZ-900 - Chapter Demo](https://youtu.be/NdqncsMtryY?list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM) 
