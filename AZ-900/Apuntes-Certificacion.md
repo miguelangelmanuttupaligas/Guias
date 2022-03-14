@@ -274,4 +274,245 @@ Centros físicos alejados pero que se encuentran dentro de una misma región.
 
 ## Concepto de Redes de Azure
 ### Red Virtual Azure 
-Es una red virtual aislada y de alta seguridad, que nos permite la ejecución de máquinas virtuales y aplicaciones
+Es una red virtual aislada y de alta seguridad, que nos permite la ejecución de máquinas virtuales y aplicaciones.  
+Característica|Descripción
+---|---
+Monitorear|La red de Azure nos permite monitorear toda la red y supervisarla.
+Comunicación|La red virtual nos permite difnir la forma en cómo se comunicarán internamente,al igual que cómo el usuario va a interactuar con el servicio.
+Aislar|Aisla nuestra red y mantenerla de forma "privada" incluyendo componentes dentro de la nube.
+Protección|Permite definir reglas de firewall, para mantener segura la red en sí.
+Segmentación de redes virtuales|Azure nos permite segmentar las redes virtuales, definiendo también así los accesos.
+
+### Disponibilidad y resiliencia de las redes en Azure
+Tipo|Descripción
+---|---
+Disponibilidad | Tiempo por el cual el servicio estará en funcionamiento.
+Resiliencia | Proporciona mecanismos para recuperarse después que el sistema ha fallado.
+
+### Azure DNS
+DNS : `Sistema de dominio de red, es un sistema el cual nos permite ponerle nombres a las direcciones IP`.  
+Azure DNS usa el mismo concepto de DNS,solo que aplicado al entorno de Azure, para una mejor optimización en la red.
+
+### Equilibrador de carga
+Es una balanceador de Azure que divide el tráfico de red de manera uniforme  y que sea de la misma región.
+Nos ayuda a tener más disponibilidad y resiliencia.
+
+### CDN de Azure
+Content Delivery Network, es una solución de red distribuida de servidores que entrega rápidamente contenido que requiere gran ancho de banda a los usuarios.  
+Ayuda a ofrecer mejor rendimiento a los usuarios finales y una seguridad robusta.
+
+## Seguridad en redes de Azure
+### Grupos de seguridad en redes de Azure
+El grupo de seguridad de red es aquel que monitorea el tráfico de red y define los accesos de este.  
+Funciones:  
+- Monitorear
+- Supervisar
+- Denegar accesos
+- Permitir accesos
+- Definir reglas de firewall
+
+### Gestor de tráfico en Azure
+(Azure Traffic Manager), es un gestor o balanceador de carga de tráfico basado en DNS que nos permite distribuir el tráfico de servicios en Azure.  
+Nos ayuda a optimizar el tráfico de servicios entre regiones de Azure y crear resiliencia en todas las regiones de Azure.  
+Características:
+- Admite puntos de conexión externos a Azure
+- Utiliza perfiles anidados
+- Usa `failover` automático
+
+### Traffic Manager vs Load Balancer
+
+\  |Azure Load Balancer|Azure Traffic Manager
+---|---|---
+Balancear la red|En una sola región Azure|En diferentes regiones Azure
+Optimización|En la entrega de paquetes|entrega de paquetes y reduce el ancho de banda
+
+### Azure Application Gateway
+Es un balanceador de carga de tráfico de red, que nos permite equilibrar el tráfico de las **aplicaciones web en Azure**.
+Características:  
+- Escalable
+- Está integrado con otros servicios Azure
+- Ofrece firewall de aplicaciones web
+- Descarga SSL
+
+### Azure Front Door
+Es la puerta que permite la entrega rápida y segura de las aplicaciones web globales.
+Características:  
+- Aceleración de aplicaciones
+- Balanceo de carga HTTP
+- Protección de aplicaciones
+- `failover` instántaneo  
+Ventajas:  
+- Aceleración HTTP
+- Escalabilidad independiente
+- Seguridad en linea
+
+## Seguridad en Azure
+### Responsabilidad compartida
+Es la asignatura de responsabilidad entre proveedor y cliente.
+### Identidad de Azure
+Son los diferentes accesos de los usuarios.
+Cada usuario posee una identidad y cada identidad tiene acceso o autorización para entrar a ciertos servicios.  
+**Autorización** : Al mencionar una autorizacións nos referismoa a que nivel de acceso tiene la persona.
+**Azure Active Directory** : Es un servicio de identidad proporcionado por la nube y nos ofrece. 
+- Admin App
+- Autenticación
+- SSO : `Procedimienot de autenticación,que habilita a un usuario determinado para acceder a varios sistemas con una sola instancia de identificación`  
+Con Azure nos permite centralizar los controlres de seguridad,al igual,poder combinar el origen de datos para análisis de amenazas en tiempo real.
+- Administración de dispositivo
+
+**MFA** : Es un método multipruebas que da acceso al usuario, siempre y cuando haya pasado las pruebas impuestas.
+
+### Azure Security Center
+Es un servicio que proporciona seguridad en tu entorno de Azure como en el entorno de tu red local.
+Beneficios:  
+- Guia a los ususarios para su configuración
+- Aprendizaje automático
+- Recomendaciones según tus configuraciones
+- Identificar amenazas
+
+### Cifrado en Azure
+Es un método de seguridad, donde se encripta la comunicación entre una conversación.
+**Cifrado asimétrico** : Utiliza dos llaves para cifrar y descifrar datos. 
+**Cifrado simétrico** : Solo necesita una lalve para poder cifrar y descifrar datos. 
+**Datos en reposo** : Son datos que no se utilizan en la comunicación por el momento, es decir que no están pasando por un canal y están almacenados. 
+**Datos en tránsito** : Son datos que se mueven de una localización a otra,la seguridad de estos pueden variar o usar varios métodos. 
+**Azure Key Vault** : Servicio que nos permite proteger nuestra encriptación y podemos gestionar los diferentes accesos y llaves.
+
+La encriptación de Azure nos ofrece :
+- Servicio de encriptación de almacenamiento
+- Encriptación de disco
+- Encriptación de base de datos
+- Secrets
+
+### Certificados
+Son una medida de confianza adicional de protección para las personas que visitan y realizan transacciones en las páginas web, asegurando que su información está segura.
+
+**Azure key vault con certificados** : En Azure Key Vault se puede crear y almacenar certificados,como una medida de mantenerlos en secreto, al igual que podemos importar certificados existentes y la renovación de estos, establecer políticas y notificaciones de eventos.
+
+**Problemas con los certificados** : No todos están actualizados o protegan y exponen la seguridad de la página y comprometiendo la información de sus usuarios.
+
+**¿Qué certificado ofrece Azure?** : Ofrece certificados X.509_V3, pueden ser auto firmados o firmados por una entidad de certificación de confianza.
+
+**Certificado de administración** : Nos permite comunicarnos con la API de administración.
+
+**Certificado de servicio** : Se utilizan para los servicios de la nube,permitiendo la comunicación segura hacía y desde el servicio.
+
+### Protección de información y Advance Threat Protection
+**Azure information protection** es una solución basada en la nube que ayuda a clasificar y administrar elementos.  
+Características:  
+- Clasifica y protege documentos y correos mediante etiquetas
+- Etiquetas pueden ser definidad de forma automática o manul
+- Realización de seguimiento
+- Tomar medidas correctivas
+
+**Advance Threat Protection** es una solución de seguridad basada en la nube, la cual nos permite detectar y controlar amenazas avanzadas.
+Características:  
+- Detección y seguimiento de amenazas
+- Detección de riesgos
+- Análisis interno y externo
+
+**Azure ATP** es una solución de seguridad, localizada en la nube que utiliza las señales de **Active Directory** local para inspeccionar,detectar y reconocer amenazas avanzadas.
+
+## Políticas de Azure,Seguridad y Gobernanza de Azure
+### Declaración de privacidad
+Es la asignación al acceso de datos por parte de la organización . Proporciona una apertura y honestidad sobre como se trataran los datos personales del usuario.
+
+### Microsoft Trust Center
+Sitio web que contiene la administración e implementación de medidas de seguridad en los servicios adquiridos.
+Características:  
+- Información especifica sobre los roles
+- Búsqueda de documentos entre empresas
+- Recomendaciones de recursos
+
+**Portal de confianza de servicios** es un portal de transparencia donde se publican informes de auditoría e información relevante para los servicios de Microsoft.  
+Permite descargar informes de auditoria,ver informes de auditoria externos a Microsoft, información del manejo de operaciones por Microsoft
+
+### Azure Policy
+Evalúa los recursos de Azure, comparando las propiedades de esos recursos con las reglas de negocio. Busca satisfacer 3 propositos : Cumplimiento y estándares, Aplicar políticas de escala,corregir y automatizar.
+
+Términos: 
+- *Policy* : Politicas a aplicar
+- *Iniciative* : Coleccción de reglas
+- *Assignment* : Alcance de aplicación
+
+Ofrece: 
+- Corregir los recursos existentes a escala
+- Directiva como código Devops
+- Alcance de exclusión
+- etc.
+
+**RBAC** es un nuevo sistema de autorización, que proporciona una administración de acceso detallada a los recursos de Azure.   
+A diferencia de **Azure Policy**, **RBAC** se centra en las acciones que se pueden tomar en un solo ámbito y la denegación de accesos se da por defecto a menos que  nosotros lo implementemos explícitamente.
+
+### Gobernanza de suscripción
+Nos permite mantener un control de los accesos dentro de nuestro entorno Azure.  
+Nos ayuda a administrar los accesos en un área específica, definiendolo como un control y administración de controles.
+
+### Azure Blueprint
+Facilidad de medidas de seguridad,análisis y detección, adaptandose a nestándares de nuestra organización.
+Nos permite la fácilidad de medidas de seugirdad,análisis y detección,adaptandose a estándares de neustra organización.  
+Como se implmenta : 
+- Creación de plantilla dedefinicióin
+- Asegurar los recursos fundamentales
+- Seguimiento de asignación  
+Blueprint nos permite:
+- Asignación de roles
+- Asignación de políticas
+- Implementación de plantillas
+- etc
+
+### Compliance Manager
+Es una funcionalidad, la cual nos permite administrar lso requisitos de cumplimiento de nuestra organización
+Características:  
+1. Seguimiento de procesos
+2. Inventario de riesgos
+3. Mantenimiento de regulaciones y certificados
+
+### Compliance Manager y Service Healt
+Es un panel de evaluación de riesgos dentro del portal de confianza.
+- Recomendaciones de mejora
+- Acciones recomendadas para mejorar el cumplimiento normativo
+- Vista del panel para regulaciones
+- Evaluación de riesgos continuos
+
+**Azure Monitor** es un servicio que máximiza la disponibilidad y requerimientos de las aplicaciones ofreciendo una solución completa
+
+Ofrece identifcación de problemas, recopilación de datos, registros de aplicación, ampliación de información, supervisión a nivel de sistemas operativos.
+
+**Service Healt** es un servicio que notifica y ayuda a entender el impacto de los problemas.
+
+Ofrece notificaciones sobre problemas, ayuda para planificaciones de mantenimiento, ayuda a comprender el impacto que pudiese tener en algún momento de caida
+
+## Costos en Azure
+### Factores de costos
+Costos que podría afectar al implementar los servicios de Azure
+**Ubicación**, **Tipo de recurso**, **Tipos de suscripción**
+
+### Azure Advisor
+Busca la manera de mejorar el ambiente en tus servicios
+
+### Ahorro de costos
+**Límite de gastos**: Azure contiene un límite de gasto, el cual se activa antes de que tu saldo llegue a cero para evitar cobros extra.  
+**Ofertas**: Aprovechamiento de ofertas para minizar los costos, estas varían dependiendo la región.  
+**Instancias reservadas** : Puedes usar instancias reservadas para minimizar el costo en un 70% dependiendo de tu máquina virtual.  
+**Créditos de Azure** : Las suscripciones pueden contener lo que son beneficios de prueba, programación de funcionalidad de Azure y a cambio te proporcionan créditos.  
+**Ubicaciones** : Usar suscripciones en regiones las cuales el costo de suscripción sea menor al que estas actualmente.  
+**Detener y eliminar máquinas virtuales** : Detener máquinas virtuales cuando estas se ejecutan innecesariamente
+****
+
+## Acuerdos de nivel de servicio en Azure
+Son los acuerdos los cuales contienen los términos específicos que definen los estándares que aplican a Azure. Existen acuerdo de nivel en productos y servicios
+### SLA de Azure 
+Azure no define lo que es SLA para todos los servicios que proporciona.  
+Características:  
+1. Objetivos de rendimiento
+2. Garantia de tiempo de actividad
+3. Créditos de servicios  
+
+### SLA de aplicación
+Al aplicar SLA como objetivo de rendimiento los cuales se adapten a nuestra aplicación de Azure.  
+Permite la **disponibilidad**,**resiliencia**
+
+## Preguntas
+`Es el lugar donde se encuentra un centro de datos de Azure` : Región  
+`Pide factores extra de autenticación, como preguntas predeterminadas` : Azure Multifactor
