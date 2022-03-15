@@ -14,6 +14,34 @@
     - [**Nube pública**](#nube-pública)
     - [**Nube privada**](#nube-privada)
     - [**Nube híbrida**](#nube-híbrida)
+  - [**Geografía, Regiones y Zonas de disponibilidad**](#geografía-regiones-y-zonas-de-disponibilidad)
+    - [Data Center](#data-center)
+    - [**Región**](#región)
+    - [**Zona de disponibilidad**](#zona-de-disponibilidad)
+    - [**Pares de regiones**](#pares-de-regiones)
+    - [**Geografías**](#geografías)
+  - [**Recursos, grupos de recursos y administrador de recursos**](#recursos-grupos-de-recursos-y-administrador-de-recursos)
+    - [**Recurso Azure**](#recurso-azure)
+    - [**Grupo de recursos**](#grupo-de-recursos)
+    - [**Administrador de recursos**](#administrador-de-recursos)
+    - [**Información adicional**](#información-adicional)
+  - [**Servicios de cómputo | VMs, VM Scale Set, App Service, Functions, ACI, AKS**](#servicios-de-cómputo--vms-vm-scale-set-app-service-functions-aci-aks)
+    - [**Virtualización**](#virtualización)
+    - [**Maquinas virtuales**](#maquinas-virtuales)
+    - [**Conjuntos de escalado de máquinas virtuales**](#conjuntos-de-escalado-de-máquinas-virtuales)
+    - [**Contenedores**](#contenedores)
+    - [**Instancias de contenedores de Azure**](#instancias-de-contenedores-de-azure)
+    - [**Servicio Azure Kubernetes (AKS)**](#servicio-azure-kubernetes-aks)
+    - [**Servicio de aplicaciones(App Service)**](#servicio-de-aplicacionesapp-service)
+    - [**Funciones de Azure (aplicaciones de funciones)**](#funciones-de-azure-aplicaciones-de-funciones)
+    - [**Resumen**](#resumen)
+  - [**Servicios de red | Virtual Network, VPN Gateway, CDN, Load Balancer, App GW**](#servicios-de-red--virtual-network-vpn-gateway-cdn-load-balancer-app-gw)
+    - [**Redes Azure (Azure Networking)**](#redes-azure-azure-networking)
+    - [**Red virtual de Azure (Azure Virtual Network)**](#red-virtual-de-azure-azure-virtual-network)
+    - [**Equilibrador de carga de Azure (Azure Load Balancer)**](#equilibrador-de-carga-de-azure-azure-load-balancer)
+    - [**Puerta de enlace VPN**](#puerta-de-enlace-vpn)
+    - [**Puerta de enlace de aplicaciones**](#puerta-de-enlace-de-aplicaciones)
+    - [**Red de entrega de contenidos**](#red-de-entrega-de-contenidos)
 
 ## **Cloud Computing y Conceptos clave**
 ### **Cloud Computing**
@@ -122,7 +150,7 @@ Azure tiene una opción para Azure SQL Server en máquina virtual donde todas la
 ## **Modelos de implementación de nube pública, privada e híbrida**
 El modelo de implementación en la nube es una separación simple que describe dónde se implementan los recursos de la empresa. Siempre que sea en un entorno de proveedor de nube pública o en un centro de datos privado.
 ### **Nube pública**
-✅ Cloud Provider  ✖  Own Datacenter   
+✅ Cloud Provider  ✖  Own Datacenter    
 **Caracteristicas claves**
 - Todo se ejecuta en el hardware del proveedor de la nube
 - Sin hardware local
@@ -141,19 +169,272 @@ Ventajas|Desventajas
 
 Ventajas|Desventajas
 ---|---
-<ul><li>Puede soportar cualquier escenario</li><li>Control total sobre la seguridad y la infraestructura
-</li><li>Puede cumplir con cualquier política de seguridad y cumplimiento</li></ul>|<ul><li>Se requiere inversión inicial</li><li>Agilidad limitada restringida por la capacidad del servidor y las habilidades del equipo</li><li>Muy dependiente de las habilidades y la experiencia en TI</li></ul>
+<ul><li>Puede soportar cualquier escenario</li><li>Control total sobre la seguridad y la infraestructura</li><li>Puede cumplir con cualquier política de seguridad y cumplimiento</li></ul> | <ul><li>Se requiere inversión inicial</li><li>Agilidad limitada restringida por la capacidad del servidor y las habilidades del equipo</li><li>Muy dependiente de las habilidades y la experiencia en TI</li></ul>
 
 ### **Nube híbrida**
-✅ Cloud Provider  ✅ Own Datacenter 
-**Caracteristicas claves** 
+✅ Cloud Provider  ✅ Own Datacenter  
+**Caracteristicas claves**  
 - Combina la nube pública y privada
 
 Ventajas|Desventajas
 ---|---
-<ul><li>Gran flexibilidad</li><li>Puede ejecutar cualquier aplicación heredada en la nube privada</li><li>Puede utilizar la infraestructura existente
-</li><li>Cumplir con los requisitos de seguridad y cumplimiento
-</li><li>Puede aprovechar todos los beneficios de la nube pública
-Desventajas</li></ul>|<ul><li>Puede ser más caro
-</li><li>Complicado de manejar debido a un paisaje más grande
-</li><li>Más dependiente de las habilidades y la experiencia en TI de los tres modelos</li></ul>
+<ul><li>Gran flexibilidad</li><li>Puede ejecutar cualquier aplicación heredada en la nube privada</li><li>Puede utilizar la infraestructura existente</li><li>Cumplir con los requisitos de seguridad y cumplimientos</li><li>Puede aprovechar todos los beneficios de la nube pública</li></ul> | <ul><li>Puede ser más caro</li><li>Complicado de manejar debido a un paisaje más grande</li><li>Más dependiente de las habilidades y la experiencia en TI de los tres modelos</li></ul>
+
+## **Geografía, Regiones y Zonas de disponibilidad**
+  * Products available by region: https://azure.microsoft.com/en-us/global-infrastructure/services/
+  * 🌐 Azure Speed Test 2.0: http://azurespeedtest.azurewebsites.net/
+
+### Data Center
+- **Instalación física**.
+- **Hosting** para grupo de **servidores** en red.
+- Infraestructura propia de **energía**, **refrigeración** y **redes**.
+
+<img src="Images/Data-center.png" alt="Data Center" width="300"/> 
+
+### **Región**
+- **Área geográfica** en el planeta.
+- **Uno, pero generalmente más centros de datos** conectados con una **red de baja latencia** (<2 milisegundos).
+- **Ubicación** para sus servicios.
+- Algunos servicios están **disponibles solo en ciertas regiones**.
+- Algunos servicios son **servicios globales**, por lo que no se asignan/implementan en una región específica.
+- Disponible globalmente con más de **50+ regiones**.
+- **Regiones gubernamentales** especiales (US DoD Central, US Gov Virginia, etc.).
+- **Regiones asociadas** especiales (Este de China, Norte de China).
+
+<img src="Images/Regions.png" alt="Regions" width="300"/> 
+
+### **Zona de disponibilidad**
+- **Característica regional**.
+- Agrupación de instalaciones **separadas físicamente**.
+- Diseñado para **proteger de fallas en el centro de datos**.
+- Si la zona se cae, **otros continúan trabajando**.
+- Dos **categorías** de servicio:
+  - Servicios **zonales** (Máquinas Virtuales, Discos, etc.).
+  - Servicios con **redundancia de zona** (SQL, Storage, etc.).
+- **No todas** las regiones son **compatibles**.
+- La **región** admitida **tiene tres o más zonas**.
+- Una **zona** es **uno o más centros de datos**.
+
+<img src="Images/Availability-zone.png" alt="Availability Zone" width="300"/> 
+
+### **Pares de regiones**
+- Cada **región** está **emparejada** con otra región, lo que la convierte en un par de regiones.
+- Los **pares de regiones son estáticos** y no se pueden elegir.
+- Cada par reside dentro de la **misma geografía**.`La excepción es Brazil South`.
+- **Aislamiento físico** con al menos 300 millas de distancia (cuando sea posible).
+- Algunos servicios tienen **replicación proporcionada por la plataforma**.
+- **Actualizaciones planificadas** en los pares.
+- **Residencia de datos** mantenida para recuperación ante desastres.
+Algunos ejemplos de regiones pares: 
+
+Región Par A|Región Par B
+---|---
+East US|West US
+UK West|UK South
+North Europe|West Europe
+
+<img src="Images/Regions-pairs.png" alt="Region Pairs" width="300"/> 
+
+### **Geografías**
+- **Mercado discreto**
+- Normalmente **contiene dos o más regiones**.
+- Garantiza que se cumplan los requisitos de **residencia**, **soberanía**, **resiliencia** y **cumplimiento** de los **datos**.
+- **Tolerante a fallas** para proteger de fallas en toda la región.
+- Dividido en áreas : **Américas**, **Europa**, **Asia Pacífico**, **Oriente Medio** y **África**.
+- Cada **región pertenece solo a una Geografía**.
+
+## **Recursos, grupos de recursos y administrador de recursos**
+### **Recurso Azure**
+- Objeto **utilizado para administrar servicios** en Azure.
+- Representa el **ciclo de vida del servicio**.
+- Guardado como **definición JSON**.
+
+<img src="Images/Resources.png" width="300"/>
+
+### **Grupo de recursos**
+- **Agrupación** de recursos.
+- Contiene recursos **lógicamente relacionados**.
+- Normalmente se organiza por
+  - **Tipo**
+  - **Ciclo de vida** (aplicación, entorno)
+  - **Departamento**
+  - **Facturación**,
+  - **Ubicación** o
+  - **combinación de esos**
+
+<img src="Images/Resource-group.png" width="300"/>
+
+### **Administrador de recursos**
+- **Capa de gestión** para todos los recursos y grupos de recursos
+- Lenguaje **unificado**.
+- **Controla el acceso** y **los recursos**.
+
+<img src="Images/Resource-manager.png" width="300"/>
+
+### **Información adicional**
+- Cada **recurso** debe estar en **uno y solo un grupo de recursos**.
+- Los **grupos de recursos tienen su propia ubicación** asignada.
+- Los recursos de los grupos de recursos pueden **residir en ubicaciones diferentes**.
+- Los recursos **se pueden mover** entre los grupos de recursos.
+- Los **grupos de recursos no se pueden anidar**.
+- Organícese en función de las necesidades de su organización, pero tenga en cuenta
+  - Facturación
+  - Seguridad y gestión de acceso
+  - Ciclo de vida de la aplicación
+
+## **Servicios de cómputo | VMs, VM Scale Set, App Service, Functions, ACI, AKS**
+### **Virtualización**
+- Emulación de máquinas físicas
+- Configuración de hardware virtual diferente por máquina/aplicación
+- Diferentes sistemas operativos por máquina/aplicación
+- Separación total de ambientes
+  - sistemas de archivos,
+  - servicios,
+  - puertos,
+  - middleware,
+  - configuración
+
+<img src="Images/Virtualization.png" width="300"/>
+
+### **Maquinas virtuales**
+- Infraestructura como servicio (IaaS)
+- Control total sobre el sistema operativo y el software
+- Soporta mercado e imágenes personalizadas
+- El más adecuado para
+  - Software personalizado que requiere una configuración de sistema personalizada
+  - Escenarios de elevación y cambio
+- Puede ejecutar cualquier aplicación/escenario
+  - aplicaciones web y servicios web,
+  - bases de datos,
+  - aplicaciones de escritorio,
+  - jumpboxes,
+  - gateways, etc
+
+<img src="Images/Azure-virtual-machines.png" width="300"/>
+
+### **Conjuntos de escalado de máquinas virtuales**
+- Infraestructura como servicio (IaaS)
+- Conjunto de máquinas virtuales idénticas
+- Funciones de escalado automático integradas
+- Diseñado para cargas de trabajo manuales y de escalado automático, como servicios web,* procesamiento por lotes, etc.
+
+<img src="Images/Azure-virtual-machine-scale-sets.png" width="300"/>
+
+### **Contenedores**
+- Usar el sistema operativo del host
+- Emular el sistema operativo (las máquinas virtuales emulan el hardware)
+- Ligero (sin O/S)
+  - Esfuerzo de desarrollo
+  - Mantenimiento
+  - Requisitos de computación y almacenamiento
+- Responda más rápido a los cambios de demanda
+- Diseñado para casi cualquier escenario
+
+<img src="Images/Containers.png" width="300"/>
+
+### **Instancias de contenedores de Azure**
+- La forma más sencilla y rápida de ejecutar un contenedor en Azure
+- Plataforma como servicio
+- Contenedores sin servidor
+- Diseñado para
+  - Servicios/aplicaciones web pequeñas y sencillas
+  - Trabajos en segundo plano
+  - Guiones programados
+
+<img src="Images/Azure-container-instances.png" width="300"/>
+
+### **Servicio Azure Kubernetes (AKS)**
+- Plataforma de orquestación de contenedores de código abierto
+- Plataforma como servicio
+- Altamente escalable y personalizable
+- Diseñado para implementaciones de contenedores a gran escala (¡cualquier cosa realmente!)
+
+<img src="Images/Azure-kubernetes-service.png" width="300"/>
+
+### **Servicio de aplicaciones(App Service)**
+- Diseñado como servicio de aplicación web de nivel empresarial
+- Plataforma como servicio
+- Admite múltiples lenguajes de programación y contenedores
+
+<img src="Images/App-service.png" width="300"/>
+
+### **Funciones de Azure (aplicaciones de funciones)**
+- Plataforma como servicio
+- Serverless
+- Dos modelos de alojamiento/precio
+  - Consumo-plan basado
+  - plan dedicado
+- Diseñado para micro/nanoservicios
+
+<img src="Images/Functions-apps.png" width="300"/>
+
+### **Resumen**
+- Máquinas virtuales (IaaS) - software personalizado, requisitos personalizados, muy especializado, alto grado de control
+- Conjuntos de escalado de máquinas virtuales (IaaS) - cargas de trabajo de escalado automático para máquinas virtuales
+- Instancias de contenedor (PaaS) - alojamiento de contenedor simple, fácil de comenzar
+- Servicio Kubernetes (PaaS) - Plataforma de alojamiento de contenedores * altamente escalable y personalizable
+- Servicios de aplicaciones (PaaS) - aplicaciones web, muchas funciones de alojamiento web empresarial *, fácil de comenzar
+- Funciones (PaaS) (Función como servicio) (Serverless) - micro/nanoservicios, excelente precio basado en el consumo, fácil de comenzar
+
+<img src="Images/Summary.png" width="300"/>
+
+## **Servicios de red | Virtual Network, VPN Gateway, CDN, Load Balancer, App GW**
+### **Redes Azure (Azure Networking)**
+- Conecte la nube y las instalaciones
+- Funcionalidad de red local
+
+<img src="Images/" width="300"/>
+
+
+### **Red virtual de Azure (Azure Virtual Network)**
+- Componentes de red aislados lógicamente
+- Segmentado en una o más subredes
+- Las subredes son secciones discretas
+- Habilite la comunicación de los recursos entre sí, Internet y en las instalaciones
+- Alcanzado a una sola región
+- El emparejamiento de VNet permite la comunicación entre regiones
+- Aislamiento, Segmentación, Comunicación, Filtrado, Enrutamiento
+
+<img src="Images/Virtual-network.png" width="300"/>
+
+### **Equilibrador de carga de Azure (Azure Load Balancer)**
+- Incluso la distribución del tráfico
+- Admite escenarios tanto entrantes como salientes
+- Escenarios de alta disponibilidad
+- Aplicaciones TCP (protocolo de control de transmisión) y UDP (protocolo de datagramas de usuario)
+- Tráfico Interno y Externo
+- Reenvío de puertos
+- Alta escala con hasta millones de flujos
+<div>
+<img src="Images/Load-balancer.png" width="300"/>
+<img src="Images/Load-Load-balancer-2.png" width="300"/>
+</div>
+
+### **Puerta de enlace VPN**
+- Tipo específico de puerta de enlace de red virtual para el tráfico local a Azure a través de la Internet pública
+
+<img src="Images/VPN-gateway.png" width="300"/>
+
+### **Puerta de enlace de aplicaciones**
+- Equilibrador de carga de tráfico web
+- cortafuegos de aplicaciones web
+- Redirección
+- Afinidad de sesión
+- Enrutamiento de URL
+- Terminación SSL
+
+<div>
+<img src="Images/Application-gateway.png" width="300"/>
+<img src="Images/Application-gateway-2.png" width="300"/>
+<img src="Images/Application-gateway-3.png" width="300"/>
+</div>
+
+### **Red de entrega de contenidos**
+- Definir contenido
+- Minimizar la latencia
+- POP (puntos de presencia) con muchas ubicaciones
+
+<div>
+<img src="Images/Content-delivery-network.png" width="300"/>
+<img src="Images/Content-delivery-network-2.png" width="300"/>
+</div>
