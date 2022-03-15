@@ -15,7 +15,7 @@
     - [**Nube privada**](#nube-privada)
     - [**Nube híbrida**](#nube-híbrida)
   - [**Geografía, Regiones y Zonas de disponibilidad**](#geografía-regiones-y-zonas-de-disponibilidad)
-    - [Data Center](#data-center)
+    - [**Data Center**](#data-center)
     - [**Región**](#región)
     - [**Zona de disponibilidad**](#zona-de-disponibilidad)
     - [**Pares de regiones**](#pares-de-regiones)
@@ -25,7 +25,7 @@
     - [**Grupo de recursos**](#grupo-de-recursos)
     - [**Administrador de recursos**](#administrador-de-recursos)
     - [**Información adicional**](#información-adicional)
-  - [**Servicios de cómputo | VMs, VM Scale Set, App Service, Functions, ACI, AKS**](#servicios-de-cómputo--vms-vm-scale-set-app-service-functions-aci-aks)
+  - [**Servicios de cómputo**](#servicios-de-cómputo)
     - [**Virtualización**](#virtualización)
     - [**Maquinas virtuales**](#maquinas-virtuales)
     - [**Conjuntos de escalado de máquinas virtuales**](#conjuntos-de-escalado-de-máquinas-virtuales)
@@ -35,13 +35,44 @@
     - [**Servicio de aplicaciones(App Service)**](#servicio-de-aplicacionesapp-service)
     - [**Funciones de Azure (aplicaciones de funciones)**](#funciones-de-azure-aplicaciones-de-funciones)
     - [**Resumen**](#resumen)
-  - [**Servicios de red | Virtual Network, VPN Gateway, CDN, Load Balancer, App GW**](#servicios-de-red--virtual-network-vpn-gateway-cdn-load-balancer-app-gw)
+  - [**Servicios de red**](#servicios-de-red)
     - [**Redes Azure (Azure Networking)**](#redes-azure-azure-networking)
     - [**Red virtual de Azure (Azure Virtual Network)**](#red-virtual-de-azure-azure-virtual-network)
     - [**Equilibrador de carga de Azure (Azure Load Balancer)**](#equilibrador-de-carga-de-azure-azure-load-balancer)
     - [**Puerta de enlace VPN**](#puerta-de-enlace-vpn)
     - [**Puerta de enlace de aplicaciones**](#puerta-de-enlace-de-aplicaciones)
     - [**Red de entrega de contenidos**](#red-de-entrega-de-contenidos)
+  - [**Servicios de almacenamiento**](#servicios-de-almacenamiento)
+    - [**Tipos de datos**](#tipos-de-datos)
+    - [**Cuenta de almacenamiento**](#cuenta-de-almacenamiento)
+    - [**Almacenamiento de blobs (Blob Storage)**](#almacenamiento-de-blobs-blob-storage)
+    - [**Almacenamiento en cola (Queue Storage)**](#almacenamiento-en-cola-queue-storage)
+    - [**Almacenamiento de tablas (Table Storage)**](#almacenamiento-de-tablas-table-storage)
+    - [**Almacenamiento de archivos (File Storage)**](#almacenamiento-de-archivos-file-storage)
+    - [**Almacenamiento de disco (Disk Storage)**](#almacenamiento-de-disco-disk-storage)
+  - [**Servicios de bases de datos**](#servicios-de-bases-de-datos)
+    - [**Tipos de datos en las BD**](#tipos-de-datos-en-las-bd)
+    - [**Cosmos DB**](#cosmos-db)
+    - [**SQL Database**](#sql-database)
+    - [**Azure SQL product family**](#azure-sql-product-family)
+  - [**Azure Marketplace**](#azure-marketplace)
+  - [**Servicios IoT**](#servicios-iot)
+    - [**Azure IoT Hub**](#azure-iot-hub)
+    - [**Azure IoT Central**](#azure-iot-central)
+    - [**Azure Sphere**](#azure-sphere)
+  - [**Servicios Big Data & Analytics**](#servicios-big-data--analytics)
+    - [**Azure Synapse Analytics**](#azure-synapse-analytics)
+    - [**Azure HDInsight**](#azure-hdinsight)
+    - [**Azure Databricks**](#azure-databricks)
+  - [**Servicios de IA**](#servicios-de-ia)
+    - [**Azure Machine Learning**](#azure-machine-learning)
+  - [**Servicios serverless computing**](#servicios-serverless-computing)
+    - [**Azure Functions**](#azure-functions)
+    - [**Azure Logic Apps**](#azure-logic-apps)
+    - [**Azure Event Grid**](#azure-event-grid)
+  - [**Soluciones DevOps**](#soluciones-devops)
+    - [**Azure DevOps**](#azure-devops)
+    - [**Azure DevTest Labs**](#azure-devtest-labs)
 
 ## **Cloud Computing y Conceptos clave**
 ### **Cloud Computing**
@@ -156,9 +187,16 @@ El modelo de implementación en la nube es una separación simple que describe d
 - Sin hardware local
 - Algunos servicios comparten hardware con otros clientes 
 
-Ventajas|Desventajas
----|---
-<ul><li>Sin CapEx</li><li>Alta disponibilidad</li><li>Agilidad</li><li>Precios por pago de uso</li><li>Sin mantenimiento de hardware</li><li>No se requieren habilidades técnicas profundas</li></ul>|<ul><li>No se pueden cumplir todas las políticas de seguridad y cumplimiento</li><li>Sin propiedad sobre la infraestructura física</li><li>No se pueden hacer escenarios específicos raros</li></ul>
+<table>
+  <tr>
+    <th>Ventajas</th>
+    <th>Desventajas</th>
+  </tr>
+  <tr>
+    <td><ul><li>Sin CapEx</li><li>Alta disponibilidad</li><li>Agilidad</li><li>Precios por pago de uso</li><li>Sin mantenimiento de hardware</li><li>No se requieren habilidades técnicas profundas</li></ul></td>
+    <td><ul><li>No se pueden cumplir todas las políticas de seguridad y cumplimiento</li><li>Sin propiedad sobre la infraestructura física</li><li>No se pueden hacer escenarios específicos raros</li></ul></td>
+  </tr>
+</table>
 
 ### **Nube privada**
 ✖  Cloud Provider  ✅ Own Datacenter  
@@ -167,24 +205,38 @@ Ventajas|Desventajas
 - Se debe proporcionar autoservicio
 - Tú mantienes el hardware
 
-Ventajas|Desventajas
----|---
-<ul><li>Puede soportar cualquier escenario</li><li>Control total sobre la seguridad y la infraestructura</li><li>Puede cumplir con cualquier política de seguridad y cumplimiento</li></ul> | <ul><li>Se requiere inversión inicial</li><li>Agilidad limitada restringida por la capacidad del servidor y las habilidades del equipo</li><li>Muy dependiente de las habilidades y la experiencia en TI</li></ul>
+<table>
+  <tr>
+    <th>Ventajas</th>
+    <th>Desventajas</th>
+  </tr>
+  <tr>
+    <td><ul><li>Puede soportar cualquier escenario</li><li>Control total sobre la seguridad y la infraestructura</li><li>Puede cumplir con cualquier política de seguridad y cumplimiento</li></ul></td>
+    <td><ul><li>Se requiere inversión inicial</li><li>Agilidad limitada restringida por la capacidad del servidor y las habilidades del equipo</li><li>Muy dependiente de las habilidades y la experiencia en TI</li></ul></td>
+  </tr>
+</table>
 
 ### **Nube híbrida**
 ✅ Cloud Provider  ✅ Own Datacenter  
 **Caracteristicas claves**  
 - Combina la nube pública y privada
 
-Ventajas|Desventajas
----|---
-<ul><li>Gran flexibilidad</li><li>Puede ejecutar cualquier aplicación heredada en la nube privada</li><li>Puede utilizar la infraestructura existente</li><li>Cumplir con los requisitos de seguridad y cumplimientos</li><li>Puede aprovechar todos los beneficios de la nube pública</li></ul> | <ul><li>Puede ser más caro</li><li>Complicado de manejar debido a un paisaje más grande</li><li>Más dependiente de las habilidades y la experiencia en TI de los tres modelos</li></ul>
+<table>
+  <tr>
+    <th>Ventajas</th>
+    <th>Desventajas</th>
+  </tr>
+  <tr>
+    <td><ul><li>Gran flexibilidad</li><li>Puede ejecutar cualquier aplicación heredada en la nube privada</li><li>Puede utilizar la infraestructura existente</li><li>Cumplir con los requisitos de seguridad y cumplimientos</li><li>Puede aprovechar todos los beneficios de la nube pública</li></ul></td>
+    <td><ul><li>Puede ser más caro</li><li>Complicado de manejar debido a un paisaje más grande</li><li>Más dependiente de las habilidades y la experiencia en TI de los tres modelos</li></ul></td>
+  </tr>
+</table>
 
 ## **Geografía, Regiones y Zonas de disponibilidad**
   * Products available by region: https://azure.microsoft.com/en-us/global-infrastructure/services/
   * 🌐 Azure Speed Test 2.0: http://azurespeedtest.azurewebsites.net/
 
-### Data Center
+### **Data Center**
 - **Instalación física**.
 - **Hosting** para grupo de **servidores** en red.
 - Infraestructura propia de **energía**, **refrigeración** y **redes**.
@@ -282,7 +334,7 @@ North Europe|West Europe
   - Seguridad y gestión de acceso
   - Ciclo de vida de la aplicación
 
-## **Servicios de cómputo | VMs, VM Scale Set, App Service, Functions, ACI, AKS**
+## **Servicios de cómputo**
 ### **Virtualización**
 - Emulación de máquinas físicas
 - Configuración de hardware virtual diferente por máquina/aplicación
@@ -378,13 +430,10 @@ North Europe|West Europe
 
 <img src="Images/Summary.png" width="300"/>
 
-## **Servicios de red | Virtual Network, VPN Gateway, CDN, Load Balancer, App GW**
+## **Servicios de red**
 ### **Redes Azure (Azure Networking)**
 - Conecte la nube y las instalaciones
 - Funcionalidad de red local
-
-<img src="Images/" width="300"/>
-
 
 ### **Red virtual de Azure (Azure Virtual Network)**
 - Componentes de red aislados lógicamente
@@ -407,7 +456,7 @@ North Europe|West Europe
 - Alta escala con hasta millones de flujos
 <div>
 <img src="Images/Load-balancer.png" width="300"/>
-<img src="Images/Load-Load-balancer-2.png" width="300"/>
+<img src="Images/Load-balancer-2.png" width="300"/>
 </div>
 
 ### **Puerta de enlace VPN**
@@ -438,3 +487,272 @@ North Europe|West Europe
 <img src="Images/Content-delivery-network.png" width="300"/>
 <img src="Images/Content-delivery-network-2.png" width="300"/>
 </div>
+
+## **Servicios de almacenamiento**
+### **Tipos de datos**
+- **Estructurado**: datos que se pueden representar mediante tablas con un esquema muy estricto. Cada fila debe seguir un esquema definido. Algunas tablas tienen relaciones definidas entre ellas. Normalmente se utiliza en bases de datos relacionales.  
+- **Semiestructurado**: datos que se pueden representar mediante tablas pero sin un esquema estricto definido.  
+Las filas solo deben tener un identificador de clave único.  
+- **Sin estructura**: cualquier archivo en cualquier formato. Como archivos binarios, archivos de aplicaciones, imágenes, películas, etc.  
+
+<img src="Images/Types-of-data.png" width="300"/>
+
+### **Cuenta de almacenamiento**
+- Grupo de servicios que incluyen
+  - almacenamiento de blobs,
+  - almacenamiento en cola,
+  - almacenamiento de tablas y
+  - almacenamiento de archivos
+- Se utiliza para almacenar
+  - archivos,
+  - mensajes, y
+  - datos semiestructurados
+- Altamente escalable (hasta petabytes de datos)
+- Muy duradero (99,999999999 % - 11 nueves, hasta 16 nueves)
+- Más barato por GB de almacenamiento
+
+<img src="Images/Storage-account.png" width="150"/>
+
+### **Almacenamiento de blobs (Blob Storage)**
+- BLOB – objeto grande binario – archivo
+- Diseñado para el almacenamiento de archivos de cualquier tipo
+- Tres niveles de almacenamiento
+  - Hot: datos de acceso frecuente
+  - Cool: datos a los que se accede con poca frecuencia (menor disponibilidad, alta durabilidad)
+  - Archive: rara vez (si es que alguna vez) se accede a los datos
+
+<img src="Images/Blob-storage.png" width="300"/>
+
+### **Almacenamiento en cola (Queue Storage)**
+- Almacenamiento de pequeños datos (mensajes)
+- Diseñado para procesamiento asíncrono escalable
+
+<div>
+<img src="Images/Queue-storage.png" width="150"/>
+<img src="Images/Queue-storage-2.png" width="150"/>
+<img src="Images/Queue-storage-3.png" width="150"/>
+</div>
+
+### **Almacenamiento de tablas (Table Storage)**
+- Almacenamiento para datos semiestructurados (NoSQL)
+  - Sin necesidad de uniones foráneas, claves foráneas, relaciones o esquemas estrictos
+  - Diseñado para un acceso rápido
+- Muchas interfaces de programación y SDK
+
+<img src="Images/Table-storage.png" width="300"/>
+
+### **Almacenamiento de archivos (File Storage)**
+- Almacenamiento para archivos a los que se accede a través de protocolos de unidades compartidas
+- Diseñado para ampliar los recursos compartidos de archivos en las instalaciones o implementar escenarios de elevación y cambio
+
+<img src="Images/File-storage.png" width="300"/>
+
+### **Almacenamiento de disco (Disk Storage)**
+- Emulación de disco en la nube
+- Almacenamiento persistente para máquinas virtuales
+- Diferente
+  - tamaños,
+  - tipos (SSD, HDD)
+  - niveles de rendimiento
+- El disco puede ser administrado o no administrado
+
+<img src="Images/Disk-storage.png" width="100"/>
+
+## **Servicios de bases de datos**
+### **Tipos de datos en las BD**
+Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
+### **Cosmos DB**
+- Servicio de base de datos NoSQL (datos semiestructurados) distribuido globalmente
+- Sin esquema
+- Múltiples API (SQL, MongoDB, Cassandra, Gremlin, Table Storage)
+- Diseñado para
+  - Aplicaciones de alta capacidad de respuesta (en tiempo real) con respuestas de latencia muy baja <10 ms
+  - Aplicaciones multirregionales
+
+<div>
+<img src="Images/Cosmos-db.png" width="300"/>
+<img src="Images/Cosmos-db-2.png" width="300"/>
+</div>
+
+### **SQL Database**
+- Servicio de **base de datos relacional** en la nube (PaaS) (DBaaS - Database as a Service)
+- **Servicio de datos estructurados** definido mediante esquema y relaciones
+- **Capacidades de consulta enriquecidas** (SQL)
+- Base de datos de **alto rendimiento**, fiable, totalmente gestionada y segura para la creación de aplicaciones
+
+<div>
+<img src="Images/SQL-database.png" width="300"/>
+<img src="Images/SQL-server.png" width="300"/>
+</div>
+
+### **Azure SQL product family**
+- Azure **SQL Database**: base de datos relacional confiable basada en SQL Server
+- Azure **Database for MySQL**: versión de Azure SQL para el motor de base de datos MySQL
+- Azure **Database for PostgreSQL**: versión de Azure SQL para el motor de base de datos de PostgreSQL
+- **Instancia administrada de Azure SQL**: SQL Server completo administrado por un proveedor de la nube
+- Azure **SQL en VM**: SQL Server completo en IaaS
+- Azure **SQL DW (Synapse)**: versión de procesamiento paralelo masivo (MPP) de SQL Server
+
+<img src="Images/Azure-sql.png" width="300"/>
+
+## **Azure Marketplace**
+- Piense en ello como una "Tienda Azure" donde compra servicios y soluciones para la plataforma Azure
+- Cada producto es una plantilla que contiene uno o varios servicios
+- Los productos son entregados por proveedores propios y externos.
+- Las soluciones pueden aprovechar todas las categorías de servicios como IaaS, PaaS y SaaS
+
+<img src="Images/Marketplace.png" width="300"/>
+
+## **Servicios IoT**
+Internet de las cosas (**IoT**) es una red de dispositivos conectados a Internet (**dispositivos IoT**) integrados en objetos cotidianos que permiten enviar y recibir datos, como **configuraciones** y **telemetría**.  
+<img src="Images/Iot.png" width="300"/>
+
+### **Azure IoT Hub**
+- Servicio gestionado para comunicación bidireccional
+- Plataforma como servicio (PaaS)
+- Altamente seguro, escalable y confiable
+- Se integra con una gran cantidad de servicios de Azure
+- SDK programables para lenguajes populares (C, C#, Java, Python, Node.js)
+- Múltiples protocolos (HTTPS, AMQP, MQTT)  
+
+<img src="Images/Iot-hub.png" width="300"/>
+
+### **Azure IoT Central**
+- Plataforma de aplicaciones IoT: software como servicio (SaaS)
+- Plantillas de aplicaciones específicas de la industria
+- No se requieren conocimientos técnicos profundos
+- Servicio de conexión, gestión y monitorización de dispositivos IoT
+- Altamente seguro, escalable y confiable
+- Construido sobre el servicio IoT Hub y más de 30 servicios más  
+
+<img src="Images/Iot-central.png" width="300"/>
+
+### **Azure Sphere**
+- Soluciones seguras de IoT de extremo a extremo
+  - Chips certificados por Azure Sphere (unidades de microcontrolador - MCU)
+  - Sistema operativo Azure Sphere basado en Linux
+  - Comunicación de dispositivo a nube de confianza de Azure Security Service 
+ 
+<img src="Images/Sphere.png" width="300"/>
+
+## **Servicios Big Data & Analytics**
+Big Data es un campo de la tecnología que ayuda con la extracción, el procesamiento y el análisis de información que es demasiado grande o compleja para ser tratada por el software tradicional.  
+**La regla de las tres V**
+Los grandes datos suelen tener una de las siguientes características  
+- **Velocidad**: qué tan rápido ingresan los datos o qué tan rápido los estamos procesando
+  - Batch
+  - Periódico
+  - Casi en tiempo real
+  - Tiempo real
+- **Volumen**: cuántos datos estamos procesando
+  - Megabytes
+  - Gigabyte
+  - Terabytes
+  - Petabytes
+- **Variedad**: cuán estructurados/complejos son los datos
+  - Tables
+  - bases de datos
+  - Foto, Audio
+  - Vídeo, Redes Sociales
+
+### **Azure Synapse Analytics**
+- Plataforma de análisis de big data (PaaS)
+- Múltiples componentes
+  - Spark
+  - Synapse SQL
+    - Grupos de SQL (dedicados: pago por rendimiento aprovisionado)
+    - SQL bajo demanda (ad-hoc: pago por TB procesados)
+  - Synapse Pipelines (Data Factory - ETL)
+  - Studio (experiencia unificada)
+
+<img src="Images/Synapse-analytics.png" width="300"/>
+
+### **Azure HDInsight**
+- Plataforma flexible multipropósito de big data (PaaS)
+- Múltiples tecnologías compatibles (Hadoop, Spark, Kafka, HBase, Hive, Storm, Machine Learning)
+
+<img src="Images/HDInsight.png" width="300"/>
+
+### **Azure Databricks**
+- Plataforma de colaboración de big data (PaaS)
+- Espacio de trabajo unificado para portátiles, clústeres, datos, administración de acceso y colaboración
+- Basado en Apache Spark
+- Se integra muy bien con los servicios de datos comunes de Azure
+
+<img src="Images/Databricks.png" width="300"/>
+
+## **Servicios de IA**
+**¿Qué es la Inteligencia Artificial?**  
+La inteligencia artificial (IA) es la simulación de la inteligencia y las capacidades humanas mediante un software informático.  
+**¿Qué es el aprendizaje automático?**  
+El aprendizaje automático es una subcategoría de la IA en la que se "enseña" un software de computadora a sacar conclusiones y hacer predicciones a partir de los datos.  
+### **Azure Machine Learning**
+- Plataforma basada en la nube para crear, administrar y publicar modelos de aprendizaje automático
+- Plataforma como servicio (PaaS)
+- Espacio de trabajo de aprendizaje automático: recurso de nivel superior
+- Machine Learning Studio: portal web para desarrollo extremo a extremo
+- Características
+  - Cuadernos: usando Python y R
+  - ML automatizado: ejecute múltiples combinaciones de algoritmos/parámetros, elija el mejor modelo
+  - Diseñador: interfaz gráfica para el desarrollo sin código
+  - Datos y computación: administración de recursos de almacenamiento y computación
+  - Pipelines: orqueste tareas de capacitación, implementación y administración de modelos
+
+<img src="Images/Machine-learning.png" width="300"/>
+
+## **Servicios serverless computing**
+La computación sin servidor es un entorno de ejecución alojado en la nube que permite a los clientes ejecutar sus aplicaciones en la nube mientras abstraen por completo la infraestructura subyacente.
+### **Azure Functions**
+- Plataforma de codificación sin servidor (Funciones como servicio, FaaS)
+- Diseñado para arquitecturas de nanoservicios y aplicaciones basadas en eventos
+- Escala hacia arriba y hacia abajo muy rápidamente
+- Altamente escalable
+- Admite lenguajes y marcos populares (.NET y .NET Core, Java, Node.js, Python, PowerShell, etc.)
+
+<img src="Images/Azure-functions-apps.png" width="300"/>
+
+### **Azure Logic Apps**
+- Servicio de integración empresarial sin servidor (PaaS)
+- Más de 200 conectores para servicios populares
+- Diseñado para la orquestación de
+  - Procesos de negocios,
+  - flujos de trabajo de integración para aplicaciones, datos, sistemas y servicios
+- Solución sin código
+
+<img src="Images/Azure-logics-apps.png" width="300"/>
+
+### **Azure Event Grid**
+- Servicio de enrutamiento de eventos sin servidor completamente administrado
+- Utiliza el modelo de publicación-suscripción
+- Diseñado para aplicaciones basadas en eventos y casi en tiempo real
+- Admite docenas de eventos integrados de los servicios de Azure más comunes
+
+<img src="Images/Azure-event-grid.png" width="300"/>
+
+## **Soluciones DevOps**
+**DevOps** es un conjunto de prácticas que combinan tanto el desarrollo (Dev) como las operaciones (Ops).  
+DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al proporcionar capacidades de **integración y entrega continuas** (CI/CD) al tiempo que garantiza una **alta calidad** de los entregables.
+
+### **Azure DevOps**
+- Colección de servicios para construir soluciones usando prácticas DevOps
+- Servicios incluidos
+  - Tableros: trabajo de seguimiento
+  - Canalizaciones: creación de flujos de trabajo de CI/CD (creación, prueba e implementación de aplicaciones)
+  - Repos: colaboración de código y control de versiones con Git
+  - Planes de prueba: pruebas manuales y exploratorias
+  - Artefactos: gestione los entregables del proyecto
+- Ampliable con Marketplace: más de 1000 aplicaciones disponibles
+- Evolucionado de TFS (Team Foundation Server), a través de VSTS (Visual Studio Team Services)
+
+<img src="Images/Azure-devops.png" width="300"/>
+
+### **Azure DevTest Labs**
+- Servicio de creación de entornos sandbox para desarrolladores/testers (PaaS)
+- Configuración rápida de máquinas virtuales autogestionadas
+- Plantillas preconfiguradas para máquinas virtuales
+- Muchos artefactos adicionales (herramientas, aplicaciones, acciones personalizadas)
+- Políticas de laboratorio (cuotas, tamaños, apagado automático)
+- Comparta y automatice laboratorios a través de imágenes personalizadas
+- Complementos/API/herramientas prefabricados para la automatización de canalización de CI/CD
+
+<img src="Images/Azure-devtest-labs.png" width="300"/>
