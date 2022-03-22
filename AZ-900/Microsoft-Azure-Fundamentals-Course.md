@@ -1,4 +1,7 @@
 # **Microsoft Azure Fundamentals Course**
+
+Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube.com/channel/UCdmEIMC3LBil4o0tjaTbj0w)
+
 ## **Temario**
 - [**Microsoft Azure Fundamentals Course**](#microsoft-azure-fundamentals-course)
   - [**Temario**](#temario)
@@ -358,7 +361,7 @@ North Europe|West Europe
 ## **Recursos, grupos de recursos y administrador de recursos**
 ### **Recurso Azure**
 - Objeto **utilizado para administrar servicios** en Azure.
-- Representa el **ciclo de vida del servicio**.
+- Representa el **ciclo de vida del servicio** (**o de otra forma: los servicios comprados**).
 - Guardado como **definición JSON**.
 
 <img src="Images/Resources.png" width="300"/>
