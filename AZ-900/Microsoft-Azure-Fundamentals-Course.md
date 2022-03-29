@@ -1,6 +1,6 @@
 # **Microsoft Azure Fundamentals Course**
 
-Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube.com/channel/UCdmEIMC3LBil4o0tjaTbj0w)
+Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube.com/channel/UCdmEIMC3LBil4o0tjaTbj0w) y [Microsoft Learn AZ-900 Contenido Autodirigido](https://docs.microsoft.com/es-es/learn/certifications/exams/az-900)
 
 ## **Temario**
 - [**Microsoft Azure Fundamentals Course**](#microsoft-azure-fundamentals-course)
