@@ -21,42 +21,45 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Data Center**](#data-center)
     - [**Región**](#región)
     - [**Zona de disponibilidad**](#zona-de-disponibilidad)
+    - [**Conjunto de disponibilidad**](#conjunto-de-disponibilidad)
     - [**Pares de regiones**](#pares-de-regiones)
     - [**Geografías**](#geografías)
-  - [**Recursos, grupos de recursos y administrador de recursos**](#recursos-grupos-de-recursos-y-administrador-de-recursos)
-    - [**Recurso Azure**](#recurso-azure)
-    - [**Grupo de recursos**](#grupo-de-recursos)
-    - [**Administrador de recursos**](#administrador-de-recursos)
+  - [**Resources, Resources Groups y Resource Manager**](#resources-resources-groups-y-resource-manager)
+    - [**Resource**](#resource)
+    - [**Resources Groups (Grupo de recursos)**](#resources-groups-grupo-de-recursos)
+    - [**Resource Manager (Administrador de recursos)**](#resource-manager-administrador-de-recursos)
     - [**Información adicional**](#información-adicional)
   - [**Servicios de cómputo**](#servicios-de-cómputo)
     - [**Virtualización**](#virtualización)
-    - [**Maquinas virtuales**](#maquinas-virtuales)
-    - [**Conjuntos de escalado de máquinas virtuales**](#conjuntos-de-escalado-de-máquinas-virtuales)
+    - [**Azure Virtual Machine (Máquina virtual)**](#azure-virtual-machine-máquina-virtual)
+    - [**Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**](#azure-virtual-machine-scale-sets-conjuntos-de-escalado-de-máquinas-virtuales)
+    - [**Azure Batch**](#azure-batch)
+    - [**Azure Virtual Desktop**](#azure-virtual-desktop)
     - [**Contenedores**](#contenedores)
-    - [**Instancias de contenedores de Azure**](#instancias-de-contenedores-de-azure)
-    - [**Servicio Azure Kubernetes (AKS)**](#servicio-azure-kubernetes-aks)
-    - [**Servicio de aplicaciones(App Service)**](#servicio-de-aplicacionesapp-service)
-    - [**Funciones de Azure (aplicaciones de funciones)**](#funciones-de-azure-aplicaciones-de-funciones)
+    - [**Azure Containers Instance (Instancias de contenedores)**](#azure-containers-instance-instancias-de-contenedores)
+    - [**Azure Kubernetes Services (AKS)**](#azure-kubernetes-services-aks)
+    - [**Azure App Service**](#azure-app-service)
+    - [**Azure Functions**](#azure-functions)
     - [**Resumen**](#resumen)
   - [**Servicios de red**](#servicios-de-red)
-    - [**Redes Azure (Azure Networking)**](#redes-azure-azure-networking)
-    - [**Red virtual de Azure (Azure Virtual Network)**](#red-virtual-de-azure-azure-virtual-network)
-    - [**Equilibrador de carga de Azure (Azure Load Balancer)**](#equilibrador-de-carga-de-azure-azure-load-balancer)
-    - [**Puerta de enlace VPN**](#puerta-de-enlace-vpn)
-    - [**Puerta de enlace de aplicaciones**](#puerta-de-enlace-de-aplicaciones)
-    - [**Red de entrega de contenidos**](#red-de-entrega-de-contenidos)
+    - [**Azure Networking (Redes Azure)**](#azure-networking-redes-azure)
+    - [**Azure Virtual Network (Red virtual)**](#azure-virtual-network-red-virtual)
+    - [**Azure VPN Gateway**](#azure-vpn-gateway)
+    - [**Azure Load Balancer (Equilibrador de carga)**](#azure-load-balancer-equilibrador-de-carga)
+    - [**Azure Application Gateway**](#azure-application-gateway)
+    - [**Azure Content Delivery Network (Red de entrega de contenidos)**](#azure-content-delivery-network-red-de-entrega-de-contenidos)
   - [**Servicios de almacenamiento**](#servicios-de-almacenamiento)
     - [**Tipos de datos**](#tipos-de-datos)
-    - [**Cuenta de almacenamiento**](#cuenta-de-almacenamiento)
-    - [**Almacenamiento de blobs (Blob Storage)**](#almacenamiento-de-blobs-blob-storage)
-    - [**Almacenamiento en cola (Queue Storage)**](#almacenamiento-en-cola-queue-storage)
-    - [**Almacenamiento de tablas (Table Storage)**](#almacenamiento-de-tablas-table-storage)
-    - [**Almacenamiento de archivos (File Storage)**](#almacenamiento-de-archivos-file-storage)
-    - [**Almacenamiento de disco (Disk Storage)**](#almacenamiento-de-disco-disk-storage)
+    - [**Storage Account (Cuenta de almacenamiento)**](#storage-account-cuenta-de-almacenamiento)
+    - [**Blob Storage (Almacenamiento de blobs)**](#blob-storage-almacenamiento-de-blobs)
+    - [**Queue Storage (Almacenamiento en cola)**](#queue-storage-almacenamiento-en-cola)
+    - [**Table Storage (Almacenamiento de tablas)**](#table-storage-almacenamiento-de-tablas)
+    - [**File Storage (Almacenamiento de archivos)**](#file-storage-almacenamiento-de-archivos)
+    - [**Disk Storage (Almacenamiento de disco)**](#disk-storage-almacenamiento-de-disco)
   - [**Servicios de bases de datos**](#servicios-de-bases-de-datos)
     - [**Tipos de datos en las BD**](#tipos-de-datos-en-las-bd)
-    - [**Cosmos DB**](#cosmos-db)
-    - [**SQL Database**](#sql-database)
+    - [**Azure Cosmos DB**](#azure-cosmos-db)
+    - [**Azure SQL Database**](#azure-sql-database)
     - [**Azure SQL product family**](#azure-sql-product-family)
   - [**Azure Marketplace**](#azure-marketplace)
   - [**Servicios IoT**](#servicios-iot)
@@ -70,7 +73,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
   - [**Servicios de IA**](#servicios-de-ia)
     - [**Azure Machine Learning**](#azure-machine-learning)
   - [**Servicios serverless computing**](#servicios-serverless-computing)
-    - [**Azure Functions**](#azure-functions)
+    - [**Azure Functions**](#azure-functions-1)
     - [**Azure Logic Apps**](#azure-logic-apps)
     - [**Azure Event Grid**](#azure-event-grid)
   - [**Soluciones DevOps**](#soluciones-devops)
@@ -95,10 +98,12 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Autenticación**](#autenticación)
     - [**Autorización**](#autorización)
     - [**Gestión de Acceso**](#gestión-de-acceso)
-    - [**Directorio activo de Azure**](#directorio-activo-de-azure)
+    - [**Azure AD**](#azure-ad)
     - [**Autenticación multifactor (MFA)**](#autenticación-multifactor-mfa)
   - [**Azure Security Center**](#azure-security-center)
+  - [**Azure Sentinel**](#azure-sentinel)
   - [**Azure Key Vault**](#azure-key-vault)
+  - [**Azure Dedicated Host**](#azure-dedicated-host)
   - [**Azure Role-based Access Control (RBAC)**](#azure-role-based-access-control-rbac)
   - [**Azure Resource Locks**](#azure-resource-locks)
   - [**Azure Resource Tags**](#azure-resource-tags)
@@ -133,7 +138,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
 
 ## **Cloud Computing y Conceptos clave**
 ### **Cloud Computing**
-Modelo de prestación de servicios a través de internet (nube). Esto incluye pero no se limita a
+**Cloud Computing o Informática en la nube** es un modelo de prestación de servicios a través de internet (nube). Esto incluye pero no se limita a
 - **Compute power** - Es decir, servidores como Windows, Linux, entornos de alojamiento, etc.
 - **Storage** - Como archivos y/o bases de datos
 - **Networking** - En **Azure** pero también fuera cuando se conecta a la red de su empresa
@@ -330,6 +335,11 @@ Debido a que no tiene control sobre en qué centro de datos se implementa sus se
 - La **región** admitida **tiene tres o más zonas**.
 - Una **zona de disponibilidad** es **uno o más centros de datos**(No necesariamente debe ser uno).
 
+### **Conjunto de disponibilidad**
+- **Característica de un DataCenter**.
+- Ubicaciones separadas, pero dentro del mismo datacenter.  
+- Garantizan que máquinas virtuales o servicios IaaS implementados en Azure se distribuyan entre varios nodos de hardware aislados en un clúster.
+
 <img src="Images/Availability-zone.png" alt="Availability Zone" width="300"/> 
 
 ### **Pares de regiones**
@@ -358,15 +368,15 @@ North Europe|West Europe
 - Dividido en áreas : **Américas**, **Europa**, **Asia Pacífico**, **Oriente Medio** y **África**.
 - Cada **región pertenece solo a una Geografía**.
 
-## **Recursos, grupos de recursos y administrador de recursos**
-### **Recurso Azure**
+## **Resources, Resources Groups y Resource Manager**
+### **Resource**
 - Objeto **utilizado para administrar servicios** en Azure.
 - Representa el **ciclo de vida del servicio** (**o de otra forma: los servicios comprados**).
 - Guardado como **definición JSON**.
 
 <img src="Images/Resources.png" width="300"/>
 
-### **Grupo de recursos**
+### **Resources Groups (Grupo de recursos)**
 - **Agrupación** de recursos.
 - Contiene recursos **lógicamente relacionados**.
 - Normalmente se organiza por
@@ -379,7 +389,7 @@ North Europe|West Europe
 
 <img src="Images/Resource-group.png" width="300"/>
 
-### **Administrador de recursos**
+### **Resource Manager (Administrador de recursos)**
 - **Capa de gestión** para todos los recursos y grupos de recursos
 - Lenguaje **unificado**.
 - **Controla el acceso** y **los recursos**.
@@ -411,7 +421,7 @@ North Europe|West Europe
 
 <img src="Images/Virtualization.png" width="300"/>
 
-### **Maquinas virtuales**
+### **Azure Virtual Machine (Máquina virtual)**
 - Infraestructura como servicio (IaaS)
 - Control total sobre el sistema operativo y el software
 - Soporta mercado e imágenes personalizadas
@@ -427,13 +437,22 @@ North Europe|West Europe
 
 <img src="Images/Azure-virtual-machines.png" width="300"/>
 
-### **Conjuntos de escalado de máquinas virtuales**
+### **Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**
 - Infraestructura como servicio (IaaS)
 - Conjunto de máquinas virtuales idénticas
 - Funciones de escalado automático integradas
 - Diseñado para cargas de trabajo manuales y de escalado automático, como servicios web,* procesamiento por lotes, etc.
 
 <img src="Images/Azure-virtual-machine-scale-sets.png" width="300"/>
+
+### **Azure Batch**
+**Azure Batch** permite trabajo por lotes paralelos a gran escala y de informática de alto rendimiento (HPC) con la capacidad de escalar a decenas, cientos o miles de máquinas virtuales.
+
+Puede haber situaciones en las que se necesite potencia informática sin procesar o potencia de cálculo a nivel de superequipo. Azure proporciona estas capacidades.
+
+### **Azure Virtual Desktop**
+Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube.  
+Permite que los usuarios usen una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos como Windows, Mac, iOS, Android y Linux. Funciona con aplicaciones que se pueden usar para acceder a aplicaciones y escritorios remotos. También puede usar la mayoría de los exploradores modernos para acceder a experiencias hospedadas en Azure Virtual Desktop.
 
 ### **Contenedores**
 - Usar el sistema operativo del host
@@ -447,9 +466,9 @@ North Europe|West Europe
 
 <img src="Images/Containers.png" width="300"/>
 
-### **Instancias de contenedores de Azure**
+### **Azure Containers Instance (Instancias de contenedores)**
 - La forma más sencilla y rápida de ejecutar un contenedor en Azure
-- Plataforma como servicio
+- Plataforma como servicio (PaaS)
 - Contenedores sin servidor
 - Diseñado para
   - Servicios/aplicaciones web pequeñas y sencillas
@@ -458,23 +477,23 @@ North Europe|West Europe
 
 <img src="Images/Azure-container-instances.png" width="300"/>
 
-### **Servicio Azure Kubernetes (AKS)**
+### **Azure Kubernetes Services (AKS)**
 - Plataforma de orquestación de contenedores de código abierto
-- Plataforma como servicio
+- Plataforma como servicio (PaaS)
 - Altamente escalable y personalizable
 - Diseñado para implementaciones de contenedores a gran escala (¡cualquier cosa realmente!)
 
 <img src="Images/Azure-kubernetes-service.png" width="300"/>
 
-### **Servicio de aplicaciones(App Service)**
+### **Azure App Service**
 - Diseñado como servicio de aplicación web de nivel empresarial
-- Plataforma como servicio
+- Plataforma como servicio (PaaS)
 - Admite múltiples lenguajes de programación y contenedores
 
 <img src="Images/App-service.png" width="300"/>
 
-### **Funciones de Azure (aplicaciones de funciones)**
-- Plataforma como servicio
+### **Azure Functions**
+- Plataforma como servicio (PaaS)
 - Serverless
 - Dos modelos de alojamiento/precio
   - Consumo-plan basado
@@ -494,23 +513,32 @@ North Europe|West Europe
 <img src="Images/Summary.png" width="300"/>
 
 ## **Servicios de red**
-### **Redes Azure (Azure Networking)**
-- Conecte la nube y las instalaciones
-- Funcionalidad de red local
+### **Azure Networking (Redes Azure)**
+Categoria de servicio que permite a los clientes conectar sus recursos locales y en la nube, pero también ayuda con la protección y monitoreo de la red para esos servicios, así como ayudar a los cliente en la entrega de aplicaciones
+- Conecte la nube y on-premises
+- Funcionalidad de red on-premise
 
-### **Red virtual de Azure (Azure Virtual Network)**
+### **Azure Virtual Network (Red virtual)**
+Las redes virtuales permiten a sus clientes crear, administrar, monitorear y proteger la conectividad entre los recursos de Azure, pero también entre los recursos de Azure y los suyos on-premises 
+- Emulación de infraestructura de red física
 - Componentes de red aislados lógicamente
 - Segmentado en una o más subredes
-- Las subredes son secciones discretas
+- Las subredes son secciones discretas y no se pueden anidar
 - Habilite la comunicación de los recursos entre sí, Internet y en las instalaciones
 - Alcanzado a una sola región
 - El emparejamiento de VNet permite la comunicación entre regiones
-- Aislamiento, Segmentación, Comunicación, Filtrado, Enrutamiento
+- Aislamiento, Segmentación, Comunicación, Filtrado y Enrutamiento entre recursos
 
 <img src="Images/Virtual-network.png" width="300"/>
 
-### **Equilibrador de carga de Azure (Azure Load Balancer)**
-- Incluso la distribución del tráfico
+### **Azure VPN Gateway**
+- Tipo específico de puerta de enlace de red virtual para el tráfico on-premise a Azure a través de la Internet pública de forma encriptada. También se puede usar para unir dos redes virtuales de Azure (no es muy común).
+
+<img src="Images/VPN-gateway.png" width="300"/>
+
+### **Azure Load Balancer (Equilibrador de carga)**
+**Balanceo**: Distribución del tráfico entre múltiples recursos
+- Iguala la distribución del tráfico
 - Admite escenarios tanto entrantes como salientes
 - Escenarios de alta disponibilidad
 - Aplicaciones TCP (protocolo de control de transmisión) y UDP (protocolo de datagramas de usuario)
@@ -522,18 +550,13 @@ North Europe|West Europe
 <img src="Images/Load-balancer-2.png" width="300"/>
 </div>
 
-### **Puerta de enlace VPN**
-- Tipo específico de puerta de enlace de red virtual para el tráfico local a Azure a través de la Internet pública
-
-<img src="Images/VPN-gateway.png" width="300"/>
-
-### **Puerta de enlace de aplicaciones**
-- Equilibrador de carga de tráfico web
-- cortafuegos de aplicaciones web
-- Redirección
-- Afinidad de sesión
+### **Azure Application Gateway**
+- Equilibrador de carga de tráfico web (HTTP)
+- Firewall de aplicaciones web
+- Redirección del tráfico entrante
+- Afinidad de sesión - Asegurarse que los usuarios siempre se dirijan a los mismos servidores
 - Enrutamiento de URL
-- Terminación SSL
+- Terminación SSL - Permite a los clientes descifrar el tráfico en **Application Gateway** y enviar una versión sin cifrar a los servicios de back-end para reducir la potencia de procesamiento requerida para descifrar cada solicitud individual.
 
 <div>
 <img src="Images/Application-gateway.png" width="300"/>
@@ -541,7 +564,8 @@ North Europe|West Europe
 <img src="Images/Application-gateway-3.png" width="300"/>
 </div>
 
-### **Red de entrega de contenidos**
+### **Azure Content Delivery Network (Red de entrega de contenidos)**
+Distribuye y almacena en caché el contenido en múltiples bucaciones emergentes en todo el mundo para descargar nuestros servicios front-end pero también reduce la latencia de entrega de recursos a nuestros usuarios.
 - Definir contenido
 - Minimizar la latencia
 - POP (puntos de presencia) con muchas ubicaciones
@@ -560,23 +584,23 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Types-of-data.png" width="300"/>
 
-### **Cuenta de almacenamiento**
+### **Storage Account (Cuenta de almacenamiento)**
 - Grupo de servicios que incluyen
-  - almacenamiento de blobs,
-  - almacenamiento en cola,
-  - almacenamiento de tablas y
-  - almacenamiento de archivos
+  - Almacenamiento de blobs,
+  - Almacenamiento en cola,
+  - Almacenamiento de tablas y
+  - aAlmacenamiento de archivos
 - Se utiliza para almacenar
-  - archivos,
-  - mensajes, y
-  - datos semiestructurados
+  - Archivos,
+  - Mensajes, y
+  - Datos semiestructurados
 - Altamente escalable (hasta petabytes de datos)
 - Muy duradero (99,999999999 % - 11 nueves, hasta 16 nueves)
 - Más barato por GB de almacenamiento
 
 <img src="Images/Storage-account.png" width="150"/>
 
-### **Almacenamiento de blobs (Blob Storage)**
+### **Blob Storage (Almacenamiento de blobs)**
 - BLOB – objeto grande binario – archivo
 - Diseñado para el almacenamiento de archivos de cualquier tipo
 - Tres niveles de almacenamiento
@@ -586,7 +610,7 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Blob-storage.png" width="300"/>
 
-### **Almacenamiento en cola (Queue Storage)**
+### **Queue Storage (Almacenamiento en cola)**
 - Almacenamiento de pequeños datos (mensajes)
 - Diseñado para procesamiento asíncrono escalable
 
@@ -596,7 +620,7 @@ Las filas solo deben tener un identificador de clave único.
 <img src="Images/Queue-storage-3.png" width="150"/>
 </div>
 
-### **Almacenamiento de tablas (Table Storage)**
+### **Table Storage (Almacenamiento de tablas)**
 - Almacenamiento para datos semiestructurados (NoSQL)
   - Sin necesidad de uniones foráneas, claves foráneas, relaciones o esquemas estrictos
   - Diseñado para un acceso rápido
@@ -604,27 +628,29 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Table-storage.png" width="300"/>
 
-### **Almacenamiento de archivos (File Storage)**
+### **File Storage (Almacenamiento de archivos)**
 - Almacenamiento para archivos a los que se accede a través de protocolos de unidades compartidas
 - Diseñado para ampliar los recursos compartidos de archivos en las instalaciones o implementar escenarios de elevación y cambio
 
 <img src="Images/File-storage.png" width="300"/>
 
-### **Almacenamiento de disco (Disk Storage)**
+### **Disk Storage (Almacenamiento de disco)**
 - Emulación de disco en la nube
 - Almacenamiento persistente para máquinas virtuales
 - Diferente
   - tamaños,
   - tipos (SSD, HDD)
   - niveles de rendimiento
-- El disco puede ser administrado o no administrado
+- El disco puede ser administrado o no administrado  
+**NOTA**: **Disk Storage** también es un subservicio de la cuenta de **Azure Storage**. esto significa que tanto los discos administrados como los no administrados son parte de él. incluso si el disco administrado se muestra como un recurso separado,
+debajo sigue siendo el mismo servicio.
 
 <img src="Images/Disk-storage.png" width="100"/>
 
 ## **Servicios de bases de datos**
 ### **Tipos de datos en las BD**
 Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
-### **Cosmos DB**
+### **Azure Cosmos DB**
 - Servicio de base de datos NoSQL (datos semiestructurados) distribuido globalmente
 - Sin esquema
 - Múltiples API (SQL, MongoDB, Cassandra, Gremlin, Table Storage)
@@ -637,7 +663,7 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 <img src="Images/Cosmos-db-2.png" width="300"/>
 </div>
 
-### **SQL Database**
+### **Azure SQL Database**
 - Servicio de **base de datos relacional** en la nube (PaaS) (DBaaS - Database as a Service)
 - **Servicio de datos estructurados** definido mediante esquema y relaciones
 - **Capacidades de consulta enriquecidas** (SQL)
@@ -659,9 +685,10 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 <img src="Images/Azure-sql.png" width="300"/>
 
 ## **Azure Marketplace**
+- Facilita la conexión entre usuarios y partners de Microsoft, proveedores de software independientes y neuvas empresas que ofrecen sus soluciones y servicios optimizados para ejecutarse en Azure.
 - Piense en ello como una "Tienda Azure" donde compra servicios y soluciones para la plataforma Azure
-- Cada producto es una plantilla que contiene uno o varios servicios
-- Los productos son entregados por proveedores propios y externos.
+- Cada producto es una plantilla que contiene **uno o varios servicios(cuya instancia es un recurso)**
+- Los productos son entregados por **proveedores propios y externos**.
 - Las soluciones pueden aprovechar todas las categorías de servicios como IaaS, PaaS y SaaS
 
 <img src="Images/Marketplace.png" width="300"/>
@@ -719,6 +746,10 @@ Los grandes datos suelen tener una de las siguientes características
   - Vídeo, Redes Sociales
 
 ### **Azure Synapse Analytics**
+Plataforma de análisis de big data con una experiencia de espacio de trabajo unificado que admite la transformación de datos de extremo a extremo con el poder de SQL y Spark.
+
+Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que es una versión de procesamiento paralelo masivo de SQL Server. En una iteración reciente, Azure Synapse también brindó la capacidad de ejecutar consultas y scripts mediante Apache Spark y al incluir Data Factory como un componente integrado llamado Synapse Pipelines, ahora se considera una solución de extremo a extremo para grandes cargas de trabajo de datos.
+
 - Plataforma de análisis de big data (PaaS)
 - Múltiples componentes
   - Spark
@@ -726,7 +757,7 @@ Los grandes datos suelen tener una de las siguientes características
     - Grupos de SQL (dedicados: pago por rendimiento aprovisionado)
     - SQL bajo demanda (ad-hoc: pago por TB procesados)
   - Synapse Pipelines (Data Factory - ETL)
-  - Studio (experiencia unificada)
+  - Studio (Engloba todos los componentes como una experiencia unificada)
 
 <img src="Images/Synapse-analytics.png" width="300"/>
 
@@ -745,14 +776,14 @@ Los grandes datos suelen tener una de las siguientes características
 <img src="Images/Databricks.png" width="300"/>
 
 ## **Servicios de IA**
-**¿Qué es la Inteligencia Artificial?**  
+**¿Qué es Artificial Intelligence?**  
 La inteligencia artificial (IA) es la simulación de la inteligencia y las capacidades humanas mediante un software informático.  
-**¿Qué es el aprendizaje automático?**  
+**¿Qué es Machine Learning?**  
 El aprendizaje automático es una subcategoría de la IA en la que se "enseña" un software de computadora a sacar conclusiones y hacer predicciones a partir de los datos.  
 ### **Azure Machine Learning**
 - Plataforma basada en la nube para crear, administrar y publicar modelos de aprendizaje automático
 - Plataforma como servicio (PaaS)
-- Espacio de trabajo de aprendizaje automático: recurso de nivel superior
+- Machine Learning Workspace: recurso de nivel superior (Top-Level)
 - Machine Learning Studio: portal web para desarrollo extremo a extremo
 - Características
   - Cuadernos: usando Python y R
@@ -764,7 +795,7 @@ El aprendizaje automático es una subcategoría de la IA en la que se "enseña" 
 <img src="Images/Machine-learning.png" width="300"/>
 
 ## **Servicios serverless computing**
-La computación sin servidor es un entorno de ejecución alojado en la nube que permite a los clientes ejecutar sus aplicaciones en la nube mientras abstraen por completo la infraestructura subyacente.
+La computación sin servidor es un entorno de ejecución alojado en la nube que permite a los clientes ejecutar sus aplicaciones en la nube mientras abstraen por completo la infraestructura subyacente.  
 ### **Azure Functions**
 - Plataforma de codificación sin servidor (Funciones como servicio, FaaS)
 - Diseñado para arquitecturas de nanoservicios y aplicaciones basadas en eventos
@@ -822,10 +853,11 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 
 ## **Azure Tools**
 ### **Azure Portal**
-- Interfaz pública basada en web para la gestión de la plataforma Azure
-- Diseñado para el autoservicio
-- personalizable
-- Tareas simples
+- Interfaz pública basada en web para la gestión de la plataforma Azure.
+- Diseñado para el autoservicio.
+- Personalizable.
+- Tareas simples.
+- Diseñado para proporcionar resiliencia y disponibilidad continua al estar presente en todos los centros de datos de Azure.
 
 <img src="Images/Azure-portal.png" width="300"/>
 
@@ -874,7 +906,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 - Diseñado para proporcionar **recomendaciones** y **mejores prácticas** para
   - **Costo** (tamaños de SKU, servicios inactivos, instancias reservadas, etc.)
   - **Seguridad** (configuración de MFA, configuración de vulnerabilidades, instalaciones de agentes, etc.)
-  - **Confiabilidad** (configuración de redundancia, eliminación suave en blobs, etc.)
+  - **Fiabilidad** (configuración de redundancia, eliminación suave en blobs, etc.)
   - **Rendimiento** (tamaños de SKU, versiones de SDK, limitación de E/S, etc.)
   - **Excelencia operativa** (salud del servicio, límites de suscripción, etc.)
 - Recomendaciones **procesables**
@@ -953,7 +985,8 @@ Ataque DoS que se origina en múltiples servidores
 
 ## **Azure Identity Services**
 ### **Identidad**
-- Un usuario con usuario y contraseña.
+La identidad en general significa el hecho de ser alguien o algo. Por ejemplo, nuestras cuentas de usuario se consideran identidad.
+- Un usuario con username y password.
 - También aplicaciones u otros servidores con claves secretas o certificados.
 - El hecho de ser algo o alguien.
 
@@ -965,6 +998,7 @@ El proceso de verificación/afirmación de identidad
 <img src="Images/Authentication.png" width="300"/>
 
 ### **Autorización**
+Después de la autenticación empieza el proceso de autorización.  
 El proceso de garantizar que solo las identidades autenticadas obtengan acceso a los recursos para los que se les ha otorgado acceso.
 
 <img src="Images/Authorization.png" width="300"/>
@@ -972,7 +1006,7 @@ El proceso de garantizar que solo las identidades autenticadas obtengan acceso a
 ### **Gestión de Acceso**
 El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios y aplicaciones autorizados.
 
-### **Directorio activo de Azure**
+### **Azure AD**
 - Servicio de Gestión de Identidad y Acceso en Azure
 - Gestión de identidades: usuarios, grupos, aplicaciones
 - Gestión de acceso: suscripciones, grupos de recursos, funciones, asignaciones de funciones, - configuración de autenticación y autorización, etc.
@@ -1010,6 +1044,11 @@ alertas de protección contra amenazas, análisis de vulnerabilidades, acceso a 
 <img src="Images/Security-center-3.png" width="300"/>
 </div>
 
+[Video explicativo](https://youtu.be/tyztKP9rszU?list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM)
+
+## **Azure Sentinel**
+Recopilar datos de seguridad de muchos orígenes diferentes mediante Azure Sentinel y tomar medidas conforme a ellos.
+
 ## **Azure Key Vault**
 - Servicio administrado para asegurar información sensible (aplicación/plataforma) (PaaS)
 - Servicio de almacenamiento seguro para
@@ -1021,6 +1060,9 @@ alertas de protección contra amenazas, análisis de vulnerabilidades, acceso a 
 - Supervisión y registro de acceso
 
 <img src="Images/Key-vault.png" width="300"/>
+
+## **Azure Dedicated Host**
+Administrar servidores físicos dedicados para hospedar máquinas virtuales de Azure para Windows y Linux mediante Azure Dedicated Host.
 
 ## **Azure Role-based Access Control (RBAC)**
 **¿Qué es un rol?**  
