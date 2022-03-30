@@ -489,7 +489,9 @@ North Europe|West Europe
   - Seguridad y gestión de acceso
   - Ciclo de vida de la aplicación
 
-## **Servicios de cómputo**
+## **Servicios de cómputo (Azure Compute)**
+Es un servicio de informática a petición para ejecutar aplicaciones basadas en la nube. 
+
 ### **Virtualización**
 - Emulación de máquinas físicas
 - Configuración de hardware virtual diferente por máquina/aplicación
@@ -504,9 +506,9 @@ North Europe|West Europe
 <img src="Images/Virtualization.png" width="300"/>
 
 ### **Azure Virtual Machine (Máquina virtual)**
-- Infraestructura como servicio (IaaS)
-- Control total sobre el sistema operativo y el software
-- Soporta mercado e imágenes personalizadas
+- Infraestructura como servicio (IaaS).
+- Control total sobre el sistema operativo y el software.
+- Soporta mercado e imágenes personalizadas.
 - El más adecuado para
   - Software personalizado que requiere una configuración de sistema personalizada
   - Escenarios de elevación y cambio
@@ -515,20 +517,27 @@ North Europe|West Europe
   - bases de datos,
   - aplicaciones de escritorio,
   - jumpboxes,
-  - gateways, etc
+  - gateways, etc.
 
 <img src="Images/Azure-virtual-machines.png" width="300"/>
 
 ### **Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**
-- Infraestructura como servicio (IaaS)
-- Conjunto de máquinas virtuales idénticas
-- Funciones de escalado automático integradas
-- Diseñado para cargas de trabajo manuales y de escalado automático, como servicios web,* procesamiento por lotes, etc.
+- Infraestructura como servicio (IaaS).
+- Conjunto de máquinas virtuales idénticas.
+- Funciones de escalado automático integradas, manual o una combinación de ambos.
+- Diseñado para cargas de trabajo manuales y de escalado automático, como servicios web, procesamiento por lotes,macrodatos, etc.
 
 <img src="Images/Azure-virtual-machine-scale-sets.png" width="300"/>
 
 ### **Azure Batch**
-**Azure Batch** permite trabajo por lotes paralelos a gran escala y de informática de alto rendimiento (HPC) con la capacidad de escalar a decenas, cientos o miles de máquinas virtuales.
+**Azure Batch** permite trabajo por lotes paralelos a gran escala y de informática de alto rendimiento (HPC) con la capacidad de escalar a decenas, cientos o miles de máquinas virtuales.  
+Cuando esté listo para ejecutar un trabajo, Batch:  
+- Iniciará un grupo de máquinas virtuales de proceso de forma automática.
+- Instalará aplicaciones y datos de almacenamiento provisional.
+- Ejecutará trabajos con tantas tareas como tenga.
+- Identificará errores.
+- Reordenará la cola de trabajo.
+- Reducirá verticalmente el grupo a medida que se complete el trabajo.
 
 Puede haber situaciones en las que se necesite potencia informática sin procesar o potencia de cálculo a nivel de superequipo. Azure proporciona estas capacidades.
 
@@ -568,11 +577,24 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
 <img src="Images/Azure-kubernetes-service.png" width="300"/>
 
 ### **Azure App Service**
-- Diseñado como servicio de aplicación web de nivel empresarial
-- Plataforma como servicio (PaaS)
-- Admite múltiples lenguajes de programación y contenedores
+- Diseñado como servicio de aplicación web de nivel empresarial.
+- Compilar, implementar y escalar de forma rápida aplicaciones de API, móviles y web.
+- Plataforma como servicio (PaaS).
+- Admite múltiples lenguajes de programación y contenedores.
+- Satisface exigentes requisitos de rendimiento, escalabilidad, seguridad y cumplimiento.
+- Controla la mayoría de decisiones sobre la infraestructura permitiendo
+  - puntos de conexión se pueden proteger
+  - sitios pueden escalar rápidamente para controlar cargas de tráfico elevado  
+Los costos de **Azure App Service** se pagan por los recursos que usa mientras procesa las solicitudes según el plan de **App Service** que elija. El plan de **App Service** determina la cantidad de hardware y si es dedicado o compartido.
 
 <img src="Images/App-service.png" width="300"/>
+
+#### **Tipos de servicios de aplicaciones**
+Con **App Service** se pueden hospedar los siguientes  estilos de servicio de aplicación más comunes:
+- **Aplicaciones web** - Compatibilidad para hospedar mediante ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP o Python. Puede elegir Windows o Linux como S.O.
+- **Aplicaciones de API** - Compilar API Web´ basadas en REST. Compatibilidad con Swagger y posibilidad de empaquetar y publicar la API en **Azure Marketplace**. Se pueden consumir desde cualquier cliente basado en HTTP o HTTPS.
+- **Trabajos web** - Usa característica **WebJobs** para ejecutar un programa(.exe, Java, PHP, Python o Node.js) o un script(.cmd, .bat, PowerShell o Bash) y suelen usarse para ejecutar tareas en segundo plano como parte de la lógica de aplicación
+- **Aplicaciones móviles** - Característica **Mobile Apps** de **App Service** para compilar un back-end para apps iOS y Android. Se pueden agregar conexiones y compatibilidad con SDK (No se explicarán aquí, ya que escapan de fundamentals) 
 
 ### **Azure Functions**
 - Plataforma como servicio (PaaS)
@@ -581,6 +603,7 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
   - Consumo-plan basado
   - plan dedicado
 - Diseñado para micro/nanoservicios
+- Las funciones pueden tener ser **sin estado**: se comportan como si se reiniciaran cada que se ejecutan; Y  **con estado**(Durable Functions) a los cuales se les pasa un contexto para realizar seguimiento.
 
 <img src="Images/Functions-apps.png" width="300"/>
 
@@ -893,7 +916,11 @@ La computación sin servidor es un entorno de ejecución alojado en la nube que 
 - Diseñado para la orquestación de
   - Procesos de negocios,
   - flujos de trabajo de integración para aplicaciones, datos, sistemas y servicios
+  - orientado al diseñador (declarativo)
 - Solución sin código
+- Mantiene un estado
+- Supervisado desde Azure Protal, Log Analytics
+- Administrado desde Azure Portal, API REST, PowerShell, Visual Studio
 
 <img src="Images/Azure-logics-apps.png" width="300"/>
 
