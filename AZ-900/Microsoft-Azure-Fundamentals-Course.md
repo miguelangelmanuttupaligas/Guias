@@ -294,6 +294,12 @@ Como servicio significa qué capa en particular administrará y todas las capas 
 
 <img src="Images/Traditional.png" alt="Traditional" width="300"/> 
 
+### **Características de los modelos de servicio**
+- **IaaS** - Se aplica el modelo de responsabilidad compartida; el usuario administra y mantiene los servicios que ha aprovisionado, y el proveedor de nube administra y mantiene la infraestructura en la nube.
+- **IaaS** - Es el servicio en la nube más flexible, ya que se dispone de control para configurar y administrar el hardware que ejecuta una aplicación.
+- **PaaS** - Es más ágil que IaaS.
+- **PaaS** - Es posible que en las plataformas en la nube haya una serie de limitaciones que pueden afectar al modo en el que una aplicación se ejecuta.
+
 ### **Matriz de responsabilidad**
 Como tal, la siguiente tabla representa las responsabilidades.  
 Layer(Capa)     |On-Premises|IaaS          |PaaS           |SaaS
