@@ -52,6 +52,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure App Service**](#azure-app-service)
       - [**Tipos de servicios de aplicaciones**](#tipos-de-servicios-de-aplicaciones)
     - [**Azure Functions**](#azure-functions)
+    - [**Azure Logic Apps**](#azure-logic-apps)
     - [**Resumen**](#resumen)
   - [**Servicios de red**](#servicios-de-red)
     - [**Azure Networking (Redes Azure)**](#azure-networking-redes-azure)
@@ -86,7 +87,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure Machine Learning**](#azure-machine-learning)
   - [**Servicios serverless computing**](#servicios-serverless-computing)
     - [**Azure Functions**](#azure-functions-1)
-    - [**Azure Logic Apps**](#azure-logic-apps)
+    - [**Azure Logic Apps**](#azure-logic-apps-1)
     - [**Azure Event Grid**](#azure-event-grid)
   - [**Soluciones DevOps**](#soluciones-devops)
     - [**Azure DevOps**](#azure-devops)
@@ -521,9 +522,9 @@ Es un servicio de informática a petición para ejecutar aplicaciones basadas en
   - jumpboxes,
   - gateways, etc.
 
-**NOTA: Deshabilitar una máquina virtual significa que se deshabilita la CPU y la red pero los discos son persistentes**  
-**NOTA 2: Si despliegas dos máquinas virtuales del mismo tamaño, ambas no generarán siempre el mismo coste mensual**  
-**NOTA 3: Puedes ver las notificaciones de fallos de servicio que pueden afectar a la disponibilidad de la VM desde el servicio Azure Virtual Machines**  
+**NOTA:** Deshabilitar una máquina virtual significa que se deshabilita la CPU y la red pero los discos son persistentes.  
+**NOTA 2:** Si despliegas dos máquinas virtuales del mismo tamaño, ambas no generarán siempre el mismo coste mensual.  
+**NOTA 3:** Puedes ver las notificaciones de fallos de servicio que pueden afectar a la disponibilidad de la VM desde el servicio Azure Virtual Machines.  
 
 <img src="Images/Azure-virtual-machines.png" width="300"/>
 
@@ -548,7 +549,7 @@ Cuando esté listo para ejecutar un trabajo, Batch:
 Puede haber situaciones en las que se necesite potencia informática sin procesar o potencia de cálculo a nivel de superequipo. Azure proporciona estas capacidades.
 
 ### **Azure Virtual Desktop**
-Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube.  
+**Azure Virtual Desktop** es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube.  
 Permite que los usuarios usen una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos como Windows, Mac, iOS, Android y Linux. Funciona con aplicaciones que se pueden usar para acceder a aplicaciones y escritorios remotos. También puede usar la mayoría de los exploradores modernos para acceder a experiencias hospedadas en Azure Virtual Desktop.
 
 - Administración simplificada
@@ -617,6 +618,13 @@ Con **App Service** se pueden hospedar los siguientes  estilos de servicio de ap
 
 <img src="Images/Functions-apps.png" width="300"/>
 
+### **Azure Logic Apps**
+Son similares a **Azure Functions**. Permiten desencadenar lógica basada en un evento ejecutando *flujos de trabajo* diseñados para automatizar escenarios empresariales. 
+- Los *flujos de trabajo* comienzan con un desencadenador
+- Cada desencadenador puede ser especificado con la frecuencia que ejecutará sus cargas de trabajo. 
+- Los *flujos de trabajo* se crean mediante un diseño visual en **Azure Portal** o en **Visual Studio**.
+- Los *flujos de trabajo* se conservan como un archivo JSON
+
 ### **Resumen**
 - Máquinas virtuales (IaaS) - software personalizado, requisitos personalizados, muy especializado, alto grado de control
 - Conjuntos de escalado de máquinas virtuales (IaaS) - cargas de trabajo de escalado automático para máquinas virtuales
@@ -628,10 +636,33 @@ Con **App Service** se pueden hospedar los siguientes  estilos de servicio de ap
 <img src="Images/Summary.png" width="300"/>
 
 ## **Servicios de red**
+
+
 ### **Azure Networking (Redes Azure)**
-Categoria de servicio que permite a los clientes conectar sus recursos locales y en la nube, pero también ayuda con la protección y monitoreo de la red para esos servicios, así como ayudar a los cliente en la entrega de aplicaciones
+Categoria de servicio que permite a los clientes conectar sus recursos locales y en la nube, pero también ayuda con la protección y monitoreo de la red para esos servicios, así como ayudar a los cliente en la entrega de aplicaciones.
 - Conecte la nube y on-premises
 - Funcionalidad de red on-premise
+
+Otra forma de ver es: Permiten a los recursos de Azure, como las **máquinas virtuales, las aplicaciones web y las bases de datos, comunicarse entre sí**, con los usuarios de Internet y con los equipos cliente en el entorno local. Se puede pensar en una red de Azure como en un conjunto de recursos que se vincula a otros recursos de Azure.
+
+Proporcionan las importantes funcionalidades:
+- **Aislamiento y segmentación** - Crear varias redes virtuales aisladas y dividir el espacio de direcciones IP en subredes y asignar parte del espacio a cada subred con nombre. En la resolución de nombres, puede usar el **servicio de reoslución de nombres** integrado en Azure o configurar para que la red virtual use un servidor DNS interno o externo. 
+- **Comunicación con Internet** - Una VM en Azure se puede conectar de forma predeterminada. Puede habilitar comunicaciones entrantes desde Internet si define una dirección IP pública o un equilibro de carga público.
+- **Comunicación entre recursos de Azure** - De dos maneras: 
+  - **Redes virtuales**
+  - **Puntos de conexión de servicio** - Puede usar estos puntos para conectarse a otros tipos de recursos de Azure, como cuentas de almacenamiento y BD´s. Permite vincular varios recursos de Azure con las redes virtuales.
+- **Comunicación con recursos locales (on-premises)** - Las redes virtuales de Azure permiten vincular entre sí a los recursos locales con los que esten dentro de la subscripción de Azure, de 3 formas posibles: 
+  - **Redes privadas virtuales de punto a sitio** - Enfoque habitual, consiste en establecer la conexión con la red corporativa(en este caso la red virtual Azure) desde un equipo ajeno a la organización.
+  - **Redes virtuales privadas de sitio a sitio** - Vincula un dispositivo o puerta de enlace de VPN local con la puerta de enlace de VPN de Azure en una red virtual, la conexión se cifra y viaja a través de Internet hacia el otro extremo.
+  - **Azure ExpressRoute** - Para entornos con necesidad de mayor ancho de banda y seguridad. Proporciona una conectividad privada decicada a Azure que no viaja a través de Internet.
+- **Enrutamiento del tráfico de red** - Azure enruta predeterminadamente el tráfico entre subredes de todas las redes virtuales conectadas,pero puede controlar el enrutamiento de dos formas:
+  - **Tablas de rutas** - Permite definir reglas para dirigir el tráfico que controlan cómo se enrutan los paquetes entre las subredes.
+  - **Protocolo de puerta de enlace de borde** - (BGP) funciona con puertas enlace de VPN de Azure o con ExpressRoute para propagar las rutas BGP locales a las redes virtuales de Azure.
+- **Filtrado del tráfico de red**
+  - **Grupos de seguridad de red** -  Es un recurso que puede contener varias reglas de seguridad de entrada y salida. Una regla se usa para definir si permitir o bloquear el tráfico en función de factores como protocolo,puerto,direcciónes IP de destino y origen.
+  - **Aplicaciones virtuales de red** - Es una máquina virtual especializada que se puede comparar con un dispositivo de red protegido y ejerce una fución de red determinada, como ejecutar un firewall o realizar la optimización de la red de área extensa (WAN).
+- **Conexión de redes virtuales** - Puede vincular redes virtuales entre sí mediante *emparejamiento de red virtual*. Estas redes virtuales pueden estar en regiones distintas.
+- **Enrutamiento definido por el usuario** - (UDR). Se trata de enrutamiento definido por el usuario, permite que los administradores de red controlen las tablas de enrutamiento entre las subredes de una red virtual,así como entre redes virtuales.
 
 ### **Azure Virtual Network (Red virtual)**
 Las redes virtuales permiten a sus clientes crear, administrar, monitorear y proteger la conectividad entre los recursos de Azure, pero también entre los recursos de Azure y los suyos on-premises 
@@ -639,9 +670,9 @@ Las redes virtuales permiten a sus clientes crear, administrar, monitorear y pro
 - Componentes de red aislados lógicamente
 - Segmentado en una o más subredes
 - Las subredes son secciones discretas y no se pueden anidar
-- Habilite la comunicación de los recursos entre sí, Internet y en las instalaciones
-- Alcanzado a una sola región
-- El emparejamiento de VNet permite la comunicación entre regiones
+- Habilita la comunicación de los recursos entre sí, Internet y en las instalaciones
+- Alcance a una sola región
+- **El emparejamiento de VNet permite la comunicación entre regiones**
 - Aislamiento, Segmentación, Comunicación, Filtrado y Enrutamiento entre recursos
 
 <img src="Images/Virtual-network.png" width="300"/>
