@@ -22,6 +22,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
   - [**CapEx vs OpEx y sus diferencias**](#capex-vs-opex-y-sus-diferencias)
   - [**Modelo basado en el consumo**](#modelo-basado-en-el-consumo)
   - [**IaaS vs PaaS vs SaaS Modelo de servicio cloud**](#iaas-vs-paas-vs-saas-modelo-de-servicio-cloud)
+    - [**Características de los modelos de servicio**](#características-de-los-modelos-de-servicio)
     - [**Matriz de responsabilidad**](#matriz-de-responsabilidad)
   - [**Modelos de implementación de nube pública, privada e híbrida**](#modelos-de-implementación-de-nube-pública-privada-e-híbrida)
     - [**Nube pública**](#nube-pública)
@@ -39,7 +40,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Resources Groups (Grupo de recursos)**](#resources-groups-grupo-de-recursos)
     - [**Resource Manager (Administrador de recursos)**](#resource-manager-administrador-de-recursos)
     - [**Información adicional**](#información-adicional)
-  - [**Servicios de cómputo**](#servicios-de-cómputo)
+  - [**Servicios de cómputo (Azure Compute)**](#servicios-de-cómputo-azure-compute)
     - [**Virtualización**](#virtualización)
     - [**Azure Virtual Machine (Máquina virtual)**](#azure-virtual-machine-máquina-virtual)
     - [**Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**](#azure-virtual-machine-scale-sets-conjuntos-de-escalado-de-máquinas-virtuales)
@@ -49,6 +50,7 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure Containers Instance (Instancias de contenedores)**](#azure-containers-instance-instancias-de-contenedores)
     - [**Azure Kubernetes Services (AKS)**](#azure-kubernetes-services-aks)
     - [**Azure App Service**](#azure-app-service)
+      - [**Tipos de servicios de aplicaciones**](#tipos-de-servicios-de-aplicaciones)
     - [**Azure Functions**](#azure-functions)
     - [**Resumen**](#resumen)
   - [**Servicios de red**](#servicios-de-red)
@@ -519,6 +521,10 @@ Es un servicio de informática a petición para ejecutar aplicaciones basadas en
   - jumpboxes,
   - gateways, etc.
 
+**NOTA: Deshabilitar una máquina virtual significa que se deshabilita la CPU y la red pero los discos son persistentes**  
+**NOTA 2: Si despliegas dos máquinas virtuales del mismo tamaño, ambas no generarán siempre el mismo coste mensual**  
+**NOTA 3: Puedes ver las notificaciones de fallos de servicio que pueden afectar a la disponibilidad de la VM desde el servicio Azure Virtual Machines**  
+
 <img src="Images/Azure-virtual-machines.png" width="300"/>
 
 ### **Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**
@@ -544,6 +550,10 @@ Puede haber situaciones en las que se necesite potencia informática sin procesa
 ### **Azure Virtual Desktop**
 Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube.  
 Permite que los usuarios usen una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos como Windows, Mac, iOS, Android y Linux. Funciona con aplicaciones que se pueden usar para acceder a aplicaciones y escritorios remotos. También puede usar la mayoría de los exploradores modernos para acceder a experiencias hospedadas en Azure Virtual Desktop.
+
+- Administración simplificada
+- Administración del rendimiento
+- Implementación de sesión múltiple de Windows 10
 
 ### **Contenedores**
 - Usar el sistema operativo del host
