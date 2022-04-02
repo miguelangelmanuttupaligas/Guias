@@ -58,6 +58,10 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure Networking (Redes Azure)**](#azure-networking-redes-azure)
     - [**Azure Virtual Network (Red virtual)**](#azure-virtual-network-red-virtual)
     - [**Azure VPN Gateway**](#azure-vpn-gateway)
+      - [**Redes privadas virtuales basadas en directivas**](#redes-privadas-virtuales-basadas-en-directivas)
+      - [**Redes privadas virtuales basadas en rutas**](#redes-privadas-virtuales-basadas-en-rutas)
+      - [**Tamaños de las instancias de VPN Gateway**](#tamaños-de-las-instancias-de-vpn-gateway)
+    - [**Azure ExpressRoute**](#azure-expressroute)
     - [**Azure Load Balancer (Equilibrador de carga)**](#azure-load-balancer-equilibrador-de-carga)
     - [**Azure Application Gateway**](#azure-application-gateway)
     - [**Azure Content Delivery Network (Red de entrega de contenidos)**](#azure-content-delivery-network-red-de-entrega-de-contenidos)
@@ -83,14 +87,17 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure Synapse Analytics**](#azure-synapse-analytics)
     - [**Azure HDInsight**](#azure-hdinsight)
     - [**Azure Databricks**](#azure-databricks)
+    - [**Azure Data Lake Analytics**](#azure-data-lake-analytics)
   - [**Servicios de IA**](#servicios-de-ia)
     - [**Azure Machine Learning**](#azure-machine-learning)
+    - [**Azure Cognitive Service**](#azure-cognitive-service)
+    - [**Azure Bot Service**](#azure-bot-service)
   - [**Servicios serverless computing**](#servicios-serverless-computing)
     - [**Azure Functions**](#azure-functions-1)
     - [**Azure Logic Apps**](#azure-logic-apps-1)
     - [**Azure Event Grid**](#azure-event-grid)
   - [**Soluciones DevOps**](#soluciones-devops)
-    - [**Azure DevOps**](#azure-devops)
+    - [**Azure DevOps Services**](#azure-devops-services)
     - [**Azure DevTest Labs**](#azure-devtest-labs)
   - [**Azure Tools**](#azure-tools)
     - [**Azure Portal**](#azure-portal)
@@ -675,12 +682,65 @@ Las redes virtuales permiten a sus clientes crear, administrar, monitorear y pro
 - **El emparejamiento de VNet permite la comunicación entre regiones**
 - Aislamiento, Segmentación, Comunicación, Filtrado y Enrutamiento entre recursos
 
-<img src="Images/Virtual-network.png" width="300"/>
+<img src="Images/Virtual-network.png" width="600"/>
 
 ### **Azure VPN Gateway**
-- Tipo específico de puerta de enlace de red virtual para el tráfico on-premise a Azure a través de la Internet pública de forma encriptada. También se puede usar para unir dos redes virtuales de Azure (no es muy común).
+- Tipo específico de puerta de enlace de red virtual para el tráfico on-premise a Azure a través de la Internet pública de forma cifrada. También se puede usar para unir dos redes virtuales de Azure (no es muy común).
+- Las instancias de **Azure VPN Gateway** se implementan en **Azure Virtual Network** y habilitan: 
+  - Conectar los centros de datos locales a redes virtuales a través de una conexión de **sitio a sitio**.
+  - Conectar los dispositivos individuales a redes virtuales a través de una conexión de **punto a sitio**.
+  - Conectar las redes virtuales a otras redes virtuales a través de una conexión **entre redes**.
+- Solo se puede tener una instancia de **Azure VPN Gateway** en cada red virtual, pero se puede usar una puerta de enlace para conectarse a varias ubicaciones.
+- **Azure VPN Gateway** debe conocer el tipo de red privada virtual : *basada en directivas* o *basada en rutas*. 
+- En **Azure**, ambos tipos de puertas de enlace VPN resultantes del tipo de red privada virtual, usan una clave previamente compartida como único método de autenticación.
+- Usan el intercambio de claves por red (**IKE**) en versiones 1 o 2 y protocolo de seguridad de internet (**IPsec**)
+  - IKE se usa para establecer asociación de seguridad entre dos puntos de conexión.
+  - Después se pasa al conjunto de IPsec que cifra y descrifa los paquetes de datos encapsulados en el túnel VPN.
 
-<img src="Images/VPN-gateway.png" width="300"/>
+#### **Redes privadas virtuales basadas en directivas**
+Las instancias de **VPN Gateway basadas en directivas** especifican estáticamente la dirección IP de los paquetes que se deben cifrar a través de cada túnel evaluando los paquetes de datos en función de los conjuntos de direcciones IP para elegir el túnel a tavés del cual se va a enviar el paquete.
+  - Compatibilidad solo con IKEv1
+  - Escenarios específicos como compatibilidad con dispositivos de red privada virtual locales heredados
+#### **Redes privadas virtuales basadas en rutas**
+Las instancias de **VPN Gateway basadas en rutas** permiten que los túneles IPSec se modelen como una interfaz de red o de túnel virtual. El enrutamiento IP decide cuál de estas interfaces de túnel se va a usar al enviar cada paquete y son el método preferido para conectar dispositivos locales pues son resistentes a los cambios de la topología como la creación de subredes.
+  - Compatibilidad con IKEv2
+  - Uso de selectores de tráfico universales
+  - Se puede usar *protocolos de enrutamiento dinámico*
+Estas instancias permiten: 
+  - Conexiones entre redes virtuales
+  - Conexiones de punto a sitio
+  - Conexiones de varios sitios
+  - Coexistencia con una puerta de enlace de Azure ExpressRoute
+
+#### **Tamaños de las instancias de VPN Gateway**
+
+SKU	| Túneles de sitio a sitio o de red a red	| Pruebas comparativas de rendimiento agregado	| Compatibilidad con el Protocolo de puerta de enlace de borde
+---|---|---|---
+Básico* | Máximo: 10	| 100 Mbps | No compatible
+VpnGw1/Az |	Máximo: 30 | 650 Mbps | Compatible
+VpnGw2/Az |	Máximo: 30 | 1 Gbps | Compatible
+VpnGw3/Az |	Máximo: 30 | 1,25 Gbps | Compatible.
+
+**Básico*** : Solo debe usarse en cargas de trabajo de desarrollo/pruebas.Además, no se puede migrar a SKU superiores sin quitar el gateway y volver a implementarla.
+
+<img src="Images/VPN-gateway.png" width="600"/>
+
+Si se requiere más detalles sobre la implementación de instancias de VPN Gateway, visite https://docs.microsoft.com/es-es/learn/modules/azure-networking-fundamentals/azure-vpn-gateway-fundamentals
+
+### **Azure ExpressRoute**
+Permite ampliar las redes locales a la nube de Microsoft mediante una conexión privada con la ayuda de un proveedor de conectividad.
+- No pasan por la red pública de Internet
+- Conectividad de nivel 3 entre su red local y Microsfot Cloud a través de un proveedor de conectividad
+- Enrutamiento dinámico entre la red y Microsoft a través de BGP
+- Redudancia integrada en todas las ubicaciones de configuración entre pares
+- Admite 3 modelos de conectividad
+  - Ubicación de CloudExchange
+  - Conexión Ethernet de punto a punto
+  - Conexión universal
+- Rendimiento de red coherente
+- Incluso si tiene conexión ExpressRoute, las consultas DNS, comprobación de lista de revocación de certificados se hacen por la internet.
+
+Si se requiere más detalles,visite https://docs.microsoft.com/es-es/learn/modules/azure-networking-fundamentals/express-route-fundamentals
 
 ### **Azure Load Balancer (Equilibrador de carga)**
 **Balanceo**: Distribución del tráfico entre múltiples recursos
@@ -798,7 +858,7 @@ debajo sigue siendo el mismo servicio.
 Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 ### **Azure Cosmos DB**
 - Servicio de base de datos NoSQL (datos semiestructurados) distribuido globalmente
-- Sin esquema
+- Sin esquema (Se abstrae y se consulta a través de las API´s)
 - Múltiples API (SQL, MongoDB, Cassandra, Gremlin, Table Storage)
 - Diseñado para
   - Aplicaciones de alta capacidad de respuesta (en tiempo real) con respuestas de latencia muy baja <10 ms
@@ -826,7 +886,7 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 - Azure **Database for PostgreSQL**: versión de Azure SQL para el motor de base de datos de PostgreSQL
 - **Instancia administrada de Azure SQL**: SQL Server completo administrado por un proveedor de la nube
 - Azure **SQL en VM**: SQL Server completo en IaaS
-- Azure **SQL DW (Synapse)**: versión de procesamiento paralelo masivo (MPP) de SQL Server
+- Azure **SQL Data Warehouse (Ahora Azure Synapse Analytics)**: versión de procesamiento paralelo masivo (MPP) de SQL Server que permite consultar datos mediante recursos sin servidor o aprovisionados a escala. Experiencia unificada para ingerir, preparar, administrar y servir los datos.
 
 <img src="Images/Azure-sql.png" width="300"/>
 
@@ -844,30 +904,39 @@ Internet de las cosas (**IoT**) es una red de dispositivos conectados a Internet
 <img src="Images/Iot.png" width="300"/>
 
 ### **Azure IoT Hub**
+Azure clasifica a su servicio como uno que permite *ordernar y controlar*.
+
 - Servicio gestionado para comunicación bidireccional
 - Plataforma como servicio (PaaS)
 - Altamente seguro, escalable y confiable
 - Se integra con una gran cantidad de servicios de Azure
 - SDK programables para lenguajes populares (C, C#, Java, Python, Node.js)
 - Múltiples protocolos (HTTPS, AMQP, MQTT)  
+- Admite varios patrones de mensajería : telemetría de dispositivo a la nube, carga de archivos desde dispositivos y métodos de solicitud-respuesta.
+
+**Nota**: Una vez que **Azure IoT Hub** recibe un mensaje de un dispositivo, puede enrutarlo a otro servicio de Azure.
 
 <img src="Images/Iot-hub.png" width="300"/>
 
 ### **Azure IoT Central**
+Se basa en **Azure IoT Hub** y proporciona un panel que permite a las empresas administrar dispositivos de IoT de forma individual y en conjunto, ver informes y configurar notificaciones de error mediante una GUI.
+
 - Plataforma de aplicaciones IoT: software como servicio (SaaS)
-- Plantillas de aplicaciones específicas de la industria
+- Plantillas de aplicaciones específicas de la industria personalizables
 - No se requieren conocimientos técnicos profundos
-- Servicio de conexión, gestión y monitorización de dispositivos IoT
+- Servicio de conexión, gestión y **monitorización** de dispositivos IoT
 - Altamente seguro, escalable y confiable
 - Construido sobre el servicio IoT Hub y más de 30 servicios más  
+- Puede enviar actualizaciones de firmware o software a los dispositivos.
+- Uso de plantillas de dispositivo que permite conectar un dispositivo sin programación(Desarrolladores aún deben crear código que se ejecute, pero este solo debería coincidir con la especificación de la plantilla de dispositivo).
 
 <img src="Images/Iot-central.png" width="300"/>
 
 ### **Azure Sphere**
 - Soluciones seguras de IoT de extremo a extremo
-  - Chips certificados por Azure Sphere (unidades de microcontrolador - MCU)
-  - Sistema operativo Azure Sphere basado en Linux
-  - Comunicación de dispositivo a nube de confianza de Azure Security Service 
+  - Chips certificados por Azure Sphere (unidades de microcontrolador - MCU) - Procesan el S.O. y las señales de los sensores conectados
+  - Sistema operativo Azure Sphere basado en Linux - Controla la comunicación con el servicio de seguridad y ejecuta el software del proveedor.
+  - Comunicación de dispositivo a nube de confianza de Azure Security Service - Es el servicio de seguridad (AS3). Funciona autenticandose mediante certificados y se asegura que el dispositivo no está en peligro, además una vez se identifica inserta las actualizaciones de software del S.O. o del cliente(y aprobadas) a la vez que pueden recibir mensajes o enviar de forma remota.
  
 <img src="Images/Sphere.png" width="300"/>
 
@@ -894,7 +963,7 @@ Los grandes datos suelen tener una de las siguientes características
 ### **Azure Synapse Analytics**
 Plataforma de análisis de big data con una experiencia de espacio de trabajo unificado que admite la transformación de datos de extremo a extremo con el poder de SQL y Spark.
 
-Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que es una versión de procesamiento paralelo masivo de SQL Server. En una iteración reciente, Azure Synapse también brindó la capacidad de ejecutar consultas y scripts mediante Apache Spark y al incluir Data Factory como un componente integrado llamado Synapse Pipelines, ahora se considera una solución de extremo a extremo para grandes cargas de trabajo de datos.
+Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que es una versión de procesamiento paralelo masivo de SQL Server. En una iteración reciente, Azure Synapse también brindó la capacidad de ejecutar consultas y scripts mediante Apache Spark y al incluir **Data Factory** como un componente integrado llamado **Synapse Pipelines**, ahora se considera una solución de extremo a extremo para grandes cargas de trabajo de datos.
 
 - Plataforma de análisis de big data (PaaS)
 - Múltiples componentes
@@ -909,7 +978,8 @@ Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que e
 
 ### **Azure HDInsight**
 - Plataforma flexible multipropósito de big data (PaaS)
-- Múltiples tecnologías compatibles (Hadoop, Spark, Kafka, HBase, Hive, Storm, Machine Learning)
+- Múltiples tecnologías compatibles de código abierto(Hadoop, Spark, Kafka, HBase, Hive, Storm, Machine Learning)
+- Permite una amplia gama de escenarios como ETL, almacenamiento de datos, aprendizaje automático e IoT
 
 <img src="Images/HDInsight.png" width="300"/>
 
@@ -918,15 +988,25 @@ Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que e
 - Espacio de trabajo unificado para portátiles, clústeres, datos, administración de acceso y colaboración
 - Basado en Apache Spark
 - Se integra muy bien con los servicios de datos comunes de Azure
+- Dirigido generalmente a soluciones de inteligencia artificial
+- Admite Python, Scala, R, Java y SQL
+- Admite marcos y biliotecas de ciencias de datos : TensorFlow, PyTorch, Scikit-learn
 
 <img src="Images/Databricks.png" width="300"/>
+
+### **Azure Data Lake Analytics**
+Servicio de trabajos de análisis a petición que simplifica los macrodatos. No requiere administración de servidor, solo escribir consultas para transformar los datos y extraer ideas valiosas.
 
 ## **Servicios de IA**
 **¿Qué es Artificial Intelligence?**  
 La inteligencia artificial (IA) es la simulación de la inteligencia y las capacidades humanas mediante un software informático.  
 **¿Qué es Machine Learning?**  
-El aprendizaje automático es una subcategoría de la IA en la que se "enseña" un software de computadora a sacar conclusiones y hacer predicciones a partir de los datos.  
+El aprendizaje automático es una subcategoría de la IA en la que se "enseña" un software de computadora a sacar conclusiones y hacer predicciones a partir de los datos. 
+**¿Qué es Deep Learning?** 
+Se modela en la red neuronal similar al de la mente humana, lo que le permite descubrir, aprender y crecer a través de la experiencia.
 ### **Azure Machine Learning**
+Plataforma para realizar predicciones. Consta de herramientas que permiten conectarse a los datos, probar modelos, implementarlos y usarlo en tiempo real a través de un punto de conexión de API web.
+
 - Plataforma basada en la nube para crear, administrar y publicar modelos de aprendizaje automático
 - Plataforma como servicio (PaaS)
 - Machine Learning Workspace: recurso de nivel superior (Top-Level)
@@ -938,7 +1018,23 @@ El aprendizaje automático es una subcategoría de la IA en la que se "enseña" 
   - Datos y computación: administración de recursos de almacenamiento y computación
   - Pipelines: orqueste tareas de capacitación, implementación y administración de modelos
 
+Cuando los científicos de datos necesiten un control completo sobre el diseño y entrenamiento de un algoritmo con sus propios datos.
+
 <img src="Images/Machine-learning.png" width="300"/>
+
+### **Azure Cognitive Service**
+Proporciona modelos de aprendizaje automático creados y entrenados previamente. 
+- Soluciona problemas generales : análisis de texto, de imágenes
+- Poco conocimiento técnico para usar los servicios
+- Se accede a estos servicios mediante API 
+- Categorías: 
+  - Servicios de lenguaje - Evaluar opiniones,reconocer que quieren usuarios.
+  - Servicios de voz - Voz a texto y texto a voz, traducciones y reconocimiento y verificación del hablante.
+  - Servicios de visión - Reconocimiento e identificación en imágenes,vídeos y otro contenido visual. 
+  - Servicios de decisión - Recomendaciones personalizadas mejorables automáticamente con el uso.
+
+### **Azure Bot Service**
+Junto a **Bot Framework** son plataformas para crear agentes virtuales que comprenden y responden a preguntas como un ser humano. Este bot creado usa otros servicios de Azure como **Azure Cognitive Services** para comprender lo que le solicitan los humanos.
 
 ## **Servicios serverless computing**
 La computación sin servidor es un entorno de ejecución alojado en la nube que permite a los clientes ejecutar sus aplicaciones en la nube mientras abstraen por completo la infraestructura subyacente.  
@@ -977,14 +1073,15 @@ La computación sin servidor es un entorno de ejecución alojado en la nube que 
 **DevOps** es un conjunto de prácticas que combinan tanto el desarrollo (Dev) como las operaciones (Ops).  
 DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al proporcionar capacidades de **integración y entrega continuas** (CI/CD) al tiempo que garantiza una **alta calidad** de los entregables.
 
-### **Azure DevOps**
+### **Azure DevOps Services**
+- Software como servicio (SaaS)
 - Colección de servicios para construir soluciones usando prácticas DevOps
 - Servicios incluidos
-  - Tableros: trabajo de seguimiento
-  - Canalizaciones: creación de flujos de trabajo de CI/CD (creación, prueba e implementación de aplicaciones)
-  - Repos: colaboración de código y control de versiones con Git
-  - Planes de prueba: pruebas manuales y exploratorias
-  - Artefactos: gestione los entregables del proyecto
+  - Azure Boards - Tableros: trabajo de seguimiento,Paneles Kanban, Informes, Ideas de seguimiento y trabajo.
+  - Azure Pipelines: creación de flujos de trabajo de CI/CD (creación, prueba e implementación de aplicaciones)
+  - Azure Repos: colaboración de código y control de versiones con Git
+  - Azure Test Plans: pruebas manuales y exploratorias
+  - Azure Artifacts: gestione los entregables del proyecto
 - Ampliable con Marketplace: más de 1000 aplicaciones disponibles
 - Evolucionado de TFS (Team Foundation Server), a través de VSTS (Visual Studio Team Services)
 
