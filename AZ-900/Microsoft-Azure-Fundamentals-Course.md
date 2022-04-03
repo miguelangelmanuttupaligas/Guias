@@ -68,11 +68,11 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
   - [**Servicios de almacenamiento**](#servicios-de-almacenamiento)
     - [**Tipos de datos**](#tipos-de-datos)
     - [**Storage Account (Cuenta de almacenamiento)**](#storage-account-cuenta-de-almacenamiento)
-    - [**Blob Storage (Almacenamiento de blobs)**](#blob-storage-almacenamiento-de-blobs)
-    - [**Queue Storage (Almacenamiento en cola)**](#queue-storage-almacenamiento-en-cola)
-    - [**Table Storage (Almacenamiento de tablas)**](#table-storage-almacenamiento-de-tablas)
-    - [**File Storage (Almacenamiento de archivos)**](#file-storage-almacenamiento-de-archivos)
-    - [**Disk Storage (Almacenamiento de disco)**](#disk-storage-almacenamiento-de-disco)
+    - [**Blob Storage**](#blob-storage)
+    - [**Queue Storage**](#queue-storage)
+    - [**Table Storage**](#table-storage)
+    - [**File Storage**](#file-storage)
+    - [**Disk Storage**](#disk-storage)
   - [**Servicios de bases de datos**](#servicios-de-bases-de-datos)
     - [**Tipos de datos en las BD**](#tipos-de-datos-en-las-bd)
     - [**Azure Cosmos DB**](#azure-cosmos-db)
@@ -104,52 +104,63 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
     - [**Azure PowerShell**](#azure-powershell)
     - [**Azure CLI**](#azure-cli)
     - [**Azure Cloud Shell**](#azure-cloud-shell)
-  - [**Azure Advisor**](#azure-advisor)
+  - [**Soluciones de supervisión**](#soluciones-de-supervisión)
+    - [**Azure Advisor**](#azure-advisor)
+    - [**Azure Monitor**](#azure-monitor)
+    - [**Azure Service Health**](#azure-service-health)
+  - [**Servicios de seguridad de red**](#servicios-de-seguridad-de-red)
+    - [**Azure Firewall**](#azure-firewall)
+    - [**Azure DDoS Protección**](#azure-ddos-protección)
   - [**Grupos de seguridad Azure**](#grupos-de-seguridad-azure)
     - [**Grupos de seguridad de red**](#grupos-de-seguridad-de-red)
     - [**Grupos de seguridad de aplicaciones**](#grupos-de-seguridad-de-aplicaciones)
+    - [**Combinación de servicios de Azure para una solución de seguridad de red completa**](#combinación-de-servicios-de-azure-para-una-solución-de-seguridad-de-red-completa)
   - [**Rutas definidas por el usuario (UDR) con tablas de rutas**](#rutas-definidas-por-el-usuario-udr-con-tablas-de-rutas)
     - [**Enrutamiento(Routing)**](#enrutamientorouting)
     - [**User-defined Routes(UDR)**](#user-defined-routesudr)
-  - [**Azure Firewall**](#azure-firewall)
-  - [**Azure DDoS Protección**](#azure-ddos-protección)
   - [**Azure Identity Services**](#azure-identity-services)
     - [**Identidad**](#identidad)
-    - [**Autenticación**](#autenticación)
-    - [**Autorización**](#autorización)
+    - [**Autenticación(AuthN)**](#autenticaciónauthn)
+    - [**Autorización(AuthZ)**](#autorizaciónauthz)
     - [**Gestión de Acceso**](#gestión-de-acceso)
     - [**Azure AD**](#azure-ad)
     - [**Autenticación multifactor (MFA)**](#autenticación-multifactor-mfa)
-  - [**Azure Security Center**](#azure-security-center)
-  - [**Azure Sentinel**](#azure-sentinel)
-  - [**Azure Key Vault**](#azure-key-vault)
-  - [**Azure Dedicated Host**](#azure-dedicated-host)
-  - [**Azure Role-based Access Control (RBAC)**](#azure-role-based-access-control-rbac)
-  - [**Azure Resource Locks**](#azure-resource-locks)
-  - [**Azure Resource Tags**](#azure-resource-tags)
-  - [**Azure Policy**](#azure-policy)
-  - [**Azure Blueprints**](#azure-blueprints)
-  - [**Cloud Adoption Framework for Azure**](#cloud-adoption-framework-for-azure)
-    - [**Adopción de la nube**](#adopción-de-la-nube)
-    - [**Marco de adopción de la nube**](#marco-de-adopción-de-la-nube)
-    - [**Estrategía**](#estrategía)
-    - [**Plan**](#plan)
-    - [**Comienzo**](#comienzo)
-    - [**Adopción**](#adopción)
-    - [**Gobierno y Administración**](#gobierno-y-administración)
-    - [**Organizar**](#organizar)
+    - [**Acceso condicional**](#acceso-condicional)
+  - [**Herramientas de seguridad**](#herramientas-de-seguridad)
+    - [**Azure Security Center**](#azure-security-center)
+    - [**Azure Sentinel**](#azure-sentinel)
+    - [**Azure Key Vault**](#azure-key-vault)
+    - [**Azure Dedicated Host**](#azure-dedicated-host)
+  - [**Gobernanza en Azure**](#gobernanza-en-azure)
+    - [**Azure Role-based Access Control (RBAC)**](#azure-role-based-access-control-rbac)
+    - [**Azure Resource Locks**](#azure-resource-locks)
+    - [**Azure Resource Tags**](#azure-resource-tags)
+    - [**Azure Policy**](#azure-policy)
+    - [**Azure Blueprints**](#azure-blueprints)
+    - [**Cloud Adoption Framework for Azure**](#cloud-adoption-framework-for-azure)
+      - [**Adopción de la nube**](#adopción-de-la-nube)
+      - [**Marco de adopción de la nube**](#marco-de-adopción-de-la-nube)
+      - [**Estrategía**](#estrategía)
+      - [**Plan**](#plan)
+      - [**Comienzo**](#comienzo)
+      - [**Adopción**](#adopción)
+      - [**Gobierno y Administración**](#gobierno-y-administración)
+      - [**Organizar**](#organizar)
   - [**Core tenets of Security,Privacy,Compliance(Trust Center,DPA,OST y más)**](#core-tenets-of-securityprivacycompliancetrust-centerdpaost-y-más)
+    - [**Azure Government**](#azure-government)
+    - [**Azure China 21Vianet**](#azure-china-21vianet)
     - [**Regiones soberanas de Azure**](#regiones-soberanas-de-azure)
-  - [**Cost Affecting Factors**](#cost-affecting-factors)
-  - [**Cost Reduction Methods, Reservations, Hybrid benefit, Spot VM, Pricing y TCO**](#cost-reduction-methods-reservations-hybrid-benefit-spot-vm-pricing-y-tco)
-    - [**Reservaciones en Azure**](#reservaciones-en-azure)
-    - [**Máquinas virtuales al contado de Azure**](#máquinas-virtuales-al-contado-de-azure)
-    - [**Beneficio de uso híbrido**](#beneficio-de-uso-híbrido)
-    - [**Herramientas**](#herramientas)
-  - [**Azure Cost Managment**](#azure-cost-managment)
-    - [**Administración de costos de Azure**](#administración-de-costos-de-azure)
-    - [**Minimización de costos en Azure**](#minimización-de-costos-en-azure)
-  - [**SLA y Composite SLA en Azure**](#sla-y-composite-sla-en-azure)
+  - [**Planeación y administración de costos de Azure**](#planeación-y-administración-de-costos-de-azure)
+    - [**Cost Reduction Methods, Reservations, Hybrid benefit, Spot VM, Pricing y TCO**](#cost-reduction-methods-reservations-hybrid-benefit-spot-vm-pricing-y-tco)
+      - [**Reservaciones en Azure**](#reservaciones-en-azure)
+      - [**Máquinas virtuales al contado de Azure**](#máquinas-virtuales-al-contado-de-azure)
+      - [**Beneficio de uso híbrido**](#beneficio-de-uso-híbrido)
+      - [**Herramientas**](#herramientas)
+    - [**Azure Cost Managment**](#azure-cost-managment)
+      - [**Administración de costos de Azure**](#administración-de-costos-de-azure)
+      - [**Minimización de costos en Azure**](#minimización-de-costos-en-azure)
+  - [**SLA y SLA Compuesto en Azure**](#sla-y-sla-compuesto-en-azure)
+    - [**Acuerdo de nivel de servicio de aplicación**](#acuerdo-de-nivel-de-servicio-de-aplicación)
     - [**Formulas**](#formulas)
     - [**Elementos clave**](#elementos-clave)
   - [**Ciclo de vida de un servicio en Azure | Public preview and General availability**](#ciclo-de-vida-de-un-servicio-en-azure--public-preview-and-general-availability)
@@ -806,7 +817,7 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Storage-account.png" width="150"/>
 
-### **Blob Storage (Almacenamiento de blobs)**
+### **Blob Storage**
 - BLOB – objeto grande binario – archivo
 - Diseñado para el almacenamiento de archivos de cualquier tipo
 - Tres niveles de almacenamiento
@@ -816,7 +827,7 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Blob-storage.png" width="300"/>
 
-### **Queue Storage (Almacenamiento en cola)**
+### **Queue Storage**
 - Almacenamiento de pequeños datos (mensajes)
 - Diseñado para procesamiento asíncrono escalable
 
@@ -826,7 +837,7 @@ Las filas solo deben tener un identificador de clave único.
 <img src="Images/Queue-storage-3.png" width="150"/>
 </div>
 
-### **Table Storage (Almacenamiento de tablas)**
+### **Table Storage**
 - Almacenamiento para datos semiestructurados (NoSQL)
   - Sin necesidad de uniones foráneas, claves foráneas, relaciones o esquemas estrictos
   - Diseñado para un acceso rápido
@@ -834,13 +845,13 @@ Las filas solo deben tener un identificador de clave único.
 
 <img src="Images/Table-storage.png" width="300"/>
 
-### **File Storage (Almacenamiento de archivos)**
+### **File Storage**
 - Almacenamiento para archivos a los que se accede a través de protocolos de unidades compartidas
 - Diseñado para ampliar los recursos compartidos de archivos en las instalaciones o implementar escenarios de elevación y cambio
 
 <img src="Images/File-storage.png" width="300"/>
 
-### **Disk Storage (Almacenamiento de disco)**
+### **Disk Storage**
 - Emulación de disco en la nube
 - Almacenamiento persistente para máquinas virtuales
 - Diferente
@@ -1148,7 +1159,8 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 
 <img src="Images/Azure-cloud-shell.png" width="300"/>
 
-## **Azure Advisor**
+## **Soluciones de supervisión**
+### **Azure Advisor**
 - Servicio de **consultoria personalizada**
 - Diseñado para proporcionar **recomendaciones** y **mejores prácticas** para
   - **Costo** (tamaños de SKU, servicios inactivos, instancias reservadas, etc.)
@@ -1161,7 +1173,82 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 
 <img src="Images/Azure-advisor.png" width="300"/>
 
+### **Azure Monitor**
+- Servicio de **recopilación, análisis y visualizador de estos datos**
+- Función de métricas en el entorno local y de Azure
+- **Application Insights se basa en Azure Monitor**
+- Puede enviar alertas a los grupos de seguridad de **Azure AD**
+
+### **Azure Service Health**
+- Vista personalizada del estado de los servicios, regiones y recursos de Azure en los que se basa su infraestructura.
+- Proporciona, después de incidentes oficiales, un análisis de la causa principla(RCA)
+- Ayuda a supervisar varios tipos de eventos: 
+  - **Problemas de servicios** - Son de Azure, como las interrupciones
+  - **Mantenimiento planeado** - Afectan la disponibilidad
+  - **Avisos de estado** - Problemas que exigen actuar para evitar interrupción del servicio
+
+## **Servicios de seguridad de red**
+La estrategia de *defensa en profundidad* usa una serie de mecanismos para ralentizar el avance de un ataque dirigido a adquirir acceso no autorizado a los datos.  
+Se puede visualizar como un conjunto de capas(De arriba hacia abajo) :
+  - **Capa de seguridad física** es la primera línea de defensa para proteger el hardware informático del centro de datos.
+  - **Capa de identidad y acceso** controla el acceso a la infraestructura y al control de cambios.
+  - **Capa perimetral** usa protección frente a ataques de denegación de servicio distribuido (DDoS) para filtrar los ataques a gran escala antes de que puedan causar una denegación de servicio para los usuarios.
+  - **Capa de red** limita la comunicación entre los recursos a través de controles de acceso y segmentación.
+  - **Capa de proceso** protege el acceso a las máquinas virtuales.
+  - **Capa de aplicación** ayuda a garantizar que las aplicaciones sean seguras y estén libres de vulnerabilidades de seguridad.
+  - **Capa de datos** controla el acceso a los datos empresariales y de clientes que es necesario proteger.
+Cada capa proporciona protección. Este enfoque elimina protección única y proporciona telemtría de alertas sobre la que se puede actuar de forma automática o manual.
+
+Los *niveles de seguridad* es la capacidad de su organización de protegerse frente a amenazas de seguridad y responder a ellas. Los principios comunes usados para definir un nivel son:
+  - **Confidencialidad** - Acceso a usuarios especifícos
+  - **Integridad** - Evitar cambios no autorizados en la información
+    - En reposo - Cuando se almacenan
+    - En tránsito - Cuando se transfieren de un lugar a otro
+  - **Disponibilidad** - Siempre estén disponibles los servicios y datos
+
+### **Azure Firewall**
+Firewall es un servicio de seguridad de red que monitorea y controla el tráfico entrante y saliente en función de un conjunto definido de reglas de seguridad.  
+Es un firewall con estado, lo que implica que analiza el contexto completo de una conexión de red
+
+- Servicio de firewall administrado basado en la nube y con *estado* (PaaS, Firewall como servicio)
+- Alta disponibilidad integrada
+- Usa una dirección IP pública estática 
+- Altamente escalable
+- Reglas de filtrado de tráfico entrante y saliente
+- Compatibilidad con FQDN (Nombre de dominio completo), ej. microsoft.com
+- Totalmente integrado con Azure monitor para registro y análisis
+
+<img src="Images/Azure-firewall.png" width="300"/>
+
+### **Azure DDoS Protección**
+**DoS - Denegación de servicio**  
+Ciberataque con la intención de causar una interrupción temporal o indefinida del servicio
+
+<img src="Images/Dos.png" width="300"/>
+
+**DDoS - Denegación de servicio distribuida**  
+Ataque DoS que se origina en múltiples servidores
+
+<img src="Images/Ddos.png" width="300"/>
+
+**Azure DDoS Protection**
+- Servicio de protección DDoS en Azure
+- Diseñado para
+  - Detecte el tráfico malicioso y bloquéelo mientras permite que los usuarios legítimos se conecten
+  - Evite costos adicionales para entornos de escalado automático
+- dos niveles
+  - **Básico**: habilitado automáticamente para la plataforma Azure
+  - **Estándar**: capacidades adicionales de mitigación y supervisión para los recursos de **Azure Virtual Network**
+- El nivel estándar utiliza el aprendizaje automático para analizar los patrones de tráfico para una mayor precisión
+- El nivel estándar ayuda a evitar:
+  - Ataques volumétricos - este ataque busca desbordar la capa de red con una gran cantidad de tráfico
+  - Ataques de protocolo - vuelven un destino inaccesible al aprovechar vulnerabilidad en la pila del protocolo de capa 3 y 4
+  - Ataques de nivel de recursos(nivel de aplicación)(solo con el firewall de aplicaciones web) - dirigidos a paquetes de aplicaciones web para interrumpir la transmisión de datos entre hosts
+
+<img src="Images/Ddos-protection.png" width="300"/>
+
 ## **Grupos de seguridad Azure**
+Azure Firewall y Azure DDoS Protection ayudan a controlar el tráfico que proviene externamente, pero también se debe saber como proteger las redes internas de Azure.
 ### **Grupos de seguridad de red**
 - Diseñado para filtrar el tráfico hacia (entrante) y desde (saliente) los recursos de Azure ubicados en Azure Virtual Network
 - Filtrado controlado por reglas
@@ -1181,6 +1268,9 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 
 <img src="Images/application-security-groups.png" width="300"/>
 
+### **Combinación de servicios de Azure para una solución de seguridad de red completa**
+[Leer aquí](https://docs.microsoft.com/es-es/learn/modules/secure-network-connectivity-azure/7-combine-services-complete-solution)
+
 ## **Rutas definidas por el usuario (UDR) con tablas de rutas**
 ### **Enrutamiento(Routing)**
 Proceso de encontrar/seleccionar una ruta para el tráfico en una o varias redes.
@@ -1195,41 +1285,6 @@ Proceso de encontrar/seleccionar una ruta para el tráfico en una o varias redes
 
 <img src="Images/User-defined-routes.png" width="300"/>
 
-## **Azure Firewall**
-Firewall es un servicio de seguridad de red que monitorea y controla el tráfico entrante y saliente.
-
-- Servicio de firewall administrado basado en la nube (PaaS, Firewall como servicio)
-- Alta disponibilidad integrada
-- Altamente escalable
-- Reglas de filtrado de tráfico entrante y saliente
-- Compatibilidad con FQDN (Nombre de dominio completo), ej. microsoft.com
-- Totalmente integrado con Azure monitor para registro y análisis
-
-<img src="Images/Azure-firewall.png" width="300"/>
-
-## **Azure DDoS Protección**
-**DoS - Denegación de servicio**  
-Ciberataque con la intención de causar una interrupción temporal o indefinida del servicio
-
-<img src="Images/Dos.png" width="300"/>
-
-**DDoS - Denegación de servicio distribuida**  
-Ataque DoS que se origina en múltiples servidores
-
-<img src="Images/Ddos.png" width="300"/>
-
-**Azure DDoS Protection**
-- Servicio de protección DDoS en Azure
-- Diseñado para
-  - Detecte el tráfico malicioso y bloquéelo mientras permite que los usuarios legítimos se conecten
-  - Evite costos adicionales para entornos de escalado automático
-- dos niveles
-  - Básico: habilitado automáticamente para la plataforma Azure
-  - Estándar: capacidades adicionales de mitigación y supervisión para los recursos de Azure Virtual Network
-- El nivel estándar utiliza el aprendizaje automático para analizar los patrones de tráfico para una mayor precisión
-
-<img src="Images/Ddos-protection.png" width="300"/>
-
 ## **Azure Identity Services**
 ### **Identidad**
 La identidad en general significa el hecho de ser alguien o algo. Por ejemplo, nuestras cuentas de usuario se consideran identidad.
@@ -1239,12 +1294,12 @@ La identidad en general significa el hecho de ser alguien o algo. Por ejemplo, n
 
 <img src="Images/Identity.png" width="300"/>
 
-### **Autenticación**
+### **Autenticación(AuthN)**
 El proceso de verificación/afirmación de identidad
 
 <img src="Images/Authentication.png" width="300"/>
 
-### **Autorización**
+### **Autorización(AuthZ)**
 Después de la autenticación empieza el proceso de autorización.  
 El proceso de garantizar que solo las identidades autenticadas obtengan acceso a los recursos para los que se les ha otorgado acceso.
 
@@ -1259,11 +1314,24 @@ El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios 
 - Gestión de acceso: suscripciones, grupos de recursos, funciones, asignaciones de funciones, - configuración de autenticación y autorización, etc.
 - Utilizado por múltiples plataformas en la nube de Microsoft
   - Azure
-  - microsoft 365
+  - Microsoft 365
   - Office 365
   - Servicios de Live.com (Skype, OneDrive, etc.)
 
 <img src="Images/Azure-ad.png" width="300"/>
+
+**Azure Active Directory (AD)** está relacionado con **Active Directory** de Windows Server.  
+Azure AD es para:
+  - **Administradores de TI** - Controlar acceso a las aplicaciones y los recursos en función de sus requisitos empresariales
+  - **Desarrolladores de aplicaciones** - Agregar funcionalidad a las aplicaciones como SSO o habilitar una aplicación para que funcione con las credenciales existentes de un usuario.
+  - **Usuarios** - Administrar sus identidades como restablecimiento de contraseña sin intervención de otros.
+  - **Suscriptores de servicios en línea** - Suscriptores de Microsoft 365, Office 365, Azure, etc ya usan Azure AD. 
+
+**Servicios proporcionados por Azure AD**: 
+- **Autenticación** - Comprobación de identidad para acceder a aplicaciones y recursos, funciones de autoservicio del usuario y autenticación multifactor, lista de contraseña prohibidas y servicios de bloqueo inteligente.
+- **Inicio de sesión único** - Permite iniciar sesión una vez y usar esa credencial para acceder a recursos y aplicaciones de distintos proveedores.
+- **Administrador de aplicaciones** - Características como Application Proxy, aplicaciones SaaS, portal Aplicaciones y SSO
+- **Administrador de dispositivos** - Registro de dispositivos a través de herramientas como Microsoft Intune. 
 
 ### **Autenticación multifactor (MFA)**
 - Proceso de autenticación usando más de un factor (evidencia) para probar la identidad
@@ -1276,7 +1344,12 @@ El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios 
 
 <img src="Images/Multi-factor-authentication.png" width="300"/>
 
-## **Azure Security Center**
+### **Acceso condicional**
+Herramienta que usa Azure AD para permitir o no el acceso a los recursos en función de señales de identidad. Estas señales incluyen **quién es,dónde se encuentra y desde qué dispositivo solicta el acceso el usuario**.  
+Para usar el acceso condicional se necesita una licencia Azure AD Premium P1 o P2
+
+## **Herramientas de seguridad**
+### **Azure Security Center**
 - Servicio de administración de seguridad de plataforma e infraestructura centralizada/unificada
 - Integrado de forma nativa en los servicios de Azure
 - Integrado con Azure Advisor
@@ -1284,7 +1357,12 @@ El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios 
   - Gratis (Azure Defender APAGADO): incluido en todos los servicios de Azure, proporciona evaluaciones continuas, puntuación de seguridad y recomendaciones de seguridad procesables
   - Pagado (Azure Defender ON): seguridad híbrida,
 alertas de protección contra amenazas, análisis de vulnerabilidades, acceso a máquinas virtuales justo a tiempo (JIT), etc.
-
+- Incluye funciones avanzadas de defensa en la nube para máquinas virtuales, seguridad de red e integridad de archivos
+  - **Acceso Just-in-Time** - bloquea el tráfico de forma predeterminada en puertos de red especifícos, pero lo permite durante un tiempo especifico cuando un administrador lo solicita y aprueba.
+  - **Controles de aplicaciones adaptables** - Puede controlar que aplicaciones se pueden ejecutar en VM´s. Por medio de ML se examinan procesos que se ejecutan en una VM y envia alertas si hay aplicaciones no autorizadas en ejecución.
+  - **Protección de red adaptable** - Supervisa los patrones de tráfico de internet de las VM y los compara con la configuración actual de los grupos de seguridad(NSG) de la empresa. A partir de ahi, puede hacer recomendaciones sobre si los NSG deben bloquearse más.
+  - **Supervisión de la integridad de los archivos** - Configuración del registro, aplicaciones y otros aspectos que puedan indicar un ataque de seguridad.
+- Ofrece una vista centralizada de todas sus alertas de seguridad.
 <div>
 <img src="Images/Security-center.png" width="300"/>
 <img src="Images/Security-center-2.png" width="300"/>
@@ -1293,39 +1371,63 @@ alertas de protección contra amenazas, análisis de vulnerabilidades, acceso a 
 
 [Video explicativo](https://youtu.be/tyztKP9rszU?list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM)
 
-## **Azure Sentinel**
-Recopilar datos de seguridad de muchos orígenes diferentes mediante Azure Sentinel y tomar medidas conforme a ellos.
+### **Azure Sentinel**
+Administración de seguridad a gran escala puede beneficiarse de sistema de administración de eventos e información de seguridad (SIEM) dedicado que agrega datos de seguridad de muchos orígenes diferentes.Además proporciona funciones para detección de amenazas y respuesta a ellas. **Azure Sentinel** es el sistema SIEM basado en la nube de Microsfot. Permite:
+- **Recopilación de datos en la nube a gran escala** - Recopila datos de todos los usuarios, dispositivos, aplicaciones e infraestructura, tanto locales como de varias nubes. Las conexiones se administran por conectores integrados o API y formatos de registro estándar del sector.
+  - **Conexión de soluciones de Microsoft** - Entre estas: orígenes de Microsoft 365,Azure AD y Firewall de Windows Defender
+  - **Conexión de otros servicios y soluciones** - AWS CloudTrail, Citrix Analytics(Security), Sophos XG Firewall, VMware Carbon Black Cloud y Okta SSO
+  - **Conexión de orígenes de datos estándar del sector** - Datos de otros orígenes que usan estándar de mensajería Formato de evento común (CEF), Syslog o la API REST.
+- **Detección de amenazas no detectadas anteriormente** - Minimiza los falsos positivos mediante el análisis y la inteligencia sobre amenazas completas.
+- **Investigación de amenazas con inteligencia artificial** Examine actividades sospechosas a gran escala usando la experiencia de Microsoft.
+- **Respuesta rápida a los incidentes** Use la orquestación y la automatización de tareas comunes integradas.
 
-## **Azure Key Vault**
+Más información [aquí](https://docs.microsoft.com/es-es/learn/modules/protect-against-security-threats-azure/3-detect-respond-threats-sentinel)
+
+### **Azure Key Vault**
 - Servicio administrado para asegurar información sensible (aplicación/plataforma) (PaaS)
-- Servicio de almacenamiento seguro para
-  - Keys,
-  - Secrets y
-  - Certificados
+- Servicio de almacenamiento seguro
+  - Administración de keys - facilita creación y control de claves de cifrado que se emplean para cifrar los datos.
+  - Administración de secrets - Controla el acceso a tokens, contraseñas, certificados, claves de API y más.
+  - Administración de certificados SSL/TLS - aprovisionar, administrar e implementar los certificados públicos y privadas de capa de socket seguros y seguridad de la capa de transporte de los recursos de Azure y recursos locales
+  - Administración de secretos basado en módulos de seguridad de hardware(HSMs) - Se protegen mediante software o con dispositivos HSM validados por FIPS 140-2 de nivel 2.
 - Altamente integrado con otros servicios de Azure (VM, Logic Apps, Data Factory, Web Apps, etc.)
-- Centralización
+- Centralización para controlar su distribución y reduce posibilidades de que se filtren
 - Supervisión y registro de acceso
+- Requiere autenticación y autorización adecuadas que garantiza almacenamiento seguro
 
 <img src="Images/Key-vault.png" width="300"/>
 
-## **Azure Dedicated Host**
-Administrar servidores físicos dedicados para hospedar máquinas virtuales de Azure para Windows y Linux mediante Azure Dedicated Host.
+### **Azure Dedicated Host**
+En Azure, las VM se ejecutan en hardware compartido administrado por Microsoft, pero las cargas de trabajo de las VM están aisladas, pero debido a un cumplimiento normativo que obliga a ser el único cliente que usa el equipo físico, aparece **Azure Dedicated Host**.  
+- Administrar servidores físicos dedicados para hospedar máquinas virtuales de Azure para Windows y Linux mediante Azure Dedicated Host.
+- Ofrece visibilidad y control sobre infraestructura de servidor que ejecuta las VM
+- Permite elegir número de procesadores, capacidades de servidor, series de VM y tamaños de estas.
+- Para lograr alta disponibilidad puede aprovisionar varios hosts en un *grupo host* e implementar las VM´s en este grupo.
+- Se puede aprovechar las ventajas del *control de mantenimiento* que permite controlar cuando se producen las actualizaciones de mantenimiento en VM.
+- Se cobra por host dedicado y este precio se basa en familia de máquinas virtuales, el tipo de hardware y la región
 
-## **Azure Role-based Access Control (RBAC)**
+<img src="Images/azure-dedicated-host.png" width="500"/>
+
+## **Gobernanza en Azure**
+*Gibernanza* describe el proceso general por el que se establecen reglas y directivas y se garantiza que esas reglas y directivas se aplican. En la nube tener una buena gobernanza ayuda a tener control de las aplicaciones y los recursos que se administran en la nube, así se garantiza que seamos compatibles con:
+  - Estándares del sector, como **PCI DSS**
+  - Estándares corporativos o de la organización
+Las ventajas de gobernanza son mayores cuando:
+  - Hay varios equipos de ingeniería que trabajan en Azure.
+  - Hay varias suscripciones que administrar.
+  - Hay requisitos normativos que deben aplicarse.
+  - Hay estándares que deben seguirse en todos los recursos en la nube.
+
+Cuando tenemos varios equipos de TI e ingeniería, ¿cómo podemos controlar el acceso que tienen a los recursos del entorno de nube? Una buena práctica de seguridad consiste en conceder a los usuarios únicamente los derechos que necesitan para realizar su trabajo, y solo a los recursos pertinentes.  
+En vez de definir los requisitos de acceso detallados de cada individuo y, posteriormente, ir actualizándolos a medida que se vayan creando más recursos, Azure permite controlar el acceso a través del control de acceso basado en roles de Azure (RBAC de Azure).
+
+### **Azure Role-based Access Control (RBAC)**
 **¿Qué es un rol?**  
 El rol (definición de rol) es una colección de acciones que la identidad asignada podrá realizar.  
-La definición de roles es una respuesta a la pregunta "¿Qué se puede hacer?"  
+La definición de roles es una respuesta a la pregunta "¿Qué se puede hacer?".  
+Cuando se asignan usuarios o grupos a uno o varios roles, reciben todos los permisos de acceso asociados correspondientes.    
 
 <img src="Images/Roles.png" width="300"/>
-
-**¿Qué es un principal de seguridad?**
-Security Principal es un objeto de Azure (identidad) que se puede asignar a un rol (por ejemplo, usuarios, grupos o aplicaciones).  
-La asignación del director de seguridad es una respuesta a la pregunta "¿Quién puede hacerlo?"  
-
-<div>
-<img src="Images/Security-principals.png" width="300"/>
-<img src="Images/Security-principals-2.png" width="300"/>
-</div>
 
 **¿Qué es un alcance?**
 El ámbito es uno o más recursos de Azure a los que se aplica el acceso.  
@@ -1333,13 +1435,22 @@ La asignación de alcance es una respuesta a la pregunta "¿Dónde se puede hace
 
 <img src="Images/Scopes.png" width="300"/>
 
+**¿Qué es Security Principal?**
+Security Principal es un objeto de Azure (identidad) que se puede asignar a un rol (por ejemplo, usuarios, grupos o aplicaciones).  
+La asignación de **Security Principal** es una respuesta a la pregunta "¿Quién puede hacerlo?"  
+
+<div>
+<img src="Images/Security-principals.png" width="300"/>
+<img src="Images/Security-principals-2.png" width="300"/>
+</div>
+
 **¿Qué es una asignación de roles?**  
 La asignación de funciones es una combinación de la definición de funciones, la entidad de seguridad y el ámbito.  
 
 <img src="Images/Rol-assignament.png" width="300"/>
 
 **Características**  
-- Sistema de autorización integrado en Azure Resource Manager (ARM)
+- Sistema de autorización integrado en Azure Resource Manager (ARM) - ARM es un servicio de administración que proporciona una forma de organizar y proteger nuestros recursos en la nube.
 - Diseñado para la gestión de acceso detallada de los recursos de Azure
 - La asignación de roles es una combinación de
   - Definición de roles: lista de permisos como crear VM, eliminar SQL, asignar permisos, etc.
@@ -1349,8 +1460,17 @@ La asignación de funciones es una combinación de la definición de funciones, 
   - Grupos de administración > Suscripciones > Grupos de recursos > Recursos
 - Se admiten funciones integradas y personalizadas
 
-## **Azure Resource Locks**
-- Diseñado para evitar la eliminación y/o modificación accidental
+**¿Cómo se aplica RBAC?**
+Se aplica a cualquier acción que se inicie en un recurso de Azure que pasa por ARM.  
+RBAC de Azure no aplica permisos de acceso en el nivel de aplicación ni de datos. La seguridad de la aplicación debe controlarla la propia aplicación.
+
+**¿Cómo se administran los permisos de RBAC?**
+En el panel **Control de acceso(IAM)** de Azure Portal
+
+### **Azure Resource Locks**
+Aun cuando haya directivas de control de acceso basado en roles de Azure (RBAC de Azure) en vigor, sigue existiendo el riesgo de que alguien con el nivel de acceso adecuado elimine recursos de nube críticos. Podríamos pensar en un bloqueo de recursos como un sistema de aviso que nos recuerda que un recurso no se debe eliminar o cambiar.
+
+- Diseñado para evitar la eliminación y/o modificación accidental de recursos.
 - Usado junto con RBAC
 - Dos tipos de cerraduras
   - Solo lectura (ReadOnly): solo se permiten acciones de lectura
@@ -1359,15 +1479,21 @@ La asignación de funciones es una combinación de la definición de funciones, 
   - Suscripciones > Grupos de recursos > Recursos
 - Los grupos de administración no se pueden bloquear
 - Solo las funciones de propietario y administrador de acceso de usuario pueden administrar bloqueos (funciones integradas)
+- Los bloqueos se aplican con independencia de los permisos RBAC
 
 <div>
 <img src="Images/resource-locks.png" width="300"/>
 <img src="Images/resource-locks-2.png" width="300"/>
 </div>
 
-## **Azure Resource Tags**
+**¿Cómo se administran los bloqueos de recursos?**
+Desde Azure Portal, PowerShell, CLI o con una plantilla en ARM. Desde Azure Portal, en Configuración/Bloqueos de cualquier recurso en Azure Portal.  
+Se pueden aplicar bloqueos a una suscripción o aun grupo de recursos o a un recurso individual.
+
+### **Azure Resource Tags**
 - Las etiquetas son simples pares Nombre (clave) - Valor
 - Diseñado para ayudar con la organización de los recursos de Azure
+- Se pueden agregar, modificar o eliminar etiquetas a través de PowerShell, CLI, Plantillas de ARM, API REST o Azure Portal. También se pueden administrar mediante Azure Policy para que las etiquetas se hereden.
 - Se utiliza para la gestión de recursos, la seguridad, la gestión de operaciones, la gestión de costes, la automatización, etc.
 - Estrategias típicas de etiquetado
   - Funcional – marcar por función (ej: entorno = producción)
@@ -1379,7 +1505,12 @@ La asignación de funciones es una combinación de la definición de funciones, 
 
 <img src="Images/tags.png" width="300"/>
 
-## **Azure Policy**
+### **Azure Policy**
+Surge de la necesidad de asegurarse que sus recursos mantenga su cumplimiento de gobernaza y si pudiera recibir un aviso cuando la configuración de un recurso cambie. Crea, asigna y administra directivas que controlan o auditan recursos.
+
+- Definir directivas individuales y grupos de directivas relacionadas (*iniciativas*)
+- Impedir que se creen recursos no conformes.
+- Se integra con **Azure DevOps** aplicando directivas de integración continua y canalización de entrega.
 - Diseñado para ayudar con la gestión de recursos, la seguridad, el cumplimiento, la gestión de costes, etc.
 - Las políticas se centran en las propiedades de los recursos (RBAC se centra en las acciones del usuario)
 - Definición de política: define lo que debería suceder
@@ -1401,7 +1532,7 @@ La asignación de funciones es una combinación de la definición de funciones, 
 <img src="Images/Policy-2.png" width="300"/>
 </div>
 
-## **Azure Blueprints**
+### **Azure Blueprints**
 Un blueprint es una guía,patrón o diseño para realizar algo
 
 <img src="Images/blueprint.png" width="300"/>
@@ -1420,11 +1551,20 @@ Un blueprint es una guía,patrón o diseño para realizar algo
 <img src="Images/blueprint-3.png" width="300"/>
 </div>
 
-## **Cloud Adoption Framework for Azure** 
-### **Adopción de la nube**
+**Uso de Azure Blueprints**
+La relación entre la definición del plano técnico y su asignación permanece, es decir, Azure crea un registro que asocia un recurso con el plano técnico que lo define y con esta conexión se realiza el seguimiento y la auditoría de nuestras implementaciones.  
+Los planos técnicos también tienen versiones y el control de versiones nos permite llevar un control de los cambios que se producen en el plano técnico y comentarlos.
+
+**Artefactos de plano técnico**
+Cada componente de la definición de un planot técnico se denomina *artefacto*.
+Los *artefactos* pueden contener uno o más parámetros que se pueden configurar
+
+### **Cloud Adoption Framework for Azure** 
+Sirve como guía consolidada para ayudar en el recorrido para la adopción de la nube.
+#### **Adopción de la nube**
 La adopción de la nube es un movimiento estratégico de una organización para aprovechar la nube en su negocio
 
-### **Marco de adopción de la nube**
+#### **Marco de adopción de la nube**
 Cloud Adoption Framework for Azure es un conjunto de
   - herramientas,
   - mejores prácticas,
@@ -1432,7 +1572,7 @@ Cloud Adoption Framework for Azure es un conjunto de
   - documentación
 preparado por Microsoft para ayudar a las empresas en su proceso de adopción de la nube.
 
-### **Estrategía**
+#### **Estrategía**
 1. Comprende tu motivación
 - Responde a la pregunta ¿POR QUÉ MOVERSE?
 - Los desencadenantes comunes de la motivación incluyen
@@ -1470,7 +1610,7 @@ preparado por Microsoft para ayudar a las empresas en su proceso de adopción de
   - Criterios Técnicos
     - Dependencias y activos mínimos
 
-### **Plan**
+#### **Plan**
 1. Digital Estate (INVENTARIO DE ACTIVOS)
   - Revise el panorama actual y enumere todos los proyectos/soluciones (activos digitales)
   - Elija una de las cinco (5) R de racionalización
@@ -1488,7 +1628,7 @@ preparado por Microsoft para ayudar a las empresas en su proceso de adopción de
 
 <img src="Images/Plan.png" width="300"/>
 
-### **Comienzo**
+#### **Comienzo**
 1. Guía de configuración de Azure: revise la guía de configuración de Azure para familiarizarse con las herramientas y los enfoques que debe usar para crear una zona de aterrizaje.
 2. Azure Landing Zone: elija un tipo de suscripción de Azure adecuado que mejor se adapte a sus necesidades y establezca un entorno de Azure inicial.
 3. Ampliar zona de aterrizaje -
@@ -1497,7 +1637,7 @@ Amplíe la zona de aterrizaje inicial para que se ajuste a las necesidades de su
 
 <img src="Images/Ready.png" width="300"/>
 
-### **Adopción**
+#### **Adopción**
 **Emigrar**  
 1. Primera migración: migre su primera aplicación para familiarizarse con la nube, las pautas y las herramientas
 2. Escenarios de migración: revise y prepare escenarios/directrices de migración para su empresa
@@ -1519,7 +1659,7 @@ Amplíe la zona de aterrizaje inicial para que se ajuste a las necesidades de su
 3. Mejores prácticas: verifique que se sigan las mejores prácticas para todas las herramientas en la cadena de herramientas
 4. Mejoras de Procesos - recopilar comentarios de los usuarios y clientes para mejorar las decisiones arquitectónicas y los productos futuros
 
-### **Gobierno y Administración**
+#### **Gobierno y Administración**
 1. Defina soluciones de gobierno: elija soluciones para mantener el cumplimiento, la seguridad y garantizar el control total del entorno.
   - Esas soluciones deben centrarse en
     - Abordar las necesidades comerciales
@@ -1530,10 +1670,10 @@ El equipo debe garantizar que la estabilidad y los costos estén siempre en perf
 
 <div>
 <img src="Images/Govern.png" width="300"/>
-<img src="Images/Govern-2.png" width="300"/>
+<img src="Images/Govern-2.png" width="100"/>
 </div>
 
-### **Organizar**
+#### **Organizar**
 Asegúrese de que todos sepan qué hacer y cuándo hacerlo en cada etapa de este proceso. Una de las formas de lograr esto es a través de la matriz RACI (Responsable, Responsable, Consultado e Informado).
 
 <img src="Images/Organize.png" width="300"/>
@@ -1541,12 +1681,49 @@ Asegúrese de que todos sepan qué hacer y cuándo hacerlo en cada etapa de este
 ## **Core tenets of Security,Privacy,Compliance(Trust Center,DPA,OST y más)**
 
 Document/Website | Diagrama | Info | Ofertas | Audiencia
----|---|---|---|---
-Microsoft Privacy Statement| <img src="Images/Microsoft-privacy-statement.png" width="300"/> |Recopilación, Propósito y Uso de Datos Personales|Todas las ofertas de Microsoft, incluidos servicios, aplicaciones, sitios web, software, servidores, dispositivos|Todos - clientes finales o empresas 
-Online Services Terms (OST)| <img src="Images/Online-services-terms.png" width="300"/> |Términos de licencia (acuerdo legal): derechos de uso sobre los servicios de Azure. Lo que se puede hacer y lo que está prohibido.|Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.|Organizaciones - equipos legales
-Data Protection Addendum| <img src="Images/Data-protection-addendum.png" width="300"/>|Anexo al OST que describe las obligaciones de ambas partes (Microsoft y usted) con respecto al procesamiento de datos personales y del cliente|Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.|Organizaciones - equipos legales, equipos de seguridad
-Trust Center|<img src="Images/Trust-center.png" width="300"/>|Portal web de ventanilla única para todo lo relacionado con seguridad, cumplimiento, privacidad, políticas, mejores prácticas, etc.|Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.|Organizaciones: equipos legales, equipos de seguridad, gerentes comerciales, administradores
-Azure Compliance Documentation|<img src="Images/Azure-compliance-docs.png" width="300"/>|Portal web que se centra en las ofertas de cumplimiento en Azure, similar al centro de confianza pero reducido|Azure|Organizaciones: equipos legales, equipos de seguridad, gerentes comerciales, administradores de Azure
+
+**Microsoft Privacy Statement**
+<img src="Images/Microsoft-privacy-statement.png" width="900"/> 
+
+- Recopilación, Propósito y Uso de Datos Personales|Todas las ofertas de Microsoft, incluidos servicios, aplicaciones, sitios web, software, servidores, dispositivos
+- Todos 
+- Clientes finales o empresas 
+
+**Online Services Terms (OST)**
+<img src="Images/Online-services-terms.png" width="900"/> 
+
+- Términos de licencia (acuerdo legal): derechos de uso sobre los servicios de Azure. Lo que se puede hacer y lo que está prohibido.
+- Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
+- Organizaciones - Equipos legales
+
+**Data Protection Addendum**
+<img src="Images/Data-protection-addendum.png" width="900"/>
+
+- Anexo al OST que describe las obligaciones de ambas partes (Microsoft y usted) con respecto al procesamiento de datos personales y del cliente
+- Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
+- Organizaciones - Equipos legales, equipos de seguridad
+
+**Trust Center**
+<img src="Images/Trust-center.png" width="900"/>
+
+- Portal web de ventanilla única para todo lo relacionado con seguridad, cumplimiento, privacidad, políticas, mejores prácticas, etc.
+- Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
+- Organizaciones: equipos legales, equipos de seguridad, gerentes comerciales, administradores
+
+**Azure Compliance Documentation**
+<img src="Images/Azure-compliance-docs.png" width="900"/>
+
+- Portal web que se centra en las ofertas de cumplimiento en Azure, similar al centro de confianza pero reducido
+- Azure
+- Organizaciones: equipos legales, equipos de seguridad, gerentes comerciales, administradores de Azure
+
+### **Azure Government**
+Es una instancia independiente del servicio de Microsoft Azure. Aborda las necesidades de seguridad y cumplimiento de las agencias federales de EE. UU., los gobiernos locales y estatales, así como sus proveedores de soluciones. Azure Government ofrece aislamiento físico de las implementaciones que no son del gobierno de los Estados Unidos y proporciona personal estadounidense que ha pasado por un filtro.
+
+### **Azure China 21Vianet**
+Es operado por 21Vianet. Se trata de una instancia físicamente separada de servicios en la nube que se encuentra en China.  
+Según el Reglamento de telecomunicaciones de China, los proveedores de servicios en la nube, infraestructuras como servicio (IaaS) y plataformas como servicio (PaaS) deben tener permisos de telecomunicaciones de valor añadido. Solo las compañías registradas localmente con una inversión extranjera inferior al 50 % pueden optar a estos permisos.  
+Los contratos y acuerdos de Azure en China, cuando corresponde, se firman entre los clientes y 21Vianet.
 
 ### **Regiones soberanas de Azure**
 Azure Sovereign Regions proporciona servicios de Azure en mercados con requisitos normativos muy estrictos.  
@@ -1559,7 +1736,7 @@ Azure Sovereign Regions proporciona servicios de Azure en mercados con requisito
   - Aislado físicamente de otras regiones de Azure
   - Operado por una empresa de telecomunicaciones china llamada 21Vianet
 
-## **Cost Affecting Factors**
+## **Planeación y administración de costos de Azure**
 - Costo base
   - Tipos de recursos: todos los servicios de Azure (recursos) tienen modelos de precios específicos de recursos. Por lo general, consta de una o más métricas.
 
@@ -1581,9 +1758,8 @@ Azure Sovereign Regions proporciona servicios de Azure en mercados con requisito
   - Instancias reservadas
   - Beneficios Híbridos
 
-
-## **Cost Reduction Methods, Reservations, Hybrid benefit, Spot VM, Pricing y TCO**
-### **Reservaciones en Azure**
+### **Cost Reduction Methods, Reservations, Hybrid benefit, Spot VM, Pricing y TCO**
+#### **Reservaciones en Azure**
 Adquiera los servicios de Azure con 1 o 3 años de anticipación con importantes descuentos
   - Instancias reservadas: Azure Virtual Machines
   - Capacidad reservada: Azure Storage, núcleos virtuales de SQL Database, DBU de Databricks, RU de Cosmos DB
@@ -1592,7 +1768,7 @@ Adquiera los servicios de Azure con 1 o 3 años de anticipación con importantes
 
 <img src="Images/Reservations.png" width="300"/>
 
-### **Máquinas virtuales al contado de Azure**
+#### **Máquinas virtuales al contado de Azure**
 Compre capacidad de máquina virtual no utilizada para obtener un descuento significativo  
 - Cómo funciona
   - Descuento significativo para máquinas virtuales de Azure
@@ -1603,7 +1779,7 @@ etc)
 
 <img src="Images/Spot-VM.png" width="300"/>
 
-### **Beneficio de uso híbrido**
+#### **Beneficio de uso híbrido**
 Usar licencias existentes en la nube
   - Usar licencias existentes en Azure
     - Windows Server
@@ -1620,7 +1796,7 @@ Usar licencias existentes en la nube
 
 <img src="Images/Hybrid-use-benefit.png" width="300"/>
 
-### **Herramientas**
+#### **Herramientas**
 - Calculadora de precios: calcule el costo de los servicios de Azure
   - Seleccionar servicio
   - Ajustar parámetros (uso)
@@ -1631,8 +1807,8 @@ Usar licencias existentes en la nube
   - Ver el informe
 
 
-## **Azure Cost Managment**
-### **Administración de costos de Azure**
+### **Azure Cost Managment**
+#### **Administración de costos de Azure**
 - Un servicio centralizado para generar informes sobre el uso y la facturación del entorno de Azure
 - Capacidades de exploración de costos de autoservicio
 - Presupuestos y alertas
@@ -1641,7 +1817,7 @@ Usar licencias existentes en la nube
 
 <img src="Images/Cost-managment.png" width="300"/>
 
-### **Minimización de costos en Azure**
+#### **Minimización de costos en Azure**
 - Calculadora de precios de Azure para elegir la región de bajo costo
   - Buena latencia
   - Todos los servicios requeridos están disponibles.
@@ -1653,9 +1829,10 @@ Usar licencias existentes en la nube
 - Azure Monitor para encontrar y reducir recursos infrautilizados
 - Use etiquetas y políticas para una gobernanza eficaz
 
-## **SLA y Composite SLA en Azure**
+## **SLA y SLA Compuesto en Azure**
 **SLA**  
 El Acuerdo de nivel de servicio (SLA) es un acuerdo formal entre un proveedor de servicios y un cliente.  
+No es necesaria una suscripción de Azure para revisar los SLA. [Ver aquí.](https://azure.microsoft.com/es-es/support/legal/sla/)   
 SLA es una promesa de disponibilidad de un servicio (tiempo de actividad y conectividad). La disponibilidad es una medida del tiempo que un servicio permanece operativo.  
   - Cada Servicio tiene su propio SLA
   - Rangos de 99% a 99.999%
@@ -1670,6 +1847,12 @@ SLA | Tiempo de inactividad mensual
 99.95%|21m 54s
 99.99%|4m 22s
 99.999%|26s
+
+**Créditos de servicio**
+Es el porcentaje de precio que ha pagado y que se le abonará conforme al proceso de aprobación de reclamaciones. Si un servicio no funciona de acuerdo a su SLA, puede obtener un descuento compensatorio en su factura.
+
+### **Acuerdo de nivel de servicio de aplicación**
+Define los requisitos del acuerdo para una aplicación específica.
 
 ### **Formulas**
 **AND lógico - agregando dependencia**
