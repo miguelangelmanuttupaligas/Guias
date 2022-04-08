@@ -174,32 +174,34 @@ Información resumida de [Adam Marczak - Azure for Everyone](https://www.youtube
 - **Storage** - Como archivos y/o bases de datos
 - **Networking** - En **Azure** pero también fuera cuando se conecta a la red de su empresa
 - **Analytics** - Servicios de visualización y datos de telemetría  
-<img src="Images/Cloud-Computing.png" alt="Cloud-Computing" width="300"/>
+
+
+<img src="Images/Cloud-Computing.png" alt="Cloud-Computing" width="400" class="center"/>
 
 ### **Conceptos clave**
 **Notará una similitud en Scalability y Elasticity. Pero la diferencia radica en que Scalability es una propiedad de los recursos que ofrece Azure y Elasticity es la gestión dinámica(o también automática) que ofrece Azure usando la propiedad Scalability de los recursos**
 
 - **Scalability** - Es la capacidad de escalar, así que asigna y desasigna recursos en cualquier momento.  
-<img src="Images/Scalability.png" alt="Scalability" width="300"/>
+<img src="Images/Scalability.png" alt="Scalability" width="400"/>
 
 - **Elasticity** - Es la capacidad de escalar dinámicamente.  
-<img src="Images/Elasticity.png" alt="Elasticity" width="300"/>
+<img src="Images/Elasticity.png" alt="Elasticity" width="400"/>
 
 - **Agility** - Es la capacidad de reaccionar rápido (escala rápidamente).  
-<img src="Images/Agility.png" alt="Agility" width="300"/>
+<img src="Images/Agility.png" alt="Agility" width="400"/>
 
 - **Fault tolerance** - Es la capacidad de mantener el tiempo de actividad del sistema mientras ocurren fallas físicas y de componentes de servicio.  
-<img src="Images/Fault-Tolerance.png" alt="Fault-Tolerance" width="300"/>
+<img src="Images/Fault-Tolerance.png" alt="Fault-Tolerance" width="400"/>
 
 - **Disaster Recovery** - Es el proceso y principio de diseño que permite que un sistema se recupere de desastres naturales o inducidos por el hombre.  
-<img src="Images/Disaster-Recovery.png" alt="Disaster-Recovery" width="300"/> 
+<img src="Images/Disaster-Recovery.png" alt="Disaster-Recovery" width="400"/> 
 
 - **High Availability** - Es el nivel acordado de tiempo de actividad operativa para el sistema. Es un cálculo simple del tiempo de actividad del sistema frente a toda la vida útil del sistema.  
 `disponibilidad = tiempo de actividad/(tiempo de actividad + tiempo de inactividad)`  
-<img src="Images/High-Availability.png" alt="High-Availability" width="300"/>  
+<img src="Images/High-Availability.png" alt="High-Availability" width="400"/>  
 
 ## **Recorrido rápido por los servicios generales de Azure**
-<img src="Images/Servicios-Azure.png" alt="Servicios-Azure" width="600"/>
+<img src="Images/Servicios-Azure.png" alt="Servicios-Azure" width="900"/>
 
 ### **Process**
 **Azure Virtual Machines** - Máquinas virtuales (VM) Windows o Linux hospedadas en Azure.  
@@ -270,8 +272,8 @@ Por eso, las empresas pueden ahorrar/ganar más, lo que a cambio les permite red
 No es posible ir a 0 porque, al final, se debe ejecutar alguna infraestructura subyacente para proporcionar los servicios. Pero cuanto mayor sea la escala, más beneficios se pueden transferir a los clientes.  
 De hecho, en la escala actual, Microsoft ya puede ofrecer múltiples servicios de forma gratuita debido a lo pequeña que es una fracción del costo para ellos.  
 <div>
-    <img src="Images/Economies-of-scale.png" alt="Economies-of-scale" width="300"/>  
-    <img src="Images/Economies-of-scale-2.png" alt="Economies-of-scale-2" width="300"/>  
+    <img src="Images/Economies-of-scale.png" alt="Economies-of-scale" width="380"/>  
+    <img src="Images/Economies-of-scale-2.png" alt="Economies-of-scale-2" width="430"/>  
 </div> 
 
 ## **CapEx vs OpEx y sus diferencias**
@@ -302,7 +304,7 @@ Este modelo se caracteriza por
 - **Paga por lo que necesitas**
 - **Deja de pagar cuando no lo haces**  
 **El consumo** es la métrica virtual que se usa para calcular cuánto se usó cada recurso (servicio) en Azure. Cada servicio tiene muchas métricas más pequeñas que rastrean su consumo para ofrecer el mejor modelo de precios posible. Esas métricas se rastrean en un nivel muy granular.  
-<img src="Images/Consumption-based-model.png" alt="CapEx" title="CapEx" width="300"/> 
+<img src="Images/Consumption-based-model.png" alt="CapEx" title="CapEx" width="400"/> 
 
 [Consumption based Model - AZ-900 - Chapter Demo](https://youtu.be/NdqncsMtryY?list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM) 
 
@@ -313,7 +315,7 @@ Como servicio significa qué capa en particular administrará y todas las capas 
 - La capa de **Platform** significa todo el software de soporte y el sistema oeprativo necesarios para alojar la aplicación.
 - La capa de **Infraestructure** consta de hardware, la infraestructura y la virtualización necesarias para alojar la plataforma.
 
-<img src="Images/Traditional.png" alt="Traditional" width="300"/> 
+<img src="Images/Traditional.png" alt="Traditional" width="800"/> 
 
 ### **Características de los modelos de servicio**
 - **IaaS** - Se aplica el modelo de responsabilidad compartida; el usuario administra y mantiene los servicios que ha aprovisionado, y el proveedor de nube administra y mantiene la infraestructura en la nube.
@@ -408,7 +410,7 @@ El modelo de implementación en la nube es una separación simple que describe d
 - **Hosting** para grupo de **servidores** en red.
 - Infraestructura propia de **energía**, **refrigeración** y **redes**.
 
-<img src="Images/Data-center.png" alt="Data Center" width="300"/> 
+<img src="Images/Data-center.png" alt="Data Center" width="400"/> 
 
 ### **Región**
 - **Área geográfica** en el planeta.
@@ -420,8 +422,8 @@ El modelo de implementación en la nube es una separación simple que describe d
 - **Regiones gubernamentales** especiales (US DoD Central, US Gov Virginia, etc.).
 - **Regiones asociadas** especiales (Este de China, Norte de China).
 <div>
-<img src="Images/Regions.png" alt="Regions" width="300"/> 
-<img src="Images/Regions-2.png" alt="Regions" width="120"/> 
+<img src="Images/Regions.png" alt="Regions" width="900"/> 
+<img src="Images/Regions-2.png" alt="Regions" width="400"/> 
 </div>
 
 ### **Zona de disponibilidad**
@@ -443,7 +445,7 @@ Debido a que no tiene control sobre en qué centro de datos se implementa sus se
 - Ubicaciones separadas, pero dentro del mismo datacenter.  
 - Garantizan que máquinas virtuales o servicios IaaS implementados en Azure se distribuyan entre varios nodos de hardware aislados en un clúster.
 
-<img src="Images/Availability-zone.png" alt="Availability Zone" width="300"/> 
+<img src="Images/Availability-zone.png" alt="Availability Zone" width="800"/> 
 
 ### **Pares de regiones**
 - Cada **región** está **emparejada** con otra región, lo que la convierte en un par de regiones.
@@ -461,7 +463,7 @@ East US|West US
 UK West|UK South
 North Europe|West Europe
 
-<img src="Images/Regions-pairs.png" alt="Region Pairs" width="300"/> 
+<img src="Images/Regions-pairs.png" alt="Region Pairs" width="800"/> 
 
 ### **Geografías**
 - **Mercado discreto**
@@ -477,7 +479,7 @@ North Europe|West Europe
 - Representa el **ciclo de vida del servicio** (**o de otra forma: los servicios comprados**).
 - Guardado como **definición JSON**.
 
-<img src="Images/Resources.png" width="300"/>
+<img src="Images/Resources.png" width="500"/>
 
 ### **Resources Groups (Grupo de recursos)**
 - **Agrupación** de recursos.
@@ -490,14 +492,14 @@ North Europe|West Europe
   - **Ubicación** o
   - **combinación de esos**
 
-<img src="Images/Resource-group.png" width="300"/>
+<img src="Images/Resource-group.png" width="400"/>
 
 ### **Resource Manager (Administrador de recursos)**
 - **Capa de gestión** para todos los recursos y grupos de recursos
 - Lenguaje **unificado**.
 - **Controla el acceso** y **los recursos**.
 
-<img src="Images/Resource-manager.png" width="300"/>
+<img src="Images/Resource-manager.png" width="600"/>
 
 ### **Información adicional**
 - Cada **recurso** debe estar en **uno y solo un grupo de recursos**.
@@ -524,7 +526,7 @@ Es un servicio de informática a petición para ejecutar aplicaciones basadas en
   - middleware,
   - configuración
 
-<img src="Images/Virtualization.png" width="300"/>
+<img src="Images/Virtualization.png" width="800"/>
 
 ### **Azure Virtual Machine (Máquina virtual)**
 - Infraestructura como servicio (IaaS).
@@ -544,7 +546,7 @@ Es un servicio de informática a petición para ejecutar aplicaciones basadas en
 **NOTA 2:** Si despliegas dos máquinas virtuales del mismo tamaño, ambas no generarán siempre el mismo coste mensual.  
 **NOTA 3:** Puedes ver las notificaciones de fallos de servicio que pueden afectar a la disponibilidad de la VM desde el servicio Azure Virtual Machines.  
 
-<img src="Images/Azure-virtual-machines.png" width="300"/>
+<img src="Images/Azure-virtual-machines.png" width="800"/>
 
 ### **Azure Virtual Machine Scale Sets (Conjuntos de escalado de máquinas virtuales)**
 - Infraestructura como servicio (IaaS).
@@ -552,7 +554,7 @@ Es un servicio de informática a petición para ejecutar aplicaciones basadas en
 - Funciones de escalado automático integradas, manual o una combinación de ambos.
 - Diseñado para cargas de trabajo manuales y de escalado automático, como servicios web, procesamiento por lotes,macrodatos, etc.
 
-<img src="Images/Azure-virtual-machine-scale-sets.png" width="300"/>
+<img src="Images/Azure-virtual-machine-scale-sets.png" width="800"/>
 
 ### **Azure Batch**
 **Azure Batch** permite trabajo por lotes paralelos a gran escala y de informática de alto rendimiento (HPC) con la capacidad de escalar a decenas, cientos o miles de máquinas virtuales.  
@@ -584,7 +586,7 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
 - Responda más rápido a los cambios de demanda
 - Diseñado para casi cualquier escenario
 
-<img src="Images/Containers.png" width="300"/>
+<img src="Images/Containers.png" width="800"/>
 
 ### **Azure Containers Instance (Instancias de contenedores)**
 - La forma más sencilla y rápida de ejecutar un contenedor en Azure
@@ -595,7 +597,7 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
   - Trabajos en segundo plano
   - Guiones programados
 
-<img src="Images/Azure-container-instances.png" width="300"/>
+<img src="Images/Azure-container-instances.png" width="800"/>
 
 ### **Azure Kubernetes Services (AKS)**
 - Plataforma de orquestación de contenedores de código abierto
@@ -603,7 +605,7 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
 - Altamente escalable y personalizable
 - Diseñado para implementaciones de contenedores a gran escala (¡cualquier cosa realmente!)
 
-<img src="Images/Azure-kubernetes-service.png" width="300"/>
+<img src="Images/Azure-kubernetes-service.png" width="800"/>
 
 ### **Azure App Service**
 - Diseñado como servicio de aplicación web de nivel empresarial.
@@ -616,7 +618,7 @@ Permite que los usuarios usen una versión hospedada en la nube de Windows desde
   - sitios pueden escalar rápidamente para controlar cargas de tráfico elevado  
 Los costos de **Azure App Service** se pagan por los recursos que usa mientras procesa las solicitudes según el plan de **App Service** que elija. El plan de **App Service** determina la cantidad de hardware y si es dedicado o compartido.
 
-<img src="Images/App-service.png" width="300"/>
+<img src="Images/App-service.png" width="800"/>
 
 #### **Tipos de servicios de aplicaciones**
 Con **App Service** se pueden hospedar los siguientes  estilos de servicio de aplicación más comunes:
@@ -634,7 +636,7 @@ Con **App Service** se pueden hospedar los siguientes  estilos de servicio de ap
 - Diseñado para micro/nanoservicios
 - Las funciones pueden tener ser **sin estado**: se comportan como si se reiniciaran cada que se ejecutan; Y  **con estado**(Durable Functions) a los cuales se les pasa un contexto para realizar seguimiento.
 
-<img src="Images/Functions-apps.png" width="300"/>
+<img src="Images/Functions-apps.png" width="800"/>
 
 ### **Azure Logic Apps**
 Son similares a **Azure Functions**. Permiten desencadenar lógica basada en un evento ejecutando *flujos de trabajo* diseñados para automatizar escenarios empresariales. 
@@ -651,7 +653,7 @@ Son similares a **Azure Functions**. Permiten desencadenar lógica basada en un 
 - Servicios de aplicaciones (PaaS) - aplicaciones web, muchas funciones de alojamiento web empresarial *, fácil de comenzar
 - Funciones (PaaS) (Función como servicio) (Serverless) - micro/nanoservicios, excelente precio basado en el consumo, fácil de comenzar
 
-<img src="Images/Summary.png" width="300"/>
+<img src="Images/Summary.png" width="800"/>
 
 ## **Servicios de red**
 
@@ -734,7 +736,7 @@ VpnGw3/Az |	Máximo: 30 | 1,25 Gbps | Compatible.
 
 **Básico*** : Solo debe usarse en cargas de trabajo de desarrollo/pruebas.Además, no se puede migrar a SKU superiores sin quitar el gateway y volver a implementarla.
 
-<img src="Images/VPN-gateway.png" width="600"/>
+<img src="Images/VPN-gateway.png" width="800"/>
 
 Si se requiere más detalles sobre la implementación de instancias de VPN Gateway, visite https://docs.microsoft.com/es-es/learn/modules/azure-networking-fundamentals/azure-vpn-gateway-fundamentals
 
@@ -763,8 +765,8 @@ Si se requiere más detalles,visite https://docs.microsoft.com/es-es/learn/modul
 - Reenvío de puertos
 - Alta escala con hasta millones de flujos
 <div>
-<img src="Images/Load-balancer.png" width="300"/>
-<img src="Images/Load-balancer-2.png" width="300"/>
+<img src="Images/Load-balancer.png" width="800"/>
+<img src="Images/Load-balancer-2.png" width="800"/>
 </div>
 
 ### **Azure Application Gateway**
@@ -776,9 +778,9 @@ Si se requiere más detalles,visite https://docs.microsoft.com/es-es/learn/modul
 - Terminación SSL - Permite a los clientes descifrar el tráfico en **Application Gateway** y enviar una versión sin cifrar a los servicios de back-end para reducir la potencia de procesamiento requerida para descifrar cada solicitud individual.
 
 <div>
-<img src="Images/Application-gateway.png" width="300"/>
-<img src="Images/Application-gateway-2.png" width="300"/>
-<img src="Images/Application-gateway-3.png" width="300"/>
+<img src="Images/Application-gateway.png" width="500"/>
+<img src="Images/Application-gateway-2.png" width="500"/>
+<img src="Images/Application-gateway-3.png" width="500"/>
 </div>
 
 ### **Azure Content Delivery Network (Red de entrega de contenidos)**
@@ -788,8 +790,8 @@ Distribuye y almacena en caché el contenido en múltiples bucaciones emergentes
 - POP (puntos de presencia) con muchas ubicaciones
 
 <div>
-<img src="Images/Content-delivery-network.png" width="300"/>
-<img src="Images/Content-delivery-network-2.png" width="300"/>
+<img src="Images/Content-delivery-network.png" width="800"/>
+<img src="Images/Content-delivery-network-2.png" width="800"/>
 </div>
 
 ## **Servicios de almacenamiento**
@@ -799,7 +801,7 @@ Distribuye y almacena en caché el contenido en múltiples bucaciones emergentes
 Las filas solo deben tener un identificador de clave único.  
 - **Sin estructura**: cualquier archivo en cualquier formato. Como archivos binarios, archivos de aplicaciones, imágenes, películas, etc.  
 
-<img src="Images/Types-of-data.png" width="300"/>
+<img src="Images/Types-of-data.png" width="800"/>
 
 ### **Storage Account (Cuenta de almacenamiento)**
 - Grupo de servicios que incluyen
@@ -815,7 +817,7 @@ Las filas solo deben tener un identificador de clave único.
 - Muy duradero (99,999999999 % - 11 nueves, hasta 16 nueves)
 - Más barato por GB de almacenamiento
 
-<img src="Images/Storage-account.png" width="150"/>
+<img src="Images/Storage-account.png" width="400"/>
 
 ### **Blob Storage**
 - BLOB – objeto grande binario – archivo
@@ -825,16 +827,16 @@ Las filas solo deben tener un identificador de clave único.
   - Cool: datos a los que se accede con poca frecuencia (menor disponibilidad, alta durabilidad)
   - Archive: rara vez (si es que alguna vez) se accede a los datos
 
-<img src="Images/Blob-storage.png" width="300"/>
+<img src="Images/Blob-storage.png" width="600"/>
 
 ### **Queue Storage**
 - Almacenamiento de pequeños datos (mensajes)
 - Diseñado para procesamiento asíncrono escalable
 
 <div>
-<img src="Images/Queue-storage.png" width="150"/>
-<img src="Images/Queue-storage-2.png" width="150"/>
-<img src="Images/Queue-storage-3.png" width="150"/>
+<img src="Images/Queue-storage.png" width="230"/>
+<img src="Images/Queue-storage-2.png" width="200"/>
+<img src="Images/Queue-storage-3.png" width="300"/>
 </div>
 
 ### **Table Storage**
@@ -843,13 +845,13 @@ Las filas solo deben tener un identificador de clave único.
   - Diseñado para un acceso rápido
 - Muchas interfaces de programación y SDK
 
-<img src="Images/Table-storage.png" width="300"/>
+<img src="Images/Table-storage.png" width="700"/>
 
 ### **File Storage**
 - Almacenamiento para archivos a los que se accede a través de protocolos de unidades compartidas
 - Diseñado para ampliar los recursos compartidos de archivos en las instalaciones o implementar escenarios de elevación y cambio
 
-<img src="Images/File-storage.png" width="300"/>
+<img src="Images/File-storage.png" width="700"/>
 
 ### **Disk Storage**
 - Emulación de disco en la nube
@@ -862,7 +864,7 @@ Las filas solo deben tener un identificador de clave único.
 **NOTA**: **Disk Storage** también es un subservicio de la cuenta de **Azure Storage**. esto significa que tanto los discos administrados como los no administrados son parte de él. incluso si el disco administrado se muestra como un recurso separado,
 debajo sigue siendo el mismo servicio.
 
-<img src="Images/Disk-storage.png" width="100"/>
+<img src="Images/Disk-storage.png" width="200"/>
 
 ## **Servicios de bases de datos**
 ### **Tipos de datos en las BD**
@@ -876,8 +878,8 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
   - Aplicaciones multirregionales
 
 <div>
-<img src="Images/Cosmos-db.png" width="300"/>
-<img src="Images/Cosmos-db-2.png" width="300"/>
+<img src="Images/Cosmos-db.png" width="600"/>
+<img src="Images/Cosmos-db-2.png" width="600"/>
 </div>
 
 ### **Azure SQL Database**
@@ -887,8 +889,8 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 - Base de datos de **alto rendimiento**, fiable, totalmente gestionada y segura para la creación de aplicaciones
 
 <div>
-<img src="Images/SQL-database.png" width="300"/>
-<img src="Images/SQL-server.png" width="300"/>
+<img src="Images/SQL-database.png" width="600"/>
+<img src="Images/SQL-server.png" width="600"/>
 </div>
 
 ### **Azure SQL product family**
@@ -899,7 +901,7 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 - Azure **SQL en VM**: SQL Server completo en IaaS
 - Azure **SQL Data Warehouse (Ahora Azure Synapse Analytics)**: versión de procesamiento paralelo masivo (MPP) de SQL Server que permite consultar datos mediante recursos sin servidor o aprovisionados a escala. Experiencia unificada para ingerir, preparar, administrar y servir los datos.
 
-<img src="Images/Azure-sql.png" width="300"/>
+<img src="Images/Azure-sql.png" width="600"/>
 
 ## **Azure Marketplace**
 - Facilita la conexión entre usuarios y partners de Microsoft, proveedores de software independientes y neuvas empresas que ofrecen sus soluciones y servicios optimizados para ejecutarse en Azure.
@@ -908,11 +910,11 @@ Se explicó anteriormente. Revisar [Tipos de datos](#tipos-de-datos)
 - Los productos son entregados por **proveedores propios y externos**.
 - Las soluciones pueden aprovechar todas las categorías de servicios como IaaS, PaaS y SaaS
 
-<img src="Images/Marketplace.png" width="300"/>
+<img src="Images/Marketplace.png" width="600"/>
 
 ## **Servicios IoT**
 Internet de las cosas (**IoT**) es una red de dispositivos conectados a Internet (**dispositivos IoT**) integrados en objetos cotidianos que permiten enviar y recibir datos, como **configuraciones** y **telemetría**.  
-<img src="Images/Iot.png" width="300"/>
+<img src="Images/Iot.png" width="600"/>
 
 ### **Azure IoT Hub**
 Azure clasifica a su servicio como uno que permite *ordernar y controlar*.
@@ -927,7 +929,7 @@ Azure clasifica a su servicio como uno que permite *ordernar y controlar*.
 
 **Nota**: Una vez que **Azure IoT Hub** recibe un mensaje de un dispositivo, puede enrutarlo a otro servicio de Azure.
 
-<img src="Images/Iot-hub.png" width="300"/>
+<img src="Images/Iot-hub.png" width="600"/>
 
 ### **Azure IoT Central**
 Se basa en **Azure IoT Hub** y proporciona un panel que permite a las empresas administrar dispositivos de IoT de forma individual y en conjunto, ver informes y configurar notificaciones de error mediante una GUI.
@@ -941,7 +943,7 @@ Se basa en **Azure IoT Hub** y proporciona un panel que permite a las empresas a
 - Puede enviar actualizaciones de firmware o software a los dispositivos.
 - Uso de plantillas de dispositivo que permite conectar un dispositivo sin programación(Desarrolladores aún deben crear código que se ejecute, pero este solo debería coincidir con la especificación de la plantilla de dispositivo).
 
-<img src="Images/Iot-central.png" width="300"/>
+<img src="Images/Iot-central.png" width="600"/>
 
 ### **Azure Sphere**
 - Soluciones seguras de IoT de extremo a extremo
@@ -949,7 +951,7 @@ Se basa en **Azure IoT Hub** y proporciona un panel que permite a las empresas a
   - Sistema operativo Azure Sphere basado en Linux - Controla la comunicación con el servicio de seguridad y ejecuta el software del proveedor.
   - Comunicación de dispositivo a nube de confianza de Azure Security Service - Es el servicio de seguridad (AS3). Funciona autenticandose mediante certificados y se asegura que el dispositivo no está en peligro, además una vez se identifica inserta las actualizaciones de software del S.O. o del cliente(y aprobadas) a la vez que pueden recibir mensajes o enviar de forma remota.
  
-<img src="Images/Sphere.png" width="300"/>
+<img src="Images/Sphere.png" width="600"/>
 
 ## **Servicios Big Data & Analytics**
 Big Data es un campo de la tecnología que ayuda con la extracción, el procesamiento y el análisis de información que es demasiado grande o compleja para ser tratada por el software tradicional.  
@@ -985,14 +987,14 @@ Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que e
   - Synapse Pipelines (Data Factory - ETL)
   - Studio (Engloba todos los componentes como una experiencia unificada)
 
-<img src="Images/Synapse-analytics.png" width="300"/>
+<img src="Images/Synapse-analytics.png" width="600"/>
 
 ### **Azure HDInsight**
 - Plataforma flexible multipropósito de big data (PaaS)
 - Múltiples tecnologías compatibles de código abierto(Hadoop, Spark, Kafka, HBase, Hive, Storm, Machine Learning)
 - Permite una amplia gama de escenarios como ETL, almacenamiento de datos, aprendizaje automático e IoT
 
-<img src="Images/HDInsight.png" width="300"/>
+<img src="Images/HDInsight.png" width="600"/>
 
 ### **Azure Databricks**
 - Plataforma de colaboración de big data (PaaS)
@@ -1003,7 +1005,7 @@ Azure Synapse Analytics es una evolución de un servicio SQL Datawarehouse que e
 - Admite Python, Scala, R, Java y SQL
 - Admite marcos y biliotecas de ciencias de datos : TensorFlow, PyTorch, Scikit-learn
 
-<img src="Images/Databricks.png" width="300"/>
+<img src="Images/Databricks.png" width="600"/>
 
 ### **Azure Data Lake Analytics**
 Servicio de trabajos de análisis a petición que simplifica los macrodatos. No requiere administración de servidor, solo escribir consultas para transformar los datos y extraer ideas valiosas.
@@ -1031,7 +1033,7 @@ Plataforma para realizar predicciones. Consta de herramientas que permiten conec
 
 Cuando los científicos de datos necesiten un control completo sobre el diseño y entrenamiento de un algoritmo con sus propios datos.
 
-<img src="Images/Machine-learning.png" width="300"/>
+<img src="Images/Machine-learning.png" width="600"/>
 
 ### **Azure Cognitive Service**
 Proporciona modelos de aprendizaje automático creados y entrenados previamente. 
@@ -1056,7 +1058,7 @@ La computación sin servidor es un entorno de ejecución alojado en la nube que 
 - Altamente escalable
 - Admite lenguajes y marcos populares (.NET y .NET Core, Java, Node.js, Python, PowerShell, etc.)
 
-<img src="Images/Azure-functions-apps.png" width="300"/>
+<img src="Images/Azure-functions-apps.png" width="600"/>
 
 ### **Azure Logic Apps**
 - Servicio de integración empresarial sin servidor (PaaS)
@@ -1070,7 +1072,7 @@ La computación sin servidor es un entorno de ejecución alojado en la nube que 
 - Supervisado desde Azure Protal, Log Analytics
 - Administrado desde Azure Portal, API REST, PowerShell, Visual Studio
 
-<img src="Images/Azure-logics-apps.png" width="300"/>
+<img src="Images/Azure-logics-apps.png" width="600"/>
 
 ### **Azure Event Grid**
 - Servicio de enrutamiento de eventos sin servidor completamente administrado
@@ -1078,7 +1080,7 @@ La computación sin servidor es un entorno de ejecución alojado en la nube que 
 - Diseñado para aplicaciones basadas en eventos y casi en tiempo real
 - Admite docenas de eventos integrados de los servicios de Azure más comunes
 
-<img src="Images/Azure-event-grid.png" width="300"/>
+<img src="Images/Azure-event-grid.png" width="600"/>
 
 ## **Soluciones DevOps**
 **DevOps** es un conjunto de prácticas que combinan tanto el desarrollo (Dev) como las operaciones (Ops).  
@@ -1096,7 +1098,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 - Ampliable con Marketplace: más de 1000 aplicaciones disponibles
 - Evolucionado de TFS (Team Foundation Server), a través de VSTS (Visual Studio Team Services)
 
-<img src="Images/Azure-devops.png" width="300"/>
+<img src="Images/Azure-devops.png" width="800"/>
 
 ### **Azure DevTest Labs**
 - Servicio de creación de entornos sandbox para desarrolladores/testers (PaaS)
@@ -1107,7 +1109,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 - Comparta y automatice laboratorios a través de imágenes personalizadas
 - Complementos/API/herramientas prefabricados para la automatización de canalización de CI/CD
 
-<img src="Images/Azure-devtest-labs.png" width="300"/>
+<img src="Images/Azure-devtest-labs.png" width="800"/>
 
 ## **Azure Tools**
 ### **Azure Portal**
@@ -1117,7 +1119,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 - Tareas simples.
 - Diseñado para proporcionar resiliencia y disponibilidad continua al estar presente en todos los centros de datos de Azure.
 
-<img src="Images/Azure-portal.png" width="300"/>
+<img src="Images/Azure-portal.png" width="800"/>
 
 ### **Azure PowerShell**
 - PowerShell y módulo
@@ -1129,7 +1131,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
   - New-AzResourceGroup: crear un nuevo grupo de recursos
   - New-AzVm: crear una máquina virtual
 
-<img src="Images/Azure-powershell.png" width="300"/>
+<img src="Images/Azure-powershell.png" width="800"/>
 
 ### **Azure CLI**
 - Interfaz de línea de comandos para Azure
@@ -1142,7 +1144,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
   - az vm create: crear una máquina virtual
 - Native OS terminal scripting
 
-<img src="Images/Azure-cli.png" width="300"/>
+<img src="Images/Azure-cli.png" width="900"/>
 
 ### **Azure Cloud Shell**
 - Entorno de secuencias de comandos basado en la nube
@@ -1157,7 +1159,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
   - Aplicación móvil de Azure
   - Integración con Microsoft Docs
 
-<img src="Images/Azure-cloud-shell.png" width="300"/>
+<img src="Images/Azure-cloud-shell.png" width="900"/>
 
 ## **Soluciones de supervisión**
 ### **Azure Advisor**
@@ -1171,7 +1173,7 @@ DevOps tiene como objetivo **acortar el ciclo de vida del desarrollo** al propor
 - Recomendaciones **procesables**
 - **¡Gratis!**
 
-<img src="Images/Azure-advisor.png" width="300"/>
+<img src="Images/Azure-advisor.png" width="900"/>
 
 ### **Azure Monitor**
 - Servicio de **recopilación, análisis y visualizador de estos datos**
@@ -1218,18 +1220,18 @@ Es un firewall con estado, lo que implica que analiza el contexto completo de un
 - Compatibilidad con FQDN (Nombre de dominio completo), ej. microsoft.com
 - Totalmente integrado con Azure monitor para registro y análisis
 
-<img src="Images/Azure-firewall.png" width="300"/>
+<img src="Images/Azure-firewall.png" width="900"/>
 
 ### **Azure DDoS Protección**
 **DoS - Denegación de servicio**  
 Ciberataque con la intención de causar una interrupción temporal o indefinida del servicio
 
-<img src="Images/Dos.png" width="300"/>
+<img src="Images/Dos.png" width="900"/>
 
 **DDoS - Denegación de servicio distribuida**  
 Ataque DoS que se origina en múltiples servidores
 
-<img src="Images/Ddos.png" width="300"/>
+<img src="Images/Ddos.png" width="900"/>
 
 **Azure DDoS Protection**
 - Servicio de protección DDoS en Azure
@@ -1245,7 +1247,7 @@ Ataque DoS que se origina en múltiples servidores
   - Ataques de protocolo - vuelven un destino inaccesible al aprovechar vulnerabilidad en la pila del protocolo de capa 3 y 4
   - Ataques de nivel de recursos(nivel de aplicación)(solo con el firewall de aplicaciones web) - dirigidos a paquetes de aplicaciones web para interrumpir la transmisión de datos entre hosts
 
-<img src="Images/Ddos-protection.png" width="300"/>
+<img src="Images/Ddos-protection.png" width="900"/>
 
 ## **Grupos de seguridad Azure**
 Azure Firewall y Azure DDoS Protection ayudan a controlar el tráfico que proviene externamente, pero también se debe saber como proteger las redes internas de Azure.
@@ -1260,13 +1262,13 @@ Azure Firewall y Azure DDoS Protection ayudan a controlar el tráfico que provie
   - Dirección (entrante o saliente)
   - Prioridad (orden de evaluación)
 
-<img src="Images/security-groups.png" width="300"/>
+<img src="Images/security-groups.png" width="900"/>
 
 ### **Grupos de seguridad de aplicaciones**
 - Característica que permite la agrupación de máquinas virtuales ubicadas en la red virtual de Azure
 - Diseñado para reducir el esfuerzo de mantenimiento (asigne ASG en lugar de la dirección IP explícita)
 
-<img src="Images/application-security-groups.png" width="300"/>
+<img src="Images/application-security-groups.png" width="900"/>
 
 ### **Combinación de servicios de Azure para una solución de seguridad de red completa**
 [Leer aquí](https://docs.microsoft.com/es-es/learn/modules/secure-network-connectivity-azure/7-combine-services-complete-solution)
@@ -1275,7 +1277,7 @@ Azure Firewall y Azure DDoS Protection ayudan a controlar el tráfico que provie
 ### **Enrutamiento(Routing)**
 Proceso de encontrar/seleccionar una ruta para el tráfico en una o varias redes.
 
-<img src="Images/Routing.png" width="300"/>
+<img src="Images/Routing.png" width="900"/>
 
 ### **User-defined Routes(UDR)**
 - Rutas personalizadas (definidas por el usuario, estáticas) (UDR)
@@ -1283,7 +1285,7 @@ Proceso de encontrar/seleccionar una ruta para el tráfico en una o varias redes
 - Administrado a través del recurso Azure Route Table
 - Asociado con cero o más subredes de red virtual
 
-<img src="Images/User-defined-routes.png" width="300"/>
+<img src="Images/User-defined-routes.png" width="900"/>
 
 ## **Azure Identity Services**
 ### **Identidad**
@@ -1292,18 +1294,18 @@ La identidad en general significa el hecho de ser alguien o algo. Por ejemplo, n
 - También aplicaciones u otros servidores con claves secretas o certificados.
 - El hecho de ser algo o alguien.
 
-<img src="Images/Identity.png" width="300"/>
+<img src="Images/Identity.png" width="900"/>
 
 ### **Autenticación(AuthN)**
 El proceso de verificación/afirmación de identidad
 
-<img src="Images/Authentication.png" width="300"/>
+<img src="Images/Authentication.png" width="900"/>
 
 ### **Autorización(AuthZ)**
 Después de la autenticación empieza el proceso de autorización.  
 El proceso de garantizar que solo las identidades autenticadas obtengan acceso a los recursos para los que se les ha otorgado acceso.
 
-<img src="Images/Authorization.png" width="300"/>
+<img src="Images/Authorization.png" width="900"/>
 
 ### **Gestión de Acceso**
 El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios y aplicaciones autorizados.
@@ -1318,7 +1320,7 @@ El proceso de controlar, verificar, rastrear y administrar el acceso a usuarios 
   - Office 365
   - Servicios de Live.com (Skype, OneDrive, etc.)
 
-<img src="Images/Azure-ad.png" width="300"/>
+<img src="Images/Azure-ad.png" width="900"/>
 
 **Azure Active Directory (AD)** está relacionado con **Active Directory** de Windows Server.  
 Azure AD es para:
@@ -1342,7 +1344,7 @@ Azure AD es para:
   - Factor de ubicación – “En algún lugar donde estés”, ej. ubicación gps
 - Compatible con Azure AD de forma predeterminada (simple interruptor de encendido y apagado)
 
-<img src="Images/Multi-factor-authentication.png" width="300"/>
+<img src="Images/Multi-factor-authentication.png" width="900"/>
 
 ### **Acceso condicional**
 Herramienta que usa Azure AD para permitir o no el acceso a los recursos en función de señales de identidad. Estas señales incluyen **quién es,dónde se encuentra y desde qué dispositivo solicta el acceso el usuario**.  
@@ -1364,9 +1366,9 @@ alertas de protección contra amenazas, análisis de vulnerabilidades, acceso a 
   - **Supervisión de la integridad de los archivos** - Configuración del registro, aplicaciones y otros aspectos que puedan indicar un ataque de seguridad.
 - Ofrece una vista centralizada de todas sus alertas de seguridad.
 <div>
-<img src="Images/Security-center.png" width="300"/>
-<img src="Images/Security-center-2.png" width="300"/>
-<img src="Images/Security-center-3.png" width="300"/>
+<img src="Images/Security-center.png" width="900"/>
+<img src="Images/Security-center-2.png" width="900"/>
+<img src="Images/Security-center-3.png" width="900"/>
 </div>
 
 [Video explicativo](https://youtu.be/tyztKP9rszU?list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM)
@@ -1395,7 +1397,7 @@ Más información [aquí](https://docs.microsoft.com/es-es/learn/modules/protect
 - Supervisión y registro de acceso
 - Requiere autenticación y autorización adecuadas que garantiza almacenamiento seguro
 
-<img src="Images/Key-vault.png" width="300"/>
+<img src="Images/Key-vault.png" width="900"/>
 
 ### **Azure Dedicated Host**
 En Azure, las VM se ejecutan en hardware compartido administrado por Microsoft, pero las cargas de trabajo de las VM están aisladas, pero debido a un cumplimiento normativo que obliga a ser el único cliente que usa el equipo físico, aparece **Azure Dedicated Host**.  
@@ -1406,7 +1408,7 @@ En Azure, las VM se ejecutan en hardware compartido administrado por Microsoft, 
 - Se puede aprovechar las ventajas del *control de mantenimiento* que permite controlar cuando se producen las actualizaciones de mantenimiento en VM.
 - Se cobra por host dedicado y este precio se basa en familia de máquinas virtuales, el tipo de hardware y la región
 
-<img src="Images/azure-dedicated-host.png" width="500"/>
+<img src="Images/azure-dedicated-host.png" width="900"/>
 
 ## **Gobernanza en Azure**
 *Gibernanza* describe el proceso general por el que se establecen reglas y directivas y se garantiza que esas reglas y directivas se aplican. En la nube tener una buena gobernanza ayuda a tener control de las aplicaciones y los recursos que se administran en la nube, así se garantiza que seamos compatibles con:
@@ -1427,27 +1429,27 @@ El rol (definición de rol) es una colección de acciones que la identidad asign
 La definición de roles es una respuesta a la pregunta "¿Qué se puede hacer?".  
 Cuando se asignan usuarios o grupos a uno o varios roles, reciben todos los permisos de acceso asociados correspondientes.    
 
-<img src="Images/Roles.png" width="300"/>
+<img src="Images/Roles.png" width="900"/>
 
 **¿Qué es un alcance?**
 El ámbito es uno o más recursos de Azure a los que se aplica el acceso.  
 La asignación de alcance es una respuesta a la pregunta "¿Dónde se puede hacer?"  
 
-<img src="Images/Scopes.png" width="300"/>
+<img src="Images/Scopes.png" width="900"/>
 
 **¿Qué es Security Principal?**
 Security Principal es un objeto de Azure (identidad) que se puede asignar a un rol (por ejemplo, usuarios, grupos o aplicaciones).  
 La asignación de **Security Principal** es una respuesta a la pregunta "¿Quién puede hacerlo?"  
 
 <div>
-<img src="Images/Security-principals.png" width="300"/>
-<img src="Images/Security-principals-2.png" width="300"/>
+<img src="Images/Security-principals.png" width="900"/>
+<img src="Images/Security-principals-2.png" width="900"/>
 </div>
 
 **¿Qué es una asignación de roles?**  
 La asignación de funciones es una combinación de la definición de funciones, la entidad de seguridad y el ámbito.  
 
-<img src="Images/Rol-assignament.png" width="300"/>
+<img src="Images/Rol-assignament.png" width="900"/>
 
 **Características**  
 - Sistema de autorización integrado en Azure Resource Manager (ARM) - ARM es un servicio de administración que proporciona una forma de organizar y proteger nuestros recursos en la nube.
@@ -1482,8 +1484,8 @@ Aun cuando haya directivas de control de acceso basado en roles de Azure (RBAC d
 - Los bloqueos se aplican con independencia de los permisos RBAC
 
 <div>
-<img src="Images/resource-locks.png" width="300"/>
-<img src="Images/resource-locks-2.png" width="300"/>
+<img src="Images/resource-locks.png" width="900"/>
+<img src="Images/resource-locks-2.png" width="900"/>
 </div>
 
 **¿Cómo se administran los bloqueos de recursos?**
@@ -1503,7 +1505,7 @@ Se pueden aplicar bloqueos a una suscripción o aun grupo de recursos o a un rec
 - Aplicable para recursos, grupos de recursos y suscripciones
 - NO se hereda por defecto
 
-<img src="Images/tags.png" width="300"/>
+<img src="Images/tags.png" width="900"/>
 
 ### **Azure Policy**
 Surge de la necesidad de asegurarse que sus recursos mantenga su cumplimiento de gobernaza y si pudiera recibir un aviso cuando la configuración de un recurso cambie. Crea, asigna y administra directivas que controlan o auditan recursos.
@@ -1528,14 +1530,14 @@ Surge de la necesidad de asegurarse que sus recursos mantenga su cumplimiento de
 - Comprobado durante la creación o actualización de recursos y los existentes con tareas de remediación
 
 <div>
-<img src="Images/Policy.png" width="300"/>
-<img src="Images/Policy-2.png" width="300"/>
+<img src="Images/Policy.png" width="900"/>
+<img src="Images/Policy-2.png" width="900"/>
 </div>
 
 ### **Azure Blueprints**
 Un blueprint es una guía,patrón o diseño para realizar algo
 
-<img src="Images/blueprint.png" width="300"/>
+<img src="Images/blueprint.png" width="900"/>
 
 - Paquete de varios componentes de Azure (artefactos)
   - Grupos de recursos
@@ -1547,8 +1549,8 @@ Un blueprint es una guía,patrón o diseño para realizar algo
 - Asignación de blueprint: describe dónde debería suceder (implementación del paquete)
 
 <div>
-<img src="Images/blueprint-2.png" width="300"/>
-<img src="Images/blueprint-3.png" width="300"/>
+<img src="Images/blueprint-2.png" width="900"/>
+<img src="Images/blueprint-3.png" width="900"/>
 </div>
 
 **Uso de Azure Blueprints**
@@ -1626,7 +1628,7 @@ preparado por Microsoft para ayudar a las empresas en su proceso de adopción de
   - Revisar las habilidades actuales y abordar las brechas
 4. Plan de adopción de la nube: combine todo, desde los pasos 1 a 3 en un solo plan de adopción de la nube
 
-<img src="Images/Plan.png" width="300"/>
+<img src="Images/Plan.png" width="900"/>
 
 #### **Comienzo**
 1. Guía de configuración de Azure: revise la guía de configuración de Azure para familiarizarse con las herramientas y los enfoques que debe usar para crear una zona de aterrizaje.
@@ -1635,7 +1637,7 @@ preparado por Microsoft para ayudar a las empresas en su proceso de adopción de
 Amplíe la zona de aterrizaje inicial para que se ajuste a las necesidades de su empresa.
 4. Mejores prácticas: revise todo y asegúrese de que se sigan las mejores prácticas.
 
-<img src="Images/Ready.png" width="300"/>
+<img src="Images/Ready.png" width="900"/>
 
 #### **Adopción**
 **Emigrar**  
@@ -1648,7 +1650,7 @@ Amplíe la zona de aterrizaje inicial para que se ajuste a las necesidades de su
 3. Mejores prácticas: aborde las necesidades comunes de migración mediante la aplicación de mejores prácticas coherentes.
 4. Mejoras de procesos: una parte importante de esta actividad intensa de proceso es identificar cuellos de botella y mejorar con cada migración
   
-<img src="Images/Adopt.png" width="300"/>
+<img src="Images/Adopt.png" width="900"/>
 
 **Innovar**
 1. Consenso de valor comercial (VALOR A LA ESTRATEGIA)
@@ -1669,48 +1671,48 @@ Amplíe la zona de aterrizaje inicial para que se ajuste a las necesidades de su
 El equipo debe garantizar que la estabilidad y los costos estén siempre en perfecto equilibrio para cumplir con los compromisos comerciales. El equipo debe permitir que el entorno crezca, evolucione y se adapte a las necesidades comerciales cambiantes
 
 <div>
-<img src="Images/Govern.png" width="300"/>
-<img src="Images/Govern-2.png" width="100"/>
+<img src="Images/Govern.png" width="900"/>
+<img src="Images/Govern-2.png" width="350"/>
 </div>
 
 #### **Organizar**
 Asegúrese de que todos sepan qué hacer y cuándo hacerlo en cada etapa de este proceso. Una de las formas de lograr esto es a través de la matriz RACI (Responsable, Responsable, Consultado e Informado).
 
-<img src="Images/Organize.png" width="300"/>
+<img src="Images/Organize.png" width="900"/>
 
 ## **Core tenets of Security,Privacy,Compliance(Trust Center,DPA,OST y más)**
 
 Document/Website | Diagrama | Info | Ofertas | Audiencia
 
-**Microsoft Privacy Statement**
+**Microsoft Privacy Statement**  
 <img src="Images/Microsoft-privacy-statement.png" width="900"/> 
 
 - Recopilación, Propósito y Uso de Datos Personales|Todas las ofertas de Microsoft, incluidos servicios, aplicaciones, sitios web, software, servidores, dispositivos
 - Todos 
 - Clientes finales o empresas 
 
-**Online Services Terms (OST)**
+**Online Services Terms (OST)**  
 <img src="Images/Online-services-terms.png" width="900"/> 
 
 - Términos de licencia (acuerdo legal): derechos de uso sobre los servicios de Azure. Lo que se puede hacer y lo que está prohibido.
 - Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
 - Organizaciones - Equipos legales
 
-**Data Protection Addendum**
+**Data Protection Addendum**  
 <img src="Images/Data-protection-addendum.png" width="900"/>
 
 - Anexo al OST que describe las obligaciones de ambas partes (Microsoft y usted) con respecto al procesamiento de datos personales y del cliente
 - Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
 - Organizaciones - Equipos legales, equipos de seguridad
 
-**Trust Center**
+**Trust Center**  
 <img src="Images/Trust-center.png" width="900"/>
 
 - Portal web de ventanilla única para todo lo relacionado con seguridad, cumplimiento, privacidad, políticas, mejores prácticas, etc.
 - Servicios en línea de Microsoft como Azure, servicios de Microsoft 365, Bing Maps, etc.
 - Organizaciones: equipos legales, equipos de seguridad, gerentes comerciales, administradores
 
-**Azure Compliance Documentation**
+**Azure Compliance Documentation**  
 <img src="Images/Azure-compliance-docs.png" width="900"/>
 
 - Portal web que se centra en las ofertas de cumplimiento en Azure, similar al centro de confianza pero reducido
@@ -1740,19 +1742,19 @@ Azure Sovereign Regions proporciona servicios de Azure en mercados con requisito
 - Costo base
   - Tipos de recursos: todos los servicios de Azure (recursos) tienen modelos de precios específicos de recursos. Por lo general, consta de una o más métricas.
 
-  <img src="Images/Resource-types.png" width="300"/>
+  <img src="Images/Resource-types.png" width="900"/>
 
   - Servicios: las ofertas específicas de Azure (Enterprise, Web Direct, CSP, etc.) tienen diferentes costos y componentes de facturación, como prepagos, ciclos de facturación, descuentos, etc.
 
-  <img src="Images/Services.png" width="300"/>
+  <img src="Images/Services.png" width="900"/>
 
   - Ubicación: la ejecución de los servicios de Azure varía entre las regiones de Azure
 
-  <img src="Images/Location.png" width="300"/>
+  <img src="Images/Location.png" width="900"/>
 
   - Ancho de banda: tráfico de red al cargar (entrante/ingreso) datos a Azure o al descargar (saliente/egreso) desde Azure
 
-  <img src="Images/Bandwidth.png" width="300"/>
+  <img src="Images/Bandwidth.png" width="900"/>
 
 - Savings
   - Instancias reservadas
@@ -1766,7 +1768,7 @@ Adquiera los servicios de Azure con 1 o 3 años de anticipación con importantes
   - Planes de software: Red Hat, Red Hat OpenShift, SUSE Linux, etc.
   - Las reservas se hacen para 1 o 3 años
 
-<img src="Images/Reservations.png" width="300"/>
+<img src="Images/Reservations.png" width="900"/>
 
 #### **Máquinas virtuales al contado de Azure**
 Compre capacidad de máquina virtual no utilizada para obtener un descuento significativo  
@@ -1777,7 +1779,7 @@ Compre capacidad de máquina virtual no utilizada para obtener un descuento sign
 - Lo mejor para cargas de trabajo interrumpibles (procesamiento por lotes, entornos de desarrollo/prueba, grandes cargas de trabajo informáticas, tareas no críticas,
 etc)
 
-<img src="Images/Spot-VM.png" width="300"/>
+<img src="Images/Spot-VM.png" width="900"/>
 
 #### **Beneficio de uso híbrido**
 Usar licencias existentes en la nube
@@ -1794,7 +1796,7 @@ Usar licencias existentes en la nube
       - Azure SQL Server on VM
       - Azure Data Factory SQL Server Integration Services
 
-<img src="Images/Hybrid-use-benefit.png" width="300"/>
+<img src="Images/Hybrid-use-benefit.png" width="900"/>
 
 #### **Herramientas**
 - Calculadora de precios: calcule el costo de los servicios de Azure
@@ -1815,7 +1817,7 @@ Usar licencias existentes en la nube
 - Recomendaciones de costos
 - Exportaciones automatizadas
 
-<img src="Images/Cost-managment.png" width="300"/>
+<img src="Images/Cost-managment.png" width="900"/>
 
 #### **Minimización de costos en Azure**
 - Calculadora de precios de Azure para elegir la región de bajo costo
@@ -1864,7 +1866,7 @@ Escenario: sitio web de Azure con base de datos back-end de SQL
   - Disponibilidad = 0.99900025
   - Disponibilidad ~ 99,9%
 
-<img src="Images/AND.png" width="300"/>
+<img src="Images/AND.png" width="900"/>
 
 **OR lógico: agregando redundancia**
 Disponibilidad de **S1 OR S2** = 100 % - ( Indisponibilidad (S1) * Indisponibilidad (S2) )  
@@ -1876,7 +1878,7 @@ Escenario: dos aplicaciones web redundantes detrás de un balanceador de carga
   - Disponibilidad (ambos-web) = 0.99999975
   - Disponibilidad (ambos-web) ~ 99.9999%
 
-<img src="Images/AND-2.png" width="300"/>
+<img src="Images/AND-2.png" width="900"/>
 
 ### **Elementos clave**
 - Acuerdo formal entre Microsoft y el cliente
@@ -1896,8 +1898,8 @@ Escenario: dos aplicaciones web redundantes detrás de un balanceador de carga
 - La disponibilidad general es una versión de "producción" del servicio
 
 <div>
-<img src="Images/lifecycle-public.png" width="300"/>
-<img src="Images/lifecycle-private.png" width="300"/>
+<img src="Images/lifecycle-public.png" width="600"/>
+<img src="Images/lifecycle-private.png" width="600"/>
 </div>
 
 ### **Información clave de vista previa pública**
